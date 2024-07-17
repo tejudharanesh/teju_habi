@@ -5,10 +5,11 @@ import Consultation from "./pages/Consultation";
 import HomePage from "./pages/HomePage";
 import CompleteProfile from "./pages/CompleteProfile.jsx";
 import InputField from "./pages/InputField.jsx";
+import Test from "./pages/Test.jsx";
 function App() {
   return (
     <div className="App">
-      <Consultation/>
+      <LoginPage />
     </div>
   );
 }

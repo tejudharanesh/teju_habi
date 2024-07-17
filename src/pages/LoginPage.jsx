@@ -1,9 +1,10 @@
 import { useState } from "react";
+import axios from "axios";
 
 import logo from "../assets/habi_logo.png";
-import googleLogo from '../assets/svg/Google.svg'
-import facebookLogo from '../assets/svg/facebook.svg'
-
+import googleLogo from "../assets/svg/Google.svg";
+import facebookLogo from "../assets/svg/facebook.svg";
+import { parsePhoneNumberFromString } from "libphonenumber-js";
 
 const LoginPage = () => {
   const [phone, setPhone] = useState("");
@@ -12,9 +13,31 @@ const LoginPage = () => {
     setPhone(event.target.value);
   };
 
-  const handleContinueClick = () => {
-    // Handle the continue button click event here
-    console.log("Phone number:", phone);
+  const formatPhoneNumber = (number) => {
+    const phoneNumberObj = parsePhoneNumberFromString(number, "IN"); // Set the default country to India
+    return phoneNumberObj ? phoneNumberObj.format("E.164") : null;
+  };
+
+  const sendOtp = async () => {
+    const formattedNumber = formatPhoneNumber(phone);
+    console.log("1 step");
+    console.log(formattedNumber);
+    try {
+      const response = await axios.post("http://localhost:5000/send-otp", {
+        phoneNumber: formattedNumber,
+      });
+      if (response) {
+        console.log("otp sent");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleContinueClick = (e) => {
+    e.preventDefault();
+    sendOtp();
+    console.log("sending otp");
   };
 
   return (
@@ -28,10 +51,17 @@ const LoginPage = () => {
           />
         </div>
         <div className="md:w-2/3 md:pl-16 lg:pl-16">
-          <h2 className="text-xl font-bold text-start mb-4">Login to Begin Your Journey</h2>
-          <p className="text-black-500 mb-8 text-sm">Building Your Dream Home Starts Here.</p>
+          <h2 className="text-xl font-bold text-start mb-4">
+            Login to Begin Your Journey
+          </h2>
+          <p className="text-black-500 mb-8 text-sm">
+            Building Your Dream Home Starts Here.
+          </p>
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="phone"
+            >
               Enter phone number
             </label>
             <div className="flex">
@@ -66,11 +96,10 @@ const LoginPage = () => {
           </div>
           <div className="flex justify-center mt-7">
             <button className="bg-white border border-gray-300 py-2 px-2 rounded-xl flex items-center space-x-2 hover:bg-gray-50 transition duration-300 mr-5">
-            <img src={googleLogo} alt="gooleLogo" />
+              <img src={googleLogo} alt="gooleLogo" />
             </button>
             <button className="bg-white border border-gray-300 py-2 px-2 rounded-xl flex items-center space-x-2 hover:bg-gray-50 transition duration-300 ml-5">
-            <img src={facebookLogo} alt="gooleLogo" />
-
+              <img src={facebookLogo} alt="gooleLogo" />
             </button>
           </div>
           <p className="text-center text-gray-500 text-xs mt-4">

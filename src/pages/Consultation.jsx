@@ -4,26 +4,30 @@ import homeSafety from "../assets/svg/HomeSafety.svg";
 import Warranty from "../assets/svg/Guarantee.svg";
 import React from "react";
 
+const thumbnailUrl = `https://img.youtube.com/vi/R3C12M4nG1o/hqdefault.jpg`;
+const videoUrl = `https://www.youtube.com/watch?v=R3C12M4nG1o`;
+
 function Consultation() {
   return (
     <div className="min-h-screen flex flex-col items-center bg-gray-100 font-poppins p-4">
-      <div className="flex flex-col items-center w-full md:w-1/2 bg-white rounded-lg shadow p-4">
-        <h1 className="text-2xl font-semibold my-4 text-black">
-          Book Free Consultation
-        </h1>
-
-        <h2 className="text-xl font-semibold mb-4">Connect with Us!</h2>
-        <div className="flex flex-col md:flex-row md:space-x-4">
-          <button className="bg-primary opacity-50 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2 md:mb-0 w-full md:w-auto">
-            Virtually
-          </button>
-          <button className="bg-primary opacity-50 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full md:w-auto">
-            Physically
-          </button>
+      <div className="flex flex-col items-center w-full md:w-2/3 bg-white rounded-lg shadow p-4">
+        <h1 className="text-2xl my-4 text-black">Book Free Consultation</h1>
+        <div className="border-4 rounded-xl px-6 py-4">
+          <h2 className="text-xl mb-4 text-center text-black">
+            Connect with Us!
+          </h2>
+          <div className="flex flex-col md:flex-row md:space-x-4">
+            <button className="bg-primary opacity-50  text-black font-bold py-2 px-4 rounded mb-2 md:mb-0 w-full md:w-auto">
+              Virtually
+            </button>
+            <button className="bg-primary opacity-50 text-black font-bold py-2 px-4 rounded w-full md:w-auto">
+              Physically
+            </button>
+          </div>
         </div>
       </div>
 
-      <section className="w-full md:w-1/2 mt-6 bg-white rounded-lg shadow p-4">
+      <section className="w-full md:w-2/3 mt-6 bg-white rounded-lg shadow p-4">
         <h2 className="text-xl font-semibold mb-4">
           Constructing Dreams with Precision and Care
         </h2>
@@ -62,20 +66,30 @@ function Consultation() {
           </div>
         </div>
         <div className="flex items-center">
-          <div className="bg-gray-300 w-16 h-16 rounded mr-4"></div>
+          <div className=" rounded mr-2">
+            <a href={videoUrl} target="_blank" rel="noopener noreferrer">
+              <img
+                src={thumbnailUrl}
+                alt="YouTube Video Thumbnail"
+                className=""
+              />
+            </a>
+          </div>
           <div>
-            <h3 className="text-lg font-semibold">
+            <h3 className="text-sm font-semibold ">
               habi's Story - Redefines Home Building | habi
             </h3>
-            <p>
-              Building Better Homes: Solving Construction Challenges with Tech.
-              Discover how ...
+            <p className="text-sm">
+              “Building Better Homes: Solving Construction Challenges with Tech”
+              Discover how our startup tackles industry pain points head-on
+              using cutting-edge technology. From streamlining processes to
+              enhancing safety, we’re revolutionizing home building.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="w-full md:w-1/2 mt-6 bg-white rounded-lg shadow p-4">
+      <section className="w-full md:w-2/3 mt-6 bg-white rounded-lg shadow p-4">
         <h2 className="text-xl font-semibold mb-4">Testimonials</h2>
         {[...Array(5)].map((_, i) => (
           <div key={i} className="flex items-center mb-4">
@@ -88,7 +102,7 @@ function Consultation() {
               </p>
               <div className="flex">
                 {[...Array(5)].map((_, j) => (
-                  <span key={j} className="text-yellow-500">
+                  <span key={j} className="text-black font-bold">
                     ★
                   </span>
                 ))}
