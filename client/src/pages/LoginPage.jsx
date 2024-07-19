@@ -130,7 +130,7 @@
 
 // export default LoginPage;
 
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
@@ -156,32 +156,35 @@ const LoginPage = () => {
     return phoneNumberObj ? phoneNumberObj.format("E.164") : null;
   };
 
-  const sendOtp = async () => {
-    const formattedNumber = formatPhoneNumber(phone);
-    try {
-      const response = await axios.post("http://localhost:5000/api/send-otp", {
-        phoneNumber: formattedNumber,
-      });
-      if (response.data.success) {
-        setUser({ phoneNumber: formattedNumber });
-        navigate("/otp");
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  // const sendOtp = async () => {
+  //   const formattedNumber = formatPhoneNumber(phone);
+  //   try {
+  //     const response = await axios.post("http://localhost:5000/api/send-otp", {
+  //       phoneNumber: formattedNumber,
+  //     });
+  //     if (response.data.success) {
+  //       setUser({ phoneNumber: formattedNumber });
+  //       navigate("/otp");
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
 
   const handleContinueClick = async (e) => {
     e.preventDefault();
     if (isPhoneValid) {
       try {
-        const response = await axios.post("http://localhost:5000/api/login", {
-          phoneNumber: formatPhoneNumber(phone),
-        });
+        const response = await axios.post(
+          "http://localhost:5000/api/otp/send",
+          {
+            phoneNumber: formatPhoneNumber(phone),
+          }
+        );
         const { token } = response.data;
         localStorage.setItem("token", token); // Store token in local storage
         setUser({ phoneNumber: formatPhoneNumber(phone) });
-        navigate("/otp");
+        navigate("/otp", { state: { phoneNumber: formatPhoneNumber(phone) } });
       } catch (error) {
         console.error("Error logging in:", error);
       }
@@ -230,6 +233,7 @@ const LoginPage = () => {
                 className="w-full border bg-white text-black border-gray-300 border-l-transparent rounded-r-2xl py-2 px-3 focus:outline-none"
                 value={phone}
                 onChange={handlePhoneChange}
+                maxLength="10"
               />
             </div>
           </div>

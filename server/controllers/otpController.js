@@ -2,8 +2,8 @@ const twilio = require("twilio");
 const { generateToken } = require("../utils/jwtUtils");
 const User = require("../models/userModel");
 
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
+const accountSid = "ACdb13688dd318588c2866806197c9f067";
+const authToken = "2d14023885cb2dc8ae5d98ce8a73ca46";
 const client = new twilio(accountSid, authToken);
 
 const sendOtp = async (req, res) => {
@@ -13,7 +13,7 @@ const sendOtp = async (req, res) => {
   try {
     await client.messages.create({
       body: `Your OTP is ${otp}`,
-      from: process.env.TWILIO_PHONE_NUMBER,
+      from: "+15677773554",
       to: phoneNumber,
     });
     res.status(200).send({ success: true });
