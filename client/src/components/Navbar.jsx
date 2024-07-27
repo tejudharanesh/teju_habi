@@ -39,7 +39,7 @@ const Navbar = ({ isExpanded }) => {
   return (
     <nav
       className={`fixed bottom-0 left-0 bg-layoutColor md:sticky ${
-        isExpanded ? "md:w-[80px]" : "md:w-[180px]" 
+        isExpanded ? "md:w-[81px]" : "md:w-[200px]"
       } md:flex-shrink-0 h-14 md:h-auto w-full border-r-2 z-10 md:z-0`}
     >
       <div className="flex flex-col justify-between relative h-auto">
@@ -48,17 +48,17 @@ const Navbar = ({ isExpanded }) => {
           <img
             src={logo}
             alt="Logo"
-            className={`h-auto ml-3 ${isExpanded ? "w-10" : "w-20"}`}
+            className={`h-auto ml-3 ${isExpanded ? "w-[40px]" : "w-[80px]"}`}
           />
         </div>
 
         {/* Navigation Buttons */}
-        <div className="flex justify-around md:items-start m-0 md:m-0 md:flex-col md:justify-start md:space-y-3 w-full">
+        <div className="flex justify-around md:items-start md:flex-col md:space-y-5 w-full">
           {buttons.map((button) => (
             <div key={button.id} className="relative w-full">
               <Link
                 to={button.link}
-                className={`btn border-none flex flex-col md:flex-row md:items-center md:space-x-3 hover:bg-primaryO w-full ${
+                className={`btn border-none flex flex-col md:flex-row md:items-center md:justify-start shadow-none md:space-x-3 hover:bg-primaryO w-full rounded-none ${
                   selected === button.id ? " bg-primaryO" : "bg-inherit"
                 }`}
                 onClick={() => setSelected(button.id)}
@@ -66,17 +66,15 @@ const Navbar = ({ isExpanded }) => {
                 <img
                   src={button.icon}
                   alt={button.alt}
-                  className={`w-6 h-6 ${
+                  className={`w-6 h-6 md:ml-4 ${
                     selected === button.id
-                      ? "fill-primary-content"
+                      ? "text-primary fill-current"
                       : "text-black"
                   }`}
                 />
                 <span
-                  className={`hidden md:inline ${
-                    selected == button.id
-                      ? "text-primary font-bold text-lg"
-                      : "text-black"
+                  className={`hidden md:inline font-[18px] ${
+                    selected == button.id ? "text-primary" : "text-black"
                   }
                   ${isExpanded ? "md:hidden" : ""}`}
                 >

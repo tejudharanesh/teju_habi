@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-button {
+.myBtn {
   display: flex;
   align-items: center;
   justify-content: center;

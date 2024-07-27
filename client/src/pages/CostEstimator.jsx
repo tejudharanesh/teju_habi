@@ -66,7 +66,7 @@ const CostEstimator = () => {
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary opacity-50"
             >
               Estimate cost
-              <img src={go} alt="" className="ml-2"/>
+              <img src={go} alt="" className="ml-2" />
             </button>
           </div>
         </form>
@@ -124,7 +124,7 @@ const CostEstimator = () => {
                   </p>
                 </div>
                 <a href={pkg.link}>
-                  <button className="mx-auto mt-3 border-4 border-gray-200 rounded-lg p-1 px-3 bg-primaryO text-black text-sm">
+                  <button className="myBtn mx-auto mt-3 border-4 border-gray-200 rounded-lg p-1 px-3 bg-primaryO text-black text-sm">
                     Click to view
                   </button>
                 </a>

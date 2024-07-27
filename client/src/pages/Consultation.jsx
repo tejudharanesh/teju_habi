@@ -21,7 +21,7 @@ function Consultation() {
   const handlePhysicallyClick = () => {
     setShowPopup(true);
   };
-
+ 
   return (
     <div className="min-h-screen flex flex-col items-center bg-background font-poppins w-full h-auto">
       <div className="flex flex-col items-center w-full bg-layoutColor shadow md:px-24 lg:px-52 xl:px-96 p-4">

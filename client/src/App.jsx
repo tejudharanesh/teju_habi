@@ -53,7 +53,7 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/test" element={<Navbar />} />
+          <Route path="/dashboard" element={<Dashboard />} />
 
           <Route path="/login" element={<LoginPage />} />
           <Route path="/otp" element={<Otp />} />
