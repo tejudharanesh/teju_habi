@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import leftarrow from "../assets/svg/leftArrow.svg";
 
 const FAQ = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
 
   const faqs = [
     {

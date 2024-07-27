@@ -21,26 +21,26 @@ function Consultation() {
   const handlePhysicallyClick = () => {
     setShowPopup(true);
   };
- 
+
   return (
     <div className="min-h-screen flex flex-col items-center bg-background font-poppins w-full h-auto">
-      <div className="flex flex-col items-center w-full bg-layoutColor shadow md:px-24 lg:px-52 xl:px-96 p-4">
-        <h1 className="text-2xl my-4 text-black font-semibold">
+      <div className="flex flex-col items-center w-full bg-layoutColor shadow md:px-[60px] lg:px-[220px] p-4">
+        <h1 className="text-[21px] lg:text-[24px] my-4 text-black font-medium">
           Book Free Consultation
         </h1>
         <div className="border-2 rounded-xl px-6 py-5 w-full">
-          <h2 className="text-xl mb-4 text-center text-black">
+          <h2 className="text-[16px] lg:text-[18px] font-medium mb-3 text-center text-black">
             Connect with Us!
           </h2>
-          <div className="flex flex-col md:flex-row md:space-x-4 lg:space-x-1">
+          <div className="flex flex-col justify-center items-center md:flex-row md:space-x-4 lg:space-x-1">
             <button
-              className="bg-primary1 text-black font-bold py-3 px-4 rounded-lg mb-3 md:mb-0 w-full lg:w-2/3 lg:mr-10 "
+              className="bg-primary1 text-black py-3 px-4 rounded-lg mb-2 md:mb-0 w-[275px] h-[68px] md:mr-[16px] lg:mr-[74px]"
               onClick={handlePhysicallyClick}
             >
               Virtually
             </button>
             <button
-              className="bg-primary1 text-black font-bold py-3 px-4 rounded-lg w-full md:mb-0 lg:w-2/3"
+              className="bg-primary1 text-black py-3 px-4 rounded-lg w-[275px] h-[68px]"
               onClick={handlePhysicallyClick}
             >
               Physically
@@ -49,7 +49,7 @@ function Consultation() {
         </div>
       </div>
 
-      <section className="w-full mt-4 bg-layoutColor shadow md:px-20 lg:px-40 xl:px-96 p-2">
+      <section className="w-full mt-4 bg-layoutColor shadow md:px-[60px] lg:px-[220px] p-4">
         <h2 className="text-lg font-semibold mb-4 text-center text-black">
           Constructing Dreams with Precision and Care
         </h2>
@@ -213,10 +213,10 @@ function Consultation() {
         </div>
       </section>
 
-      <section className="w-full mt-4 bg-layoutColor shadow p-5 md:px-20 lg:px-40 xl:px-96">
+      <section className="w-full mt-4 bg-layoutColor shadow  md:px-[60px] lg:px-[220px] p-4">
         <FAQ />
       </section>
-      <section className="w-full bg-layoutColor shadow p-4 md:px-20 lg:px-40 xl:px-96">
+      <section className="w-full bg-layoutColor shadow md:px-[60px] lg:px-[220px] p-4">
         <Footer />
       </section>
 

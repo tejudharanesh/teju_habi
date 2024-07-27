@@ -68,8 +68,8 @@ const Navbar = ({ isExpanded }) => {
                   alt={button.alt}
                   className={`w-6 h-6 md:ml-4 ${
                     selected === button.id
-                      ? "text-primary fill-current"
-                      : "text-black"
+                      ? "text-primary fill-primary"
+                      : "#000000"
                   }`}
                 />
                 <span

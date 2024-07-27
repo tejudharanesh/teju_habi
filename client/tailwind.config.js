@@ -9,7 +9,7 @@ export default {
         // Add more custom font families as needed
       },
       colors: {
-        primary: "#0FB4C3 ",
+        primary: "#0FB4C3",
         primaryO: "rgba(15, 180, 195, 0.1)",
         primary1: "rgba(15, 180, 195, 0.5)",
 
