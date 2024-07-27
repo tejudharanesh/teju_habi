@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../components/Footer";
+import go from "../assets/svg/go.svg";
 
 const CostEstimator = () => {
   return (
@@ -65,6 +66,7 @@ const CostEstimator = () => {
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary opacity-50"
             >
               Estimate cost
+              <img src={go} alt="" className="ml-2"/>
             </button>
           </div>
         </form>
