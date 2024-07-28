@@ -12,27 +12,33 @@ const Navbar = ({ isExpanded }) => {
   // const [isExpanded, setIsExpanded] = useState(true); // State to toggle navbar width
 
   const buttons = [
-    { id: "meet", icon: meetIcon, alt: "Meet us", label: "Meet us", link: "/" },
+    {
+      id: "meet",
+      icon: meetIcon,
+      alt: "Meet us",
+      label: "Meet us",
+      link: "/dashboard",
+    },
     {
       id: "packages",
       icon: packagesIcon,
       alt: "Packages",
       label: "Packages",
-      link: "packages",
+      link: "dashboard/packages",
     },
     {
       id: "projects",
       icon: projectsIcon,
       alt: "Projects",
       label: "Projects",
-      link: "projects",
+      link: "dashboard/projects",
     },
     {
       id: "profile",
       icon: profileIcon,
       alt: "Profile",
       label: "Profile",
-      link: "profile",
+      link: "dashboard/profile",
     },
   ];
 

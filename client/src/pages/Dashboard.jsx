@@ -41,10 +41,10 @@ function Dashboard() {
         <ToggleButton collapsed={collapsed} toggleSidebar={toggleSidebar} />
       </div>
       <Routes>
-        <Route path="/" element={<Consultation />} />
-        <Route path="packages" element={<CostEstimator />} />
-        <Route path="projects" element={<ProjectsPage />} />
-        <Route path="profile" element={<Profile />} />
+        <Route path="dashboard/" element={<Consultation />} />
+        <Route path="dashboard/packages" element={<CostEstimator />} />
+        <Route path="dashboard/projects" element={<ProjectsPage />} />
+        <Route path="dashboard/profile" element={<Profile />} />
       </Routes>
     </div>
   );
