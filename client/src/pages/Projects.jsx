@@ -7,7 +7,7 @@ import youtube from "../assets/svg/youtube.svg";
 function Projects() {
   return (
     <div className="min-h-screen flex flex-col items-center font-poppins w-full bg-background ">
-      <div className="flex flex-col w-full  bg-layoutColor md:px-24 lg:px-52 xl:px-96 p-4">
+      <div className="flex flex-col w-full h-full bg-layoutColor md:px-24 lg:px-52 xl:px-96 p-4">
         <div className="text-2xl font-semibold text-center text-black">
           Projects
         </div>

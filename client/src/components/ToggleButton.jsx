@@ -12,7 +12,7 @@ const ToggleButton = ({ collapsed, toggleSidebar }) => {
         <img
           src={arrow}
           alt=""
-          className={` ${collapsed ? "" : "rotate-180"}`}
+          className={`ml-2 ${collapsed ? "" : "rotate-180"}`}
         />
       </button>
     </div>

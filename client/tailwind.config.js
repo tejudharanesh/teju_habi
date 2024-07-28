@@ -15,7 +15,6 @@ export default {
 
         background: "#EEEEEE",
         layoutColor: "#F8F8FF",
-        layoutColor: "#f8f9fa",
         secondary: "#C0C0C0",
         BlackO: "#111111",
       },
