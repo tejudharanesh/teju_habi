@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/habi_logo.png"; // Import the logo image
 import meetIcon from "../assets/svg/meet.svg";
 import packagesIcon from "../assets/svg/Packages.svg";
@@ -8,7 +8,10 @@ import projectsIcon from "../assets/svg/Projects.svg";
 import SelectionIndicator from "../components/SelectionIndicator";
 
 const Navbar = ({ isExpanded }) => {
-  const [selected, setSelected] = useState("meet");
+  const location = useLocation();
+  const [selected, setSelected] = useState(
+    location.pathname.split("/")[2] || "meet"
+  );
   // const [isExpanded, setIsExpanded] = useState(true); // State to toggle navbar width
 
   const buttons = [
@@ -24,21 +27,21 @@ const Navbar = ({ isExpanded }) => {
       icon: packagesIcon,
       alt: "Packages",
       label: "Packages",
-      link: "dashboard/packages",
+      link: "/dashboard/packages",
     },
     {
       id: "projects",
       icon: projectsIcon,
       alt: "Projects",
       label: "Projects",
-      link: "dashboard/projects",
+      link: "/dashboard/projects",
     },
     {
       id: "profile",
       icon: profileIcon,
       alt: "Profile",
       label: "Profile",
-      link: "dashboard/profile",
+      link: "/dashboard/profile",
     },
   ];
 

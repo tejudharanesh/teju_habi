@@ -23,7 +23,7 @@ function Consultation() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-background font-poppins w-full h-auto">
+    <div className="min-h-screen flex flex-col items-center bg-background font-poppins w-full">
       <div className="flex flex-col items-center w-full bg-layoutColor shadow md:px-[60px] lg:px-[220px] p-4">
         <h1 className="text-[21px] lg:text-[24px] my-4 text-black font-medium">
           Book Free Consultation
