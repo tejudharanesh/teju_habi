@@ -102,7 +102,6 @@ function HomePage() {
             ))}
         </div>
       </div>
-      <Navbar />
     </div>
   );
 }

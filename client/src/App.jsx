@@ -48,11 +48,13 @@ import Otp from "./pages/Otp";
 import CompleteProfile from "./pages/CompleteProfile";
 import Dashboard from "./pages/Dashboard";
 import Navbar from "./components/Navbar";
+import Schedule from "./pages/Schedule";
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Routes>
+          <Route path="/" element={<Schedule />} />
           <Route path="/dashboard" element={<Dashboard />} />
 
           <Route path="/login" element={<LoginPage />} />
