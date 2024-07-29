@@ -10,6 +10,8 @@ import Footer from "../components/Footer";
 import FAQ from "../components/FAQ";
 import youtube from "../assets/svg/youtube.svg";
 import Meeting from "../components/Meeting";
+import Schedule from "../components/Schedule";
+
 import { useState } from "react";
 
 const thumbnailUrl = `https://img.youtube.com/vi/R3C12M4nG1o/hqdefault.jpg`;
@@ -17,9 +19,15 @@ const videoUrl = `https://www.youtube.com/watch?v=R3C12M4nG1o`;
 
 function Consultation() {
   const [showPopup, setShowPopup] = useState(false);
+  const [DateTime, setDateTime] = useState(false);
 
   const handlePhysicallyClick = () => {
     setShowPopup(true);
+  };
+
+  const handleDateTime = () => {
+    setShowPopup(false);
+    setDateTime(true);
   };
 
   return (
@@ -35,7 +43,7 @@ function Consultation() {
           <div className="flex flex-col justify-center items-center md:flex-row md:space-x-4 lg:space-x-1">
             <button
               className="bg-primary1 text-black py-3 px-4 rounded-lg mb-2 md:mb-0 w-[275px] h-[68px] md:mr-[16px] lg:mr-[74px]"
-              onClick={handlePhysicallyClick}
+              onClick={handleDateTime}
             >
               Virtually
             </button>
@@ -192,7 +200,7 @@ function Consultation() {
               <img
                 src={thumbnailUrl}
                 alt="YouTube Video Thumbnail"
-                className="rounded-xl w-96 h-28 md:w-68 md:h-28 lg:w-60 lg:h-34"
+                className="rounded-lg w-96 h-28 md:w-68 md:h-28 lg:w-60 lg:h-34"
               />
               <img
                 src={youtube} // Replace with the path to your YouTube icon
@@ -219,8 +227,12 @@ function Consultation() {
       <section className="w-full bg-layoutColor shadow md:px-[60px] lg:px-[220px] p-4">
         <Footer />
       </section>
-
-      <Meeting show={showPopup} onClose={() => setShowPopup(false)} />
+      <Meeting
+        show={showPopup}
+        onClose={() => setShowPopup(false)}
+        handleDateTime={handleDateTime}
+      />
+      <Schedule show={DateTime} onClose={() => setDateTime(false)} />
     </div>
   );
 }

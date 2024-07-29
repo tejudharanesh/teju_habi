@@ -5,12 +5,13 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 import { FaCalendarAlt, FaClock } from "react-icons/fa";
+import cancel from "../assets/svg/cancel.svg";
 
-const Schedule = () => {
+const Schedule = ({ show, onClose }) => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
 
-  const availableTimes = Array.from({ length: 16 }, (_, i) =>
+  const availableTimes = Array.from({ length: 19 }, (_, i) =>
     dayjs()
       .hour(10 + Math.floor(i / 2))
       .minute(i % 2 === 0 ? 0 : 30)
@@ -20,10 +21,12 @@ const Schedule = () => {
     setSelectedTime(time);
   };
 
+  if (!show) return null;
+
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <div className="flex flex-col items-center justify-center h-screen bg-background">
-        <div className="w-80 p-4 bg-layoutColor rounded-lg shadow-lg">
+      <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+        <div className="w-80 p-4 bg-layoutColor rounded-lg shadow-lg md:ml-64">
           <h2 className="text-xl font-semibold text-center mb-4 text-black">
             Set your Schedule
           </h2>
@@ -36,7 +39,7 @@ const Schedule = () => {
                 selected={selectedDate}
                 onChange={(date) => setSelectedDate(date)}
                 inline
-                className="bg-white"
+                className="bg-layoutColor"
                 calendarClassName="!bg-white"
               />
             </div>
@@ -54,7 +57,7 @@ const Schedule = () => {
                 }
               >
                 <option value="" disabled>
-                  Select a time
+                  Select your preferred time
                 </option>
                 {availableTimes.map((time) => (
                   <option
@@ -86,6 +89,12 @@ const Schedule = () => {
 
           <button className="w-full p-2 bg-cyan-500 text-white rounded">
             Confirm
+          </button>
+          <button
+            className="absolute top-4 right-4 text-gray-500"
+            onClick={onClose}
+          >
+            <img src={cancel} alt="" />
           </button>
         </div>
       </div>
