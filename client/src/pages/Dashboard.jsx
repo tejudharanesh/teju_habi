@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import CostEstimator from "./CostEstimator";
 import ProjectsPage from "./Projects";
 import Profile from "./Profile";
+
 function Dashboard() {
   const [collapsed, setCollapsed] = useState(false);
 
@@ -19,12 +20,14 @@ function Dashboard() {
       <div className="relative">
         <ToggleButton collapsed={collapsed} toggleSidebar={toggleSidebar} />
       </div>
-      <Routes>
-        <Route path="/" element={<Consultation />} />
-        <Route path="packages" element={<CostEstimator />} />
-        <Route path="projects" element={<ProjectsPage />} />
-        <Route path="profile" element={<Profile />} />
-      </Routes>
+      <div className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Consultation isExpanded={collapsed} />} />
+          <Route path="packages" element={<CostEstimator />} />
+          <Route path="projects" element={<ProjectsPage />} />
+          <Route path="profile" element={<Profile />} />
+        </Routes>
+      </div>
     </div>
   );
 }

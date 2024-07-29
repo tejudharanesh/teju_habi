@@ -17,7 +17,7 @@ import { useState } from "react";
 const thumbnailUrl = `https://img.youtube.com/vi/R3C12M4nG1o/hqdefault.jpg`;
 const videoUrl = `https://www.youtube.com/watch?v=R3C12M4nG1o`;
 
-function Consultation() {
+function Consultation({ isExpanded }) {
   const [showPopup, setShowPopup] = useState(false);
   const [DateTime, setDateTime] = useState(false);
 
@@ -32,7 +32,11 @@ function Consultation() {
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-background font-poppins w-full">
-      <div className="flex flex-col items-center w-full bg-layoutColor shadow md:px-[60px] lg:px-[220px] p-4">
+      <div
+        className={`flex flex-col items-center w-full bg-layoutColor shadow ${
+          isExpanded ? "md:pl-0" : "md:pl-5"
+        } p-4`}
+      >
         <h1 className="text-[21px] lg:text-[24px] my-4 text-black font-medium">
           Book Free Consultation
         </h1>
@@ -42,13 +46,13 @@ function Consultation() {
           </h2>
           <div className="flex flex-col justify-center items-center md:flex-row md:space-x-4 lg:space-x-1">
             <button
-              className="bg-primary1 text-black py-3 px-4 rounded-lg mb-2 md:mb-0 w-[275px] h-[68px] md:mr-[16px] lg:mr-[74px]"
+              className="bg-primary1 text-black py-3 px-4 rounded-lg mb-2 md:mb-0 w-[275px] h-[58px] md:mr-[16px] lg:mr-[74px]"
               onClick={handleDateTime}
             >
               Virtually
             </button>
             <button
-              className="bg-primary1 text-black py-3 px-4 rounded-lg w-[275px] h-[68px]"
+              className="bg-primary1 text-black py-3 px-4 rounded-lg w-[275px] h-[58px]"
               onClick={handlePhysicallyClick}
             >
               Physically
@@ -56,7 +60,6 @@ function Consultation() {
           </div>
         </div>
       </div>
-
       <section className="w-full mt-4 bg-layoutColor shadow md:px-[60px] lg:px-[220px] p-4">
         <h2 className="text-lg font-semibold mb-4 text-center text-black">
           Constructing Dreams with Precision and Care
@@ -220,7 +223,6 @@ function Consultation() {
           </div>
         </div>
       </section>
-
       <section className="w-full mt-4 bg-layoutColor shadow  md:px-[60px] lg:px-[220px] p-4">
         <FAQ />
       </section>

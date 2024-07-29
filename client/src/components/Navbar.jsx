@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/habi_logo.png"; // Import the logo image
+import logo from "../assets/habi_logo.png";
 import meetIcon from "../assets/svg/meet.svg";
 import packagesIcon from "../assets/svg/Packages.svg";
 import profileIcon from "../assets/svg/Profile.svg";
@@ -12,7 +12,6 @@ const Navbar = ({ isExpanded }) => {
   const [selected, setSelected] = useState(
     location.pathname.split("/")[2] || "meet"
   );
-  // const [isExpanded, setIsExpanded] = useState(true); // State to toggle navbar width
 
   const buttons = [
     {
@@ -52,7 +51,6 @@ const Navbar = ({ isExpanded }) => {
       } md:flex-shrink-0 h-14 md:h-auto w-full border-r-2 z-10 md:z-0`}
     >
       <div className="flex flex-col justify-between relative h-auto">
-        {/* Logo Image */}
         <div className={`hidden md:flex justify-center px-4 items-center py-4`}>
           <img
             src={logo}
@@ -61,7 +59,6 @@ const Navbar = ({ isExpanded }) => {
           />
         </div>
 
-        {/* Navigation Buttons */}
         <div className="flex justify-around md:items-start md:flex-col md:space-y-5 w-full">
           {buttons.map((button) => (
             <div key={button.id} className="relative w-full">
@@ -83,9 +80,8 @@ const Navbar = ({ isExpanded }) => {
                 />
                 <span
                   className={`hidden md:inline font-[18px] ${
-                    selected == button.id ? "text-primary" : "text-black"
-                  }
-                  ${isExpanded ? "md:hidden" : ""}`}
+                    selected === button.id ? "text-primary" : "text-black"
+                  } ${isExpanded ? "md:hidden" : ""}`}
                 >
                   {button.label}
                 </span>

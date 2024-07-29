@@ -128,9 +128,6 @@ const CostEstimator = () => {
                     Click to view
                   </button>
                 </a>
-                {/* <button className="mx-auto mt-3 border-4 border-gray-200 rounded-lg p-1 px-3 bg-primaryO text-black text-sm">
-                  Click to view
-                </button> */}
               </div>
             ))}
           </div>
