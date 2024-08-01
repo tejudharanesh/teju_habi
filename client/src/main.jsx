@@ -55,5 +55,5 @@ function showInstallPrompt() {
         deferredPrompt = null;
       });
     }
-  }, 10000); // Delay of 10 seconds
+  }, 3000); // Delay of 3 seconds
 }

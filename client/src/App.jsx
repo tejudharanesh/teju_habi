@@ -11,11 +11,13 @@ import Otp from "./pages/Otp";
 import CompleteProfile from "./pages/CompleteProfile";
 import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
+import SemiCircularProgressBar from "./components/SemiCircularProgressBar";
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Routes>
+          <Route path="/test" element={<SemiCircularProgressBar />} />
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard/*" element={<Dashboard />} />
 

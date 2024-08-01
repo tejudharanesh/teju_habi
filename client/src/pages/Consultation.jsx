@@ -34,7 +34,7 @@ function Consultation({ isExpanded }) {
     <div className="min-h-screen flex flex-col items-center bg-background font-poppins w-full">
       <div
         className={`flex flex-col items-center w-full bg-layoutColor shadow ${
-          isExpanded ? "md:pl-0" : "md:pl-5"
+          isExpanded ? "md:mx-10" : "md:mx-0"
         } p-4`}
       >
         <h1 className="text-[21px] lg:text-[24px] my-4 text-black font-medium">
