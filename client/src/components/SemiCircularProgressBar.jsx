@@ -13,15 +13,15 @@ const SemiCircularProgressBar = () => {
 
   const radius = 40; // radius of the semi-circle
   const dashArray = Math.PI * radius; // circumference of the semi-circle
-  const dashOffset = dashArray * (1 - (progress / 180)); // offset based on the progress
+  const dashOffset = dashArray * (1 - progress / 180); // offset based on the progress
 
   return (
-    <div className="relative flex items-center justify-center rotate-90">
-      <svg className="w-36 h-36 transform -rotate-90" viewBox="0 0 100 50">
+    <div className="relative flex items-center justify-center rotate-90 ">
+      <svg className="w-28 h-28 transform -rotate-90" viewBox="0 0 100 50">
         <defs>
           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#000000" />
-            <stop offset="100%" stopColor="#000000" />
+            <stop offset="0%" stopColor="#0FB4C3" />
+            <stop offset="100%" stopColor="#0FB4C3" />
           </linearGradient>
         </defs>
         <path
@@ -39,7 +39,7 @@ const SemiCircularProgressBar = () => {
           strokeDashoffset={dashOffset}
         />
       </svg>
-      <div className="absolute text-2xl text-gray-800 -rotate-90 ml-3">
+      <div className="absolute text-2xl font-bold text-primary -rotate-90 ml-4">
         {progress}
       </div>
     </div>
