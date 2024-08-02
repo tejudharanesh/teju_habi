@@ -12,12 +12,13 @@ import CompleteProfile from "./pages/CompleteProfile";
 import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
 import SemiCircularProgressBar from "./components/SemiCircularProgressBar";
+import HomePage from "./pages/HomePage";
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/test" element={<SemiCircularProgressBar />} />
+          <Route path="/test" element={<HomePage />} />
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard/*" element={<Dashboard />} />
 

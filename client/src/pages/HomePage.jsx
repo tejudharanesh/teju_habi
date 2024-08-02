@@ -1,109 +1,216 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
-function HomePage() {
-  const [daysLeft, setDaysLeft] = useState(180);
+import home from "../assets/images/Rectangle 521.png";
+import profile from "../assets/images/profile.png";
+import bell from "../assets/svg/Bell.svg";
+
+const HomePage = () => {
+  const [startSlideOut, setStartSlideOut] = useState(false);
 
   useEffect(() => {
-    const storedDays = localStorage.getItem("daysLeft");
-    const storedDate = localStorage.getItem("lastUpdateDate");
+    const timer = setTimeout(() => {
+      setStartSlideOut(true);
+    }, 2000); // 2 seconds delay for the slide-in animation to complete
 
-    const currentDate = new Date().toISOString().split("T")[0];
-
-    if (storedDays !== null && storedDate === currentDate) {
-      setDaysLeft(Number(storedDays));
-    } else {
-      localStorage.setItem("lastUpdateDate", currentDate);
-      localStorage.setItem("daysLeft", daysLeft);
-    }
-
-    const interval = setInterval(() => {
-      const today = new Date().toISOString().split("T")[0];
-      if (localStorage.getItem("lastUpdateDate") !== today) {
-        const newDaysLeft = daysLeft - 1;
-        setDaysLeft(newDaysLeft);
-        localStorage.setItem("daysLeft", newDaysLeft);
-        localStorage.setItem("lastUpdateDate", today);
-      }
-    }, 86400000); // Check once a day
-
-    return () => clearInterval(interval);
-  }, [daysLeft]);
+    return () => clearTimeout(timer);
+  }, []);
+  const statusData = [
+    {
+      title: "Soil Testing",
+      stage: "initial stage",
+      date: "25 May 2024 - 26 May 2024",
+      progress: 100,
+      status: "Started",
+    },
+    {
+      title: "Slabs",
+      stage: "initial stage",
+      date: "25 May 2024 - 26 May 2024",
+      progress: 0,
+      status: "Yet to begin",
+    },
+    {
+      title: "Foundation",
+      stage: "initial stage",
+      date: "25 May 2024 - 26 May 2024",
+      progress: 0,
+      status: "Yet to begin",
+    },
+    {
+      title: "IDK",
+      stage: "initial stage",
+      date: "25 May 2024 - 26 May 2024",
+      progress: 0,
+      status: "Yet to begin",
+    },
+    {
+      title: "Stage 06",
+      stage: "initial stage",
+      date: "25 May 2024 - 26 May 2024",
+      progress: 0,
+      status: "Yet to begin",
+    },
+    {
+      title: "Stage IDK",
+      stage: "initial stage",
+      date: "25 May 2024 - 26 May 2024",
+      progress: 0,
+      status: "Yet to begin",
+    },
+  ];
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <div className="p-4">
-        <div className="flex justify-between items-center mb-4">
-          <div className="text-xl font-bold">25 May 2024</div>
-          <div className="flex items-center">
-            <i className="bi bi-person-circle text-2xl"></i>
-            <div className="ml-2">Soil Testing is Underway...</div>
-            <i className="bi bi-bell ml-2 text-2xl"></i>
-          </div>
+    <div className="min-h-screen flex flex-col items-center bg-background font-poppins w-full">
+      {/* <header className="flex justify-between items-center p-4 bg-white shadow-md">
+        <div className="flex items-center">
+          <img src="logo.png" alt="Logo" className="h-10" />
         </div>
-
-        <div className="mb-4">
-          <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold">{daysLeft}</div>
-            <div className="flex-1 ml-2 h-2 bg-gray-300 rounded-full">
-              <div
-                className="h-2 bg-gray-700 rounded-full"
-                style={{ width: `${(daysLeft / 180) * 100}%` }}
-              ></div>
+        <div className="flex items-center space-x-4">
+          <span>09:41</span>
+          <div className="flex items-center space-x-2">
+            <img
+              src="profile.jpg"
+              alt="Profile"
+              className="h-10 w-10 rounded-full"
+            />
+            <div className="relative">
+              <span className="absolute top-0 right-0 bg-blue-500 text-white rounded-full h-4 w-4 text-xs flex items-center justify-center">
+                1
+              </span>
+              <img
+                src="bell-icon.png"
+                alt="Notifications"
+                className="h-6 w-6"
+              />
             </div>
           </div>
         </div>
+      </header> */}
 
-        <div className="bg-white rounded-lg shadow-md p-4 mb-4">
-          <div className="text-lg font-semibold mb-2">Payment</div>
-          <div className="flex items-center justify-between">
-            <div>Due on 05 June</div>
-            <div className="flex items-center space-x-1">
-              {[...Array(10)].map((_, index) => (
-                <div
-                  key={index}
-                  className="w-2 h-2 bg-gray-300 rounded-full"
-                ></div>
+      <main className="flex lg:flex-col">
+        <div className="w-full bg-layoutColor">
+          <div className="">
+            <div className="relative">
+              <img
+                src={home}
+                alt="Project"
+                className="w-screen md:h-[550px] object-cover rounded-b-[20px] md:rounded-b-[100px]"
+              />
+              <div className="absolute bottom-3 left-5 md:bottom-8 md:left-10 text-white">
+                <p className="text-lg font-semibold">PROJECT ID: teju188</p>
+                <p className="text-sm">Kodihalli Hosadurga - 577527</p>
+              </div>
+              <div className="absolute top-3 left-3 md:top-2 md:left-auto md:right-20 flex items-center space-x-2 p-2 rounded-lg">
+                <img
+                  src={profile}
+                  alt="Profile"
+                  className="h-[60px] w-[60px] rounded-full"
+                />
+              </div>
+              <div className="absolute top-4 right-4 md:top-4 md:right-40 flex items-center space-x-2 p-2 rounded-lg">
+                <div className="flex items-center backdrop-blur-sm rounded-md border-white border-2 px-3 whitespace-nowrap -mr-6 h-[25px] animate-grow-shrink">
+                  <span className="text-sm text-black">
+                    Soil Testing is Underway...
+                  </span>
+                </div>
+                <img
+                  src={bell}
+                  alt="Bell Icon"
+                  className="rounded-full w-[40px] h-[40px] z-10"
+                />
+              </div>
+            </div>
+            <div className="flex justify-between items-center mt-4">
+              <span>25 May 2024</span>
+              <div className="flex items-center space-x-2">
+                <div className="flex items-center">
+                  <span className="text-sm font-medium">Payment</span>
+                  <span className="text-xs text-red-500 ml-2">
+                    Due on 05 June
+                  </span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-32 bg-gray-200 rounded-full h-2">
+                    <div
+                      className="bg-green-500 h-2 rounded-full"
+                      style={{ width: "40%" }}
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-4">
+            <div className="border-l-2 border-gray-200 pl-4">
+              {statusData.map((item, index) => (
+                <div key={index} className="mb-6">
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-lg font-semibold">{item.title}</h3>
+                    <span className="text-xs">{item.status}</span>
+                  </div>
+                  <p className="text-sm">{item.stage}</p>
+                  <p className="text-xs text-gray-500">{item.date}</p>
+                  <div className="relative mt-2">
+                    <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div
+                        className="bg-blue-500 h-2 rounded-full"
+                        style={{ width: `${item.progress}%` }}
+                      ></div>
+                    </div>
+                    <span className="absolute right-0 text-xs">
+                      {item.progress}%
+                    </span>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="mb-4">
-          <div className="bg-white rounded-lg shadow-md p-4 mb-4">
-            <div className="flex justify-between items-center mb-2">
-              <div className="text-lg font-semibold">Soil Testing</div>
-              <div>Started</div>
-            </div>
-            <div className="text-gray-500">initial stage</div>
-            <div className="text-gray-500">25 May 2024 - 26 May 2024</div>
-            <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
-              <div
-                className="bg-gray-700 h-2 rounded-full"
-                style={{ width: "70%" }}
-              ></div>
+        <div className="hidden lg:block p-4">
+          <div className="flex justify-between items-center mb-4">
+            <span>25 May 2024</span>
+            <div className="flex items-center space-x-2">
+              <span className="text-sm font-medium">Payment</span>
+              <span className="text-xs text-red-500 ml-2">Due on 05 June</span>
             </div>
           </div>
-
-          {Array(4)
-            .fill(0)
-            .map((_, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg shadow-md p-4 mb-4"
-              >
-                <div className="flex justify-between items-center mb-2">
-                  <div className="text-lg font-semibold">Soil Testing</div>
-                  <div>Yet to begin</div>
-                </div>
-                <div className="text-gray-500">initial stage</div>
-                <div className="text-gray-500">25 May 2024 - 26 May 2024</div>
-                <div className="w-full bg-gray-200 rounded-full h-2 mt-2"></div>
-              </div>
-            ))}
+          <div className="flex justify-between items-center mb-4">
+            <span>Chat with our Executive</span>
+            <button className="bg-green-500 text-white py-1 px-3 rounded-lg">
+              Quick Reply
+            </button>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-2">Recent Site Photos</h3>
+            <div className="grid grid-cols-2 gap-2">
+              <img
+                src="photo1.jpg"
+                alt="Site Photo 1"
+                className="w-full h-20 object-cover rounded-lg"
+              />
+              <img
+                src="photo2.jpg"
+                alt="Site Photo 2"
+                className="w-full h-20 object-cover rounded-lg"
+              />
+              <img
+                src="photo3.jpg"
+                alt="Site Photo 3"
+                className="w-full h-20 object-cover rounded-lg"
+              />
+              <img
+                src="photo4.jpg"
+                alt="Site Photo 4"
+                className="w-full h-20 object-cover rounded-lg"
+              />
+            </div>
+            <button className="text-blue-500 mt-2">view more &gt;</button>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   );
-}
+};
 
 export default HomePage;

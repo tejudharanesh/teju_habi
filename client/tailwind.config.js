@@ -18,6 +18,17 @@ export default {
         secondary: "#C0C0C0",
         BlackO: "#111111",
       },
+      keyframes: {
+        "grow-shrink": {
+          "0%": { width: "0", opacity: "0" },
+          "50%": { width: "100%", opacity: "1" },
+          "75%": { width: "100%", opacity: "1" },
+          "100%": { width: "0", opacity: "1" },
+        },
+      },
+      animation: {
+        "grow-shrink": "grow-shrink 6s ease-in-out", // Total duration (3s grow + 3s stay + 3s shrink)
+      },
     },
   },
   plugins: [require("daisyui")],
