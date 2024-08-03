@@ -250,6 +250,12 @@ function Consultation({ isExpanded }) {
           <Footer />
         </div>
       </div>
+      <Meeting
+        show={showPopup}
+        onClose={() => setShowPopup(false)}
+        handleDateTime={handleDateTime}
+      />
+      <Schedule show={DateTime} onClose={() => setDateTime(false)} />
     </div>
   );
 }

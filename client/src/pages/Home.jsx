@@ -1,242 +1,141 @@
-import UniqueDesign from "../assets/svg/UniqueDesign.svg";
-import EfficientPlan from "../assets/svg/EfficientPlan.svg";
-import homeSafety from "../assets/svg/HomeSafety.svg";
-import Warranty from "../assets/svg/Guarantee.svg";
-import Tracking from "../assets/svg/Tracking.svg";
-import BestPrice from "../assets/svg/bestPrice.svg";
-import Gurantee from "../assets/svg/Gurantee.svg";
-import Structure from "../assets/svg/Structure.svg";
+import React from "react";
+import cover from "../assets/images/cover.png";
+import profile from "../assets/images/profile.png";
+import edit from "../assets/svg/edit.svg";
+import arrow from "../assets/svg/arrow.svg";
+import faq from "../assets/svg/FAQ.svg";
+import policy from "../assets/svg/policy.svg";
+import terms from "../assets/svg/terms.svg";
+import habi from "../assets/svg/habi.svg";
+import logout from "../assets/svg/Logout.svg";
 import Footer from "../components/Footer";
-import FAQ from "../components/FAQ";
-import youtube from "../assets/svg/youtube.svg";
-import Meeting from "../components/Meeting";
-import Schedule from "../components/Schedule";
 
-import { useState } from "react";
-
-const thumbnailUrl = `https://img.youtube.com/vi/R3C12M4nG1o/hqdefault.jpg`;
-const videoUrl = `https://www.youtube.com/watch?v=R3C12M4nG1o`;
-
-function Consultation({ isExpanded }) {
-  const [showPopup, setShowPopup] = useState(false);
-  const [DateTime, setDateTime] = useState(false);
-
-  const handlePhysicallyClick = () => {
-    setShowPopup(true);
-  };
-
-  const handleDateTime = () => {
-    setShowPopup(false);
-    setDateTime(true);
-  };
-
+const Profile = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center bg-background font-poppins w-full">
-      <div
-        className={`flex flex-col items-center w-full bg-layoutColor shadow ${
-          isExpanded ? "md:mx-10" : "md:mx-0"
-        } p-4`}
-      >
-        <h1 className="text-[21px] lg:text-[24px] my-4 text-black font-medium">
-          Book Free Consultation
-        </h1>
-        <div className="border-2 rounded-xl px-6 py-5 w-full">
-          <h2 className="text-[16px] lg:text-[18px] font-medium mb-3 text-center text-black">
-            Connect with Us!
-          </h2>
-          <div className="flex flex-col justify-center items-center md:flex-row md:space-x-4 lg:space-x-1">
-            <button
-              className="bg-primary1 text-black py-3 px-4 rounded-lg mb-2 md:mb-0 w-[275px] h-[58px] md:mr-[16px] lg:mr-[74px]"
-              onClick={handleDateTime}
-            >
-              Virtually
-            </button>
-            <button
-              className="bg-primary1 text-black py-3 px-4 rounded-lg w-[275px] h-[58px]"
-              onClick={handlePhysicallyClick}
-            >
-              Physically
+    <div className="min-h-screen flex flex-col items-center bg-background font-poppins w-full h-auto">
+      <div className="flex flex-col items-center w-full bg-layoutColor shadow pt-6 pb-4 mb-2">
+        <div className="relative w-full h-40">
+          <p className="text-center text-black font-medium text-[21px] md:text-[24px] mb-3">
+            Profile
+          </p>
+          <img
+            src={cover}
+            alt="Background"
+            className="w-full h-[110px] object-cover md:rounded-lg"
+          />
+          <div className="absolute -bottom-12 left-4 md:left-0 flex items-center">
+            <img
+              src={profile}
+              alt="Profile"
+              className="w-[94px] h-[94px] rounded-full"
+            />
+          </div>
+          <div className="absolute right-3 md:right-0 -bottom-11 flex items-center">
+            <button className="bg-primaryO border-2 border-primary text-primary rounded-lg w-[78px] h-[31px]">
+              <img src={edit} alt="" className="inline mr-1" />
+              Edit
             </button>
           </div>
+        </div>
+        <form className="mt-[77px] space-y-7 w-full px-4 md:px-0">
+          <div className="relative mb-5">
+            <label className="absolute -top-2.5 left-3 bg-layoutColor px-1 text-sm text-grey">
+              Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Teju"
+              className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
+            />
+          </div>
+          <div className="relative mb-5">
+            <label className="absolute -top-2.5 left-3 bg-layoutColor px-1 text-sm text-grey">
+              Phone Number
+            </label>
+            <input
+              type="text"
+              name="name"
+              placeholder="+91 8431497190"
+              className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
+            />
+          </div>
+          <div className="relative mb-5">
+            <label className="absolute -top-2.5 left-3 bg-layoutColor px-1 text-sm text-grey">
+              Email ID
+            </label>
+            <input
+              type="text"
+              name="name"
+              placeholder="teju@gmail.com"
+              className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
+            />
+          </div>
+          <div className="relative mb-5">
+            <label className="absolute -top-2.5 left-3 bg-layoutColor px-1 text-sm text-grey">
+              Site Location Pin code
+            </label>
+            <input
+              type="text"
+              name="name"
+              placeholder="506103"
+              className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
+            />
+          </div>
+        </form>
+      </div>
+      <div className="flex flex-col items-center w-full bg-layoutColor md:px-[140px] lg:px-[342px] p-3 mb-2">
+        <div className="w-full">
+          <ul>
+            <li className="flex justify-between items-center py-2">
+              <span className="flex items-center">
+                <img src={faq} alt="" />
+                <span className="ml-4 text-black text-[16px]">FAQ's</span>
+              </span>
+              <img src={arrow} className="mr-2 md:mr-0" />
+            </li>
+            <li className="flex justify-between items-center py-2">
+              <span className="flex items-center">
+                <img src={policy} alt="" />
+                <span className="ml-4 text-black text-[16px]">
+                  Privacy Policies
+                </span>
+              </span>
+              <img src={arrow} className="mr-2 md:mr-0" />
+            </li>
+            <li className="flex justify-between items-center py-2">
+              <span className="flex items-center">
+                <img src={terms} alt="" />
+                <span className="ml-4 text-black text-[16px]">
+                  Terms & conditions
+                </span>
+              </span>
+              <img src={arrow} className="mr-2 md:mr-0" />
+            </li>
+            <li className="flex justify-between items-center py-2">
+              <span className="flex items-center">
+                <img src={habi} alt="" />
+                <span className="ml-4 text-black text-[16px]">
+                  habi's story
+                </span>
+              </span>
+              <img src={arrow} className="mr-2 md:mr-0" />
+            </li>
+          </ul>
         </div>
       </div>
-      <section className="w-full mt-4 bg-layoutColor shadow md:px-[60px] lg:px-[220px] p-4">
-        <h2 className="text-lg font-semibold mb-4 text-center text-black">
-          Constructing Dreams with Precision and Care
-        </h2>
-        <div className="grid grid-cols-4 gap-4 mb-8">
-          <div className="flex flex-col items-center justify-center">
-            <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
-              <img
-                className="m-auto mt-1.5"
-                src={UniqueDesign}
-                alt="Unique Design"
-              />
-            </div>
-            <span className="block md:hidden text-xs text-center">Unique</span>
-            <span className="block md:hidden text-xs text-center">Design</span>
-            <span className="hidden md:block text-xs text-center">
-              Unique Design
-            </span>
-          </div>
-          <div className="flex flex-col items-center">
-            <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
-              <img
-                className="m-auto mt-1.5"
-                src={EfficientPlan}
-                alt="Efficient Planning"
-              />
-            </div>
-            <span className="block md:hidden text-xs text-center">
-              Efficient
-            </span>
-            <span className="block md:hidden text-xs text-center">
-              Planning
-            </span>
-            <span className="hidden md:block text-xs text-center">
-              Efficient Planning
-            </span>
-          </div>
-          <div className="flex flex-col items-center">
-            <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
-              <img
-                className="m-auto mt-1.5"
-                src={homeSafety}
-                alt="Disaster Resilient"
-              />
-            </div>
-            <span className="block md:hidden text-xs text-center">
-              Disaster
-            </span>
-            <span className="block md:hidden text-xs text-center">
-              Resilient
-            </span>
-            <span className="hidden md:block text-xs text-center">
-              Disaster Resilient
-            </span>
-          </div>
-          <div className="flex flex-col items-center">
-            <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
-              <img
-                className="m-auto mt-1.5"
-                src={Warranty}
-                alt="One Year Warranty"
-              />
-            </div>
-            <span className="block md:hidden text-xs text-center">1 Year</span>
-            <span className="block md:hidden text-xs text-center">
-              Warranty
-            </span>
-            <span className="hidden md:block text-xs text-center">
-              1 Year Warranty
-            </span>
-          </div>
-          <div className="flex flex-col items-center">
-            <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
-              <img
-                className="m-auto mt-3"
-                src={Tracking}
-                alt="Project Tracking"
-              />
-            </div>
-            <span className="block md:hidden text-xs text-center">Project</span>
-            <span className="block md:hidden text-xs text-center">
-              Tracking
-            </span>
-            <span className="hidden md:block text-xs text-center">
-              Project Tracking
-            </span>
-          </div>
-          <div className="flex flex-col items-center">
-            <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
-              <img
-                className="m-auto mt-3"
-                src={Gurantee}
-                alt="50 Year Guarantee"
-              />
-            </div>
-            <span className="block md:hidden text-xs text-center">50 Year</span>
-            <span className="block md:hidden text-xs text-center">
-              Guarantee
-            </span>
-            <span className="hidden md:block text-xs text-center">
-              50 Year Guarantee
-            </span>
-          </div>
-          <div className="flex flex-col items-center">
-            <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
-              <img
-                className="m-auto mt-2"
-                src={Structure}
-                alt="Structure as per NBC"
-              />
-            </div>
-            <span className="block md:hidden text-xs text-center">
-              Structure as
-            </span>
-            <span className="block md:hidden text-xs text-center">per NBC</span>
-            <span className="hidden md:block text-xs text-center">
-              Structure as per NCB
-            </span>
-          </div>
-          <div className="flex flex-col items-center">
-            <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
-              <img
-                className="m-auto mt-3"
-                src={BestPrice}
-                alt="Transparent Pricing"
-              />
-            </div>
-            <span className="block md:hidden text-xs text-center">
-              Transparent
-            </span>
-            <span className="block md:hidden text-xs text-center">Pricing</span>
-            <span className="hidden md:block text-xs text-center">
-              Transparent Pricing
-            </span>
-          </div>
-        </div>
 
-        <div className="flex items-center ml-2 w-auto">
-          <div className="relative mr-2">
-            <a href={videoUrl} target="_blank" rel="noopener noreferrer">
-              <img
-                src={thumbnailUrl}
-                alt="YouTube Video Thumbnail"
-                className="rounded-lg w-96 h-28 md:w-68 md:h-28 lg:w-60 lg:h-34"
-              />
-              <img
-                src={youtube} // Replace with the path to your YouTube icon
-                alt="YouTube Icon"
-                className="absolute inset-0 m-auto w-7 h-8"
-              />
-            </a>
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold text-black">
-              habi's Story - Redefines Home Building | habi
-            </h3>
-            <p className="text-xs">
-              “Building Better Homes: Solving Construction Challenges with Tech”
-              Discover how...
-            </p>
-          </div>
+      <div className="flex flex-col items-center w-full bg-background md:px-[140px] lg:px-[342px] p-2">
+        <div className="mt-2 text-center">
+          <button className="bg-layoutColor text-secondary rounded-lg w-[360px] h-[44px] border-2">
+            <img src={logout} alt="" className="inline mr-2" />
+            Logout
+          </button>
         </div>
-      </section>
-      <section className="w-full mt-4 bg-layoutColor shadow  md:px-[60px] lg:px-[220px] p-4">
-        <FAQ />
-      </section>
-      <section className="w-full bg-layoutColor shadow md:px-[60px] lg:px-[220px] p-4">
         <Footer />
-      </section>
-      <Meeting
-        show={showPopup}
-        onClose={() => setShowPopup(false)}
-        handleDateTime={handleDateTime}
-      />
-      <Schedule show={DateTime} onClose={() => setDateTime(false)} />
+      </div>
     </div>
   );
-}
+};
 
-export default Consultation;
+export default Profile;
