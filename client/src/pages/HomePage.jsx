@@ -4,7 +4,7 @@ import profile from "../assets/images/profile.png";
 import bell from "../assets/svg/Bell.svg";
 import SemiCircularProgressBar from "../components/SemiCircularProgressBar";
 
-const HomePage = () => {
+const HomePage = ({ isExpanded }) => {
   const [startSlideOut, setStartSlideOut] = useState(false);
 
   useEffect(() => {
@@ -91,7 +91,11 @@ const HomePage = () => {
         <div className=" bg-layoutColor">
           <div
             className="relative"
-            style={{ width: "calc(100vw - 220px)", height: "550px" }}
+            style={
+              isExpanded
+                ? { width: "calc(100vw - 80px)", height: "550px" }
+                : { width: "calc(100vw - 200px)", height: "550px" }
+            }
           >
             <div
               className="absolute inset-0 bg-cover bg-center rounded-b-[20px] md:rounded-b-[100px]"
