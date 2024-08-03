@@ -125,7 +125,7 @@ const CostEstimator = () => {
                 </div>
                 <a href={pkg.link} target="_blank">
                   <button className="myBtn mx-auto mt-3 border-[1px] border-primary1 rounded-lg p-1 px-3 bg-primaryO text-black text-sm">
-                    Click to view       
+                    Click to view
                   </button>
                 </a>
               </div>

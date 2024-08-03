@@ -57,7 +57,7 @@ function Consultation({ isExpanded }) {
         </div>
       </div>
       <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto lg:px-32 mb-3">
-        <div className="border-2 rounded-xl py-5 w-full">
+        <div className=" rounded-xl py-5 w-full">
           <h2 className="text-lg font-semibold mb-4 text-center text-black">
             Constructing Dreams with Precision and Care
           </h2>
@@ -208,16 +208,16 @@ function Consultation({ isExpanded }) {
               </span>
             </div>
           </div>
-          <div className="flex items-start md:ml-10">
+          {/* <div className="items-start md:ml-10">
             <div className="relative mr-2 md:mr-4">
               <a href={videoUrl} target="_blank" rel="noopener noreferrer">
                 <img
                   src={thumbnailUrl}
                   alt="YouTube Video Thumbnail"
-                  className="rounded-lg w-full h-auto"
+                  className="rounded-lg"
                 />
                 <img
-                  src={youtube} // Replace with the path to your YouTube icon
+                  src={youtube}
                   alt="YouTube Icon"
                   className="absolute inset-0 m-auto w-7 h-8"
                 />
@@ -237,7 +237,26 @@ function Consultation({ isExpanded }) {
                 enhancing safety, we’re revolutionizing home building.
               </p>
             </div>
+          </div> */}
+          {/* kkedke */}
+          <div className="flex flex-row items-center justify-center">
+            {/* Image Section */}
+            <div className="p-2">
+              <img
+                src={thumbnailUrl}
+                alt="Responsive"
+                className="w-[400px] h-[100px] lg:h-[150px] object-cover"
+              />
+            </div>
+            {/* Content Section */}
+            <div className="p-2">
+              <h2 className="text-lg font-bold mb-2">Content Title</h2>
+              <p className="text-gray-600">
+                This is where the content goes. Adjust the text and styling
+              </p>
+            </div>
           </div>
+          {/* kkk */}
         </div>
       </div>
       <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto lg:px-32 ">
