@@ -13,7 +13,7 @@ import Footer from "../components/Footer";
 const Profile = () => {
   return (
     <div className="min-h-screen flex flex-col items-center bg-background font-poppins w-full h-auto">
-      <div className="flex flex-col items-center w-full bg-layoutColor shadow pt-6 pb-4 mb-2">
+      <div className="flex flex-col items-center w-full bg-layoutColor shadow md:px-[140px] lg:px-[342px] pt-6 pb-4 mb-2">
         <div className="relative w-full h-40">
           <p className="text-center text-black font-medium text-[21px] md:text-[24px] mb-3">
             Profile
