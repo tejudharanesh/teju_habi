@@ -101,7 +101,7 @@ const Profile = ({ isExpanded }) => {
               <li className="flex justify-between items-center py-2">
                 <span className="flex items-center">
                   <img src={faq} alt="" />
-                  <span className="ml-4 text-black text-[16px]">FAQ's</span>
+                  <span className="ml-3.5 text-black text-[16px]">FAQ's</span>
                 </span>
                 <img src={arrow} className="mr-2 md:mr-0" />
               </li>
@@ -117,7 +117,7 @@ const Profile = ({ isExpanded }) => {
               <li className="flex justify-between items-center py-2">
                 <span className="flex items-center">
                   <img src={terms} alt="" />
-                  <span className="ml-4 text-black text-[16px]">
+                  <span className="ml-3.5 text-black text-[16px]">
                     Terms & conditions
                   </span>
                 </span>
@@ -126,7 +126,7 @@ const Profile = ({ isExpanded }) => {
               <li className="flex justify-between items-center py-2">
                 <span className="flex items-center">
                   <img src={habi} alt="" />
-                  <span className="ml-4 text-black text-[16px]">
+                  <span className="ml-2.5 text-black text-[16px]">
                     habi's story
                   </span>
                 </span>
@@ -136,9 +136,9 @@ const Profile = ({ isExpanded }) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center w-full shadow p-2 h-auto lg:px-32 mb-3">
+      <div className="flex flex-col items-center w-full shadow p-2 h-auto lg:px-32">
         <div className="rounded-xl py-4 w-full">
-          <div className="mt-2 text-center">
+          <div className=" text-center">
             <button className="bg-layoutColor text-secondary rounded-lg w-[360px] h-[44px] border-2">
               <img src={logout} alt="" className="inline mr-2" />
               Logout

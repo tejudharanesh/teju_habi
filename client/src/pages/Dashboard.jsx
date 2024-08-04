@@ -9,7 +9,7 @@ import Profile from "./Profile";
 import HomePage from "./HomePage";
 
 function Dashboard() {
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
 
   const toggleSidebar = () => {
     setCollapsed(!collapsed);

@@ -32,7 +32,7 @@ function Consultation({ isExpanded }) {
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-background font-poppins w-full">
-      <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto lg:px-32 mb-3">
+      <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto lg:px-40 mb-3">
         <h1 className="text-[21px] lg:text-[24px] my-4 text-black font-medium">
           Book Free Consultation
         </h1>
@@ -56,7 +56,7 @@ function Consultation({ isExpanded }) {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto lg:px-32 mb-3">
+      <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto lg:px-40">
         <div className=" rounded-xl py-5 w-full">
           <h2 className="text-lg font-semibold mb-4 text-center text-black">
             Constructing Dreams with Precision and Care
@@ -238,33 +238,51 @@ function Consultation({ isExpanded }) {
               </p>
             </div>
           </div> */}
-          {/* kkedke */}
-          <div className="flex flex-row items-center justify-center">
+        </div>
+      </div>
+      <div className="flex flex-col items-center w-full bg-layoutColor shadow h-auto lg:px-40 mb-3">
+        <div className=" w-full">
+          <div className="flex flex-row ml-7">
             {/* Image Section */}
-            <div className="p-2">
-              <img
-                src={thumbnailUrl}
-                alt="Responsive"
-                className="w-[400px] h-[100px] lg:h-[150px] object-cover"
-              />
+            <div className="p-2 relative w-1/2 md:w-1/3 lg:w-2/4 ">
+              <a href={videoUrl} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={thumbnailUrl}
+                  alt="Responsive"
+                  className="w-[400px] h-[100px] lg:h-[150px] object-cover rounded-xl"
+                />
+                <img
+                  src={youtube}
+                  alt="YouTube Icon"
+                  className="absolute inset-0 m-auto w-7 h-8"
+                />
+              </a>
             </div>
             {/* Content Section */}
-            <div className="p-2">
-              <h2 className="text-lg font-bold mb-2">Content Title</h2>
-              <p className="text-gray-600">
-                This is where the content goes. Adjust the text and styling
+            <div className="p-2 w-1/2 md:w-2/3 lg:w-2/4">
+              <h3 className="text-sm font-semibold text-black">
+                habi's Story - Redefines Home Building | habi
+              </h3>
+              <p className="text-xs">
+                “Building Better Homes: Solving Construction Challenges with
+                Tech”
+                <span className="hidden md:inline">
+                  Discover how our startup tackles industry pain points head-on
+                  using cutting-edge technology. From streamlining processes to
+                  enhancing safety, we’re revolutionizing home building.
+                </span>
               </p>
             </div>
           </div>
           {/* kkk */}
         </div>
       </div>
-      <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto lg:px-32 ">
+      <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto lg:px-40 ">
         <div className="rounded-xl py-5 w-full">
           <FAQ />
         </div>
       </div>
-      <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto lg:px-32 mb-3">
+      <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto lg:px-40 mb-3">
         <div className="rounded-xl py-5 w-full">
           <Footer />
         </div>

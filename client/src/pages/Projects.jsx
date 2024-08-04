@@ -4,17 +4,27 @@ import home from "../assets/images/home.png";
 import Footer from "../components/Footer";
 import youtube from "../assets/svg/youtube.svg";
 
-function Projects() {
+function Projects({ isExpanded }) {
   return (
-    <div className="min-h-screen flex flex-col items-center font-poppins w-full bg-background ">
-      <div className="flex flex-col w-full h-full bg-layoutColor md:px-24 lg:px-52 xl:px-96 p-4">
+    <div className="min-h-screen flex flex-col items-center font-poppins w-full bg-background">
+      <div
+        className={`flex flex-col items-center w-full bg-layoutColor shadow h-auto p-2 ${
+          isExpanded ? "md:px-20 lg:px-72" : "md:px-16 lg:px-60"
+        }`}
+      >
         <div className="text-2xl font-semibold text-center text-black">
           Projects
         </div>
         <div className="text-lg text-black mt-4">Completed</div>
       </div>
 
-      <div className="flex flex-col w-full  bg-layoutColor md:px-24 lg:px-52 xl:px-96 p-4 mb-2">
+      <div
+        className={`flex flex-col items-center w-full bg-layoutColor shadow h-auto mb-3 p-2 ${
+          isExpanded
+            ? "md:px-32 lg:px-64 xl:px-[600px]"
+            : "md:px-20 lg:px-52 xl:px-[550px]"
+        }`}
+      >
         <div className="mt-1 w-full">
           <div className="flex flex-row gap-4">
             <div className="flex flex-col">
@@ -33,8 +43,8 @@ function Projects() {
               </div>
             </div>
             <div className="flex flex-col w-full mt-6 ">
-              <div className="text-lg text-black">Arvind Kumar</div>
-              <div className="text-gray-500">Bengaluru</div>
+              <div className="text-[16px] text-black">Arvind Kumar</div>
+              <div className="text-gray-500 text-[14px]">Bengaluru</div>
               <div className="shrink-0 border border-solid bg-stone-300 border-stone-300 my-2" />
               <div className="text-sm">1200 Sq. Feet</div>
               <div className="text-sm">3BHK Duplex villa</div>
@@ -42,17 +52,17 @@ function Projects() {
             </div>
           </div>
         </div>
-        <div className="mt-6 w-full">
+        <div className="mt-3 w-full">
           <div className="flex flex-wrap justify-between">
             {[...Array(4)].map((_, index) => (
-              <div className="w-1/5 md:w-1/6" key={index}>
-                <img src={home} className="w-full" />
+              <div className="w-1/5 md:w-1/4" key={index}>
+                <img src={home} className="" />
               </div>
             ))}
           </div>
         </div>
-        <div className="shrink-0 mt-6 h-px border border-solid bg-stone-300 border-stone-300 w-full" />
-        <div className="mt-4 text-black w-full text-left text-xs md:text-sm">
+        <div className="shrink-0 mt-3 h-px border border-solid bg-stone-300 border-stone-300 w-full" />
+        <div className="mt-3 text-black w-full text-left text-xs md:text-sm">
           habi has satisfied all my requirements and has done a very beautiful
           and quality construction. Their architects visited the site and made a
           convenient plan despite difficulties due to COVID 19. Overall we are
@@ -60,7 +70,11 @@ function Projects() {
         </div>
       </div>
 
-      <div className="flex flex-col w-full  bg-layoutColor md:px-24 lg:px-52 xl:px-96 p-4 mb-2">
+      <div
+        className={`flex flex-col items-center w-full bg-layoutColor shadow h-auto mb-3 ${
+          isExpanded ? "md:px-20 lg:px-72" : "md:px-16 lg:px-60"
+        }`}
+      >
         <div className="mt-1 w-full">
           <div className="flex flex-row gap-4">
             <div className="flex flex-col">
@@ -105,7 +119,12 @@ function Projects() {
         <div className="text-lg text-black mt-4">Ongoing</div>
       </div>
 
-      <div className="flex flex-col w-full  bg-layoutColor md:px-24 lg:px-52 xl:px-96 p-4 mb-2">
+      <div
+        className={`flex flex-col items-center w-full bg-layoutColor shadow h-auto mb-3 ${
+          isExpanded ? "md:px-20 lg:px-72" : "md:px-16 lg:px-60"
+        }`}
+      >
+        {" "}
         <div className="mt-1 w-full">
           <div className="flex flex-row gap-4">
             <div className="flex flex-col">
@@ -137,7 +156,12 @@ function Projects() {
         </div>
       </div>
 
-      <div className="flex flex-col w-full  bg-layoutColor md:px-24 lg:px-52 xl:px-96 p-4">
+      <div
+        className={`flex flex-col items-center w-full bg-layoutColor shadow h-auto mb-3 ${
+          isExpanded ? "md:px-20 lg:px-72" : "md:px-16 lg:px-60"
+        }`}
+      >
+        {" "}
         <div className="mt-1 w-full">
           <div className="flex flex-row gap-4">
             <div className="flex flex-col">
@@ -168,7 +192,12 @@ function Projects() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col w-full  bg-layoutColor md:px-24 lg:px-52 xl:px-96 p-4">
+      <div
+        className={`flex flex-col items-center w-full bg-layoutColor shadow h-auto mb-3 ${
+          isExpanded ? "md:px-20 lg:px-72" : "md:px-16 lg:px-60"
+        }`}
+      >
+        {" "}
         <Footer />
       </div>
     </div>

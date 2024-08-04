@@ -110,7 +110,7 @@ const CostEstimator = () => {
             ].map((pkg, index) => (
               <div
                 key={index}
-                className="p-3 border rounded-lg shadow-md bg-white w-38 flex flex-col justify-between"
+                className="p-3 border rounded-lg shadow-md bg-layoutColor w-38 flex flex-col justify-between"
               >
                 <div className="flex-grow">
                   <h4 className="text-md text-black text-center">
