@@ -8,7 +8,6 @@ import { FaCalendarAlt, FaClock } from "react-icons/fa";
 import cancel from "../assets/svg/cancel.svg";
 
 const Schedule = ({ show, onClose }) => {
-  show = 1;
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
 
