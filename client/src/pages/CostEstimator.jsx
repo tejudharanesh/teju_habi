@@ -2,18 +2,23 @@ import React from "react";
 import Footer from "../components/Footer";
 import go from "../assets/svg/go.svg";
 
-const CostEstimator = () => {
+const CostEstimator = ({ isExpanded }) => {
   return (
     <div className="min-h-screen flex flex-col  bg-background font-poppins w-full h-full">
-      <div className="flex flex-col items-center w-full bg-layoutColor shadow md:px-16 lg:px-52 xl:px-96 p-4 h-auto">
+      <div
+        className={`flex flex-col items-center w-full bg-layoutColor shadow p-2 h-auto mb-3 ${
+          isExpanded ? "md:px-20 lg:px-60" : "md:px-12 lg:px-40"
+        }`}
+      >
+        {" "}
         <div>
-          <h2 className="text-center text-md font-bold text-black">
+          <h2 className="text-center text-[16px] md:text-[18px] lg:text-[21px] font-bold text-black">
             House Construction Cost Calculator
           </h2>
         </div>
         <form className="mt-8 space-y-6">
-          <div className="rounded-md shadow-sm space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+          <div className="rounded-md space-y-4">
+            <div className="grid grid-cols-2 gap-6">
               <div className="relative mb-5">
                 <label className="absolute -top-2.5 left-3 bg-layoutColor px-1 text-sm text-grey">
                   Area Sq.Feet*
@@ -21,7 +26,7 @@ const CostEstimator = () => {
                 <input
                   type="text"
                   name="name"
-                  className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
+                  className="text-black block w-[173px] h-[48px] md:w-[222px] lg:w-[270px] border border-gray-300 rounded-xl bg-layoutColor"
                 />
               </div>
               <div className="relative mb-5">
@@ -31,11 +36,11 @@ const CostEstimator = () => {
                 <input
                   type="text"
                   name="name"
-                  className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
+                  className="text-black block w-[173px] h-[48px] md:w-[222px] lg:w-[270px] border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
                 />
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-6">
               <div className="relative mb-5">
                 <label className="absolute -top-2.5 left-3 bg-layoutColor px-1 text-sm text-grey">
                   Site Pin code
@@ -44,7 +49,7 @@ const CostEstimator = () => {
                   type="text"
                   name="name"
                   placeholder="Teju"
-                  className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
+                  className="text-black block w-[173px] h-[48px] md:w-[222px] lg:w-[270px] border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
                 />
               </div>
               <div className="relative mb-5">
@@ -55,7 +60,7 @@ const CostEstimator = () => {
                   type="number"
                   name="name"
                   placeholder="00"
-                  className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
+                  className="text-black block w-[173px] h-[48px] md:w-[222px] lg:w-[270px] border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
                 />
               </div>
             </div>
@@ -63,7 +68,7 @@ const CostEstimator = () => {
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary opacity-50"
+              className="items-center flex justify-center rounded-md text-white bg-primary opacity-50 mx-auto w-[361px] h-[50px]"
             >
               Estimate cost
               <img src={go} alt="" className="ml-2" />

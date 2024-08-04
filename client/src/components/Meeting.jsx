@@ -18,21 +18,21 @@ const Meeting = ({ show, onClose, handleDateTime }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      <div className="bg-white p-3 rounded-2xl shadow-lg text-center w-[361px] h-[268px] lg:w-[397px] lg:h-[244px] relative md:ml-48 lg:ml-80">
-        <p className="mt-[30px] mb-[8px] text-gray-600 text-[12px] lg:text-[14px]">
+      <div className="bg-white p-3 rounded-2xl shadow-lg text-center w-[361px] h-[268px] lg:w-[397px] lg:h-[250px] relative md:ml-48 lg:ml-80">
+        <p className="mt-[27px] mb-[8px] text-gray-600 text-[12px] lg:text-[14px]">
           Meet our habi's executive at office.
         </p>
         <button
-          className="bg-primary1 text-black text-lg h-[61px] rounded-xl mx-auto w-[279px] lg:w-[315px]"
+          className="bg-primary1 text-black text-lg h-[60px] rounded-xl mx-auto w-[279px] lg:w-[315px]"
           onClick={handleVisitHabi}
         >
           Visit habi
         </button>
-        <p className="mt-[24px] mb-[8px] text-gray-600 text-[12px] lg:text-[14px]">
+        <p className="mt-[20px] mb-[8px] text-gray-600 text-[12px] lg:text-[14px]">
           An executive from habi will visit your home.
         </p>
         <button
-          className=" bg-primary1 text-black text-lg h-[61px] rounded-xl mx-auto w-[279px] lg:w-[315px]"
+          className=" bg-primary1 text-black text-lg h-[60px] rounded-xl mx-auto w-[279px] lg:w-[315px]"
           onClick={handleInviteHabi}
         >
           Invite habi

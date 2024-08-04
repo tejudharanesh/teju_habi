@@ -58,11 +58,11 @@ function Consultation({ isExpanded }) {
       </div>
       <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto lg:px-40">
         <div className=" rounded-xl py-5 w-full">
-          <h2 className="text-lg font-semibold mb-4 text-center text-black">
+          <h2 className="text-[16px] md:text-[18px]  mb-4 text-center text-black">
             Constructing Dreams with Precision and Care
           </h2>
 
-          <div className="grid grid-cols-4 gap-4 mb-8">
+          <div className="grid grid-cols-4 gap-4 mb-1">
             <div className="flex flex-col items-center justify-center">
               <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
                 <img
@@ -71,13 +71,13 @@ function Consultation({ isExpanded }) {
                   alt="Unique Design"
                 />
               </div>
-              <span className="block md:hidden text-xs text-center">
+              <span className="block md:hidden text-xs md:text-sm text-center text-black">
                 Unique
               </span>
-              <span className="block md:hidden text-xs text-center">
+              <span className="block md:hidden text-xs md:text-sm text-center text-black">
                 Design
               </span>
-              <span className="hidden md:block text-xs text-center">
+              <span className="hidden md:block text-xs md:text-sm text-center text-black">
                 Unique Design
               </span>
             </div>
@@ -89,13 +89,13 @@ function Consultation({ isExpanded }) {
                   alt="Efficient Planning"
                 />
               </div>
-              <span className="block md:hidden text-xs text-center">
+              <span className="block md:hidden text-xs md:text-sm text-center text-black">
                 Efficient
               </span>
-              <span className="block md:hidden text-xs text-center">
+              <span className="block md:hidden text-xs md:text-sm text-center text-black">
                 Planning
               </span>
-              <span className="hidden md:block text-xs text-center">
+              <span className="hidden md:block text-xs md:text-sm text-center text-black">
                 Efficient Planning
               </span>
             </div>
@@ -107,13 +107,13 @@ function Consultation({ isExpanded }) {
                   alt="Disaster Resilient"
                 />
               </div>
-              <span className="block md:hidden text-xs text-center">
+              <span className="block md:hidden text-xs md:text-sm text-center text-black">
                 Disaster
               </span>
-              <span className="block md:hidden text-xs text-center">
+              <span className="block md:hidden text-xs md:text-sm text-center text-black">
                 Resilient
               </span>
-              <span className="hidden md:block text-xs text-center">
+              <span className="hidden md:block text-xs md:text-sm text-center text-black">
                 Disaster Resilient
               </span>
             </div>
@@ -125,13 +125,13 @@ function Consultation({ isExpanded }) {
                   alt="One Year Warranty"
                 />
               </div>
-              <span className="block md:hidden text-xs text-center">
+              <span className="block md:hidden text-xs md:text-sm text-center text-black">
                 1 Year
               </span>
-              <span className="block md:hidden text-xs text-center">
+              <span className="block md:hidden text-xs md:text-sm text-center text-black">
                 Warranty
               </span>
-              <span className="hidden md:block text-xs text-center">
+              <span className="hidden md:block text-xs md:text-sm text-center text-black">
                 1 Year Warranty
               </span>
             </div>
@@ -143,13 +143,13 @@ function Consultation({ isExpanded }) {
                   alt="Project Tracking"
                 />
               </div>
-              <span className="block md:hidden text-xs text-center">
+              <span className="block md:hidden text-xs md:text-sm text-center text-black">
                 Project
               </span>
-              <span className="block md:hidden text-xs text-center">
+              <span className="block md:hidden text-xs md:text-sm text-center text-black">
                 Tracking
               </span>
-              <span className="hidden md:block text-xs text-center">
+              <span className="hidden md:block text-xs md:text-sm text-center text-black">
                 Project Tracking
               </span>
             </div>
@@ -161,13 +161,16 @@ function Consultation({ isExpanded }) {
                   alt="50 Year Guarantee"
                 />
               </div>
-              <span className="block md:hidden text-xs text-center">
+              <span className="block md:hidden text-xs md:text-sm text-center text-black">
                 50 Year
               </span>
-              <span className="block md:hidden text-xs text-center">
+              <span
+                className="block md:hidden text-xs md:text-sm text-center text-black"
+                text-black
+              >
                 Guarantee
               </span>
-              <span className="hidden md:block text-xs text-center">
+              <span className="hidden md:block text-xs md:text-sm text-center text-black">
                 50 Year Guarantee
               </span>
             </div>
@@ -179,13 +182,13 @@ function Consultation({ isExpanded }) {
                   alt="Structure as per NBC"
                 />
               </div>
-              <span className="block md:hidden text-xs text-center">
+              <span className="block md:hidden text-xs md:text-sm text-center text-black">
                 Structure as
               </span>
-              <span className="block md:hidden text-xs text-center">
+              <span className="block md:hidden text-xs md:text-sm text-center text-black">
                 per NBC
               </span>
-              <span className="hidden md:block text-xs text-center">
+              <span className="hidden md:block text-xs md:text-sm text-center text-black">
                 Structure as per NCB
               </span>
             </div>
@@ -197,59 +200,29 @@ function Consultation({ isExpanded }) {
                   alt="Transparent Pricing"
                 />
               </div>
-              <span className="block md:hidden text-xs text-center">
+              <span className="block md:hidden text-xs md:text-sm text-center text-black">
                 Transparent
               </span>
-              <span className="block md:hidden text-xs text-center">
+              <span className="block md:hidden text-xs md:text-sm text-center text-black">
                 Pricing
               </span>
-              <span className="hidden md:block text-xs text-center">
+              <span className="hidden md:block text-xs md:text-sm text-center text-black">
                 Transparent Pricing
               </span>
             </div>
           </div>
-          {/* <div className="items-start md:ml-10">
-            <div className="relative mr-2 md:mr-4">
-              <a href={videoUrl} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={thumbnailUrl}
-                  alt="YouTube Video Thumbnail"
-                  className="rounded-lg"
-                />
-                <img
-                  src={youtube}
-                  alt="YouTube Icon"
-                  className="absolute inset-0 m-auto w-7 h-8"
-                />
-              </a>
-            </div>
-            <div className="flex-grow mt-2">
-              <h3 className="text-sm font-semibold text-black">
-                habi's Story - Redefines Home Building | habi
-              </h3>
-              <p className="text-xs">
-                “Building Better Homes: Solving Construction Challenges with
-                Tech”
-              </p>
-              <p className="hidden md:inline text-xs">
-                Discover how our startup tackles industry pain points head-on
-                using cutting-edge technology. From streamlining processes to
-                enhancing safety, we’re revolutionizing home building.
-              </p>
-            </div>
-          </div> */}
         </div>
       </div>
       <div className="flex flex-col items-center w-full bg-layoutColor shadow h-auto lg:px-40 mb-3">
         <div className=" w-full">
-          <div className="flex flex-row ml-7">
+          <div className="flex flex-row ml-10">
             {/* Image Section */}
-            <div className="p-2 relative w-1/2 md:w-1/3 lg:w-2/4 ">
+            <div className="p-2 relative w-auto">
               <a href={videoUrl} target="_blank" rel="noopener noreferrer">
                 <img
                   src={thumbnailUrl}
                   alt="Responsive"
-                  className="w-[400px] h-[100px] lg:h-[150px] object-cover rounded-xl"
+                  className="w-[250px] h-[150px] md:h-[150px] object-cover rounded-xl"
                 />
                 <img
                   src={youtube}
@@ -259,8 +232,8 @@ function Consultation({ isExpanded }) {
               </a>
             </div>
             {/* Content Section */}
-            <div className="p-2 w-1/2 md:w-2/3 lg:w-2/4">
-              <h3 className="text-sm font-semibold text-black">
+            <div className="p-2 w-[50%]">
+              <h3 className="text-lg font-semibold text-black">
                 habi's Story - Redefines Home Building | habi
               </h3>
               <p className="text-xs">
