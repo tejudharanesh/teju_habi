@@ -8,6 +8,7 @@ import { FaCalendarAlt, FaClock } from "react-icons/fa";
 import cancel from "../assets/svg/cancel.svg";
 
 const Schedule = ({ show, onClose }) => {
+  show = 1;
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
 
@@ -23,10 +24,14 @@ const Schedule = ({ show, onClose }) => {
 
   if (!show) return null;
 
+  const today = new Date();
+  const maxDate = new Date();
+  maxDate.setDate(today.getDate() + 6);
+
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-        <div className="w-80 p-4 bg-layoutColor rounded-lg shadow-lg md:ml-64">
+        <div className="w-96 p-4 bg-layoutColor rounded-lg shadow-lg md:ml-64 mx-auto">
           <h2 className="text-xl font-semibold text-center mb-4 text-black">
             Set your Schedule
           </h2>
@@ -39,7 +44,9 @@ const Schedule = ({ show, onClose }) => {
                 selected={selectedDate}
                 onChange={(date) => setSelectedDate(date)}
                 inline
-                className="bg-layoutColor"
+                minDate={today}
+                maxDate={maxDate}
+                className="bg-layoutColor custom-datepicker"
                 calendarClassName="!bg-white"
               />
             </div>
@@ -94,7 +101,7 @@ const Schedule = ({ show, onClose }) => {
             className="absolute top-4 right-4 text-gray-500"
             onClick={onClose}
           >
-            <img src={cancel} alt="" />
+            <img src={cancel} alt="Close" />
           </button>
         </div>
       </div>

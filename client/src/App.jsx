@@ -11,14 +11,15 @@ import Otp from "./pages/Otp";
 import CompleteProfile from "./pages/CompleteProfile";
 import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
-import SemiCircularProgressBar from "./components/SemiCircularProgressBar";
 import HomePage from "./pages/HomePage";
+import Schedule from "./components/Schedule";
+import ScheduleBooked from "./components/ScheduleBooked";
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/test" element={<HomePage />} />
+          <Route path="/test" element={<ScheduleBooked />} />
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard/*" element={<Dashboard />} />
 
