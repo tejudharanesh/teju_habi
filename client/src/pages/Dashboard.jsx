@@ -24,9 +24,15 @@ function Dashboard() {
       <div className="flex-grow">
         <Routes>
           <Route path="/" element={<Consultation isExpanded={collapsed} />} />
-          <Route path="packages" element={<CostEstimator />} />
-          <Route path="projects" element={<ProjectsPage />} />
-          <Route path="profile" element={<Profile />} />
+          <Route
+            path="packages"
+            element={<CostEstimator isExpanded={collapsed} />}
+          />
+          <Route
+            path="projects"
+            element={<ProjectsPage isExpanded={collapsed} />}
+          />
+          <Route path="profile" element={<Profile isExpanded={collapsed} />} />
         </Routes>
       </div>
     </div>
