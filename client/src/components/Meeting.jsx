@@ -18,7 +18,7 @@ const Meeting = ({ show, onClose, handleDateTime }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      <div className="bg-white p-3 rounded-2xl shadow-lg text-center w-[361px] h-[268px] lg:w-[397px] lg:h-[250px] relative md:ml-48 lg:ml-80">
+      <div className="bg-white p-3 rounded-2xl shadow-lg text-center w-[361px] h-[268px] lg:w-[397px] lg:h-[250px] relative md:ml-48 lg:ml-[]">
         <p className="mt-[27px] mb-[8px] text-gray-600 text-[12px] lg:text-[14px]">
           Meet our habi's executive at office.
         </p>

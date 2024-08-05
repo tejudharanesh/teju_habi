@@ -3,11 +3,11 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import dayjs from "dayjs";
 import { FaCalendarAlt, FaClock } from "react-icons/fa";
 import cancel from "../assets/svg/cancel.svg";
+import dayjs from "dayjs";
 
-const Schedule = ({ show, onClose }) => {
+const Schedule = ({ show, onClose, onConfirm }) => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
 
@@ -21,16 +21,24 @@ const Schedule = ({ show, onClose }) => {
     setSelectedTime(time);
   };
 
+  const isConfirmEnabled = selectedDate && selectedTime;
+
   if (!show) return null;
 
   const today = new Date();
   const maxDate = new Date();
-  maxDate.setDate(today.getDate() + 6);
+  maxDate.setDate(today.getDate() + 7);
+
+  const handleConfirmClick = () => {
+    if (isConfirmEnabled) {
+      onConfirm(selectedDate, selectedTime);
+    }
+  };
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-        <div className="w-96 p-4 bg-layoutColor rounded-lg shadow-lg md:ml-64 mx-auto">
+        <div className="w-96 p-4 bg-layoutColor rounded-lg shadow-lg md:ml-64 lg:ml-[18%] mx-auto absolute">
           <h2 className="text-xl font-semibold text-center mb-4 text-black">
             Set your Schedule
           </h2>
@@ -93,7 +101,15 @@ const Schedule = ({ show, onClose }) => {
             </div>
           </div>
 
-          <button className="w-full p-2 bg-cyan-500 text-white rounded">
+          <button
+            className={`w-full p-2 rounded-xl ${
+              isConfirmEnabled
+                ? "bg-primary text-white"
+                : "bg-primaryO text-gray-400"
+            }`}
+            disabled={!isConfirmEnabled}
+            onClick={handleConfirmClick}
+          >
             Confirm
           </button>
           <button
