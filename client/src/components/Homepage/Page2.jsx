@@ -1,8 +1,6 @@
 import React from "react";
 
-function Page2({ handleDateTime, handlePhysicallyClick, selectedDateTime }) {
-  console.log(selectedDateTime);
-
+function Page2({ onReschedule, selectedDateTime }) {
   return (
     <div className="border-2 rounded-xl py-5 w-full">
       <h2 className="text-[16px] lg:text-[18px] font-medium mb-2 text-center text-black">
@@ -22,7 +20,7 @@ function Page2({ handleDateTime, handlePhysicallyClick, selectedDateTime }) {
         </a>
         <button
           className="bg-primary1 text-black py-3 px-4 rounded-lg w-[275px] md:w-[240px] h-[58px]"
-          onClick={handlePhysicallyClick}
+          onClick={onReschedule}
         >
           Reschedule
         </button>

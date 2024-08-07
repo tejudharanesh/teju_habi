@@ -12,6 +12,7 @@ import youtube from "../../assets/svg/youtube.svg";
 function HabiFeatures() {
   const thumbnailUrl = `https://img.youtube.com/vi/R3C12M4nG1o/hqdefault.jpg`;
   const videoUrl = `https://www.youtube.com/watch?v=R3C12M4nG1o`;
+
   return (
     <div>
       <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto lg:px-40">

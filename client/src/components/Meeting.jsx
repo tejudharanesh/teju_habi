@@ -1,20 +1,9 @@
 // src/components/Popup.js
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import cancel from "../assets/svg/cancel.svg";
 
-const Meeting = ({ show, onClose, handleDateTime }) => {
-  const navigate = useNavigate();
-
+const Meeting = ({ show, onClose, handleVisitHabi, handleInviteHabi }) => {
   if (!show) return null;
-
-  const handleVisitHabi = () => {
-    handleDateTime();
-  };
-
-  const handleInviteHabi = () => {
-    handleDateTime();
-  };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">

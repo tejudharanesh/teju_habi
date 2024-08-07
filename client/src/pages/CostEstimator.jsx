@@ -10,7 +10,6 @@ const CostEstimator = ({ isExpanded }) => {
           isExpanded ? "md:px-20 lg:px-60" : "md:px-12 lg:px-40"
         }`}
       >
-        {" "}
         <div>
           <h2 className="text-center text-[16px] md:text-[18px] lg:text-[21px] font-bold text-black">
             House Construction Cost Calculator

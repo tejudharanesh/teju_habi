@@ -1,10 +1,11 @@
 import Footer from "../components/Footer";
 import FAQ from "../components/FAQ";
-import youtube from "../assets/svg/youtube.svg";
 import Meeting from "../components/Meeting";
 import Schedule from "../components/Schedule";
 import Page1 from "../components/Homepage/Page1";
 import Page2 from "../components/Homepage/Page2";
+import Page3 from "../components/Homepage/Page3";
+import Page4 from "../components/Homepage/page4";
 import HabiFeatures from "../components/Homepage/HabiFeatures";
 import dayjs from "dayjs";
 
@@ -14,6 +15,8 @@ function Consultation({}) {
   const [showPopup, setShowPopup] = useState(false);
   const [DateTime, setDateTime] = useState(false);
   const [isPage1, setIsPage1] = useState(true);
+  const [isPage3, setIsPage3] = useState(false);
+  const [isPage4, setIsPage4] = useState(false);
   const [selectedDateTime, setSelectedDateTime] = useState({
     date: "",
     time: "",
@@ -22,13 +25,21 @@ function Consultation({}) {
   useEffect(() => {
     const storedDate = localStorage.getItem("selectedDate");
     const storedTime = localStorage.getItem("selectedTime");
+    const storedOption = localStorage.getItem("selectedOption");
 
     if (storedDate && storedTime) {
       setSelectedDateTime({
-        date: new Date(storedDate),
-        time: dayjs(storedTime),
+        date: storedDate,
+        time: storedTime,
       });
       setIsPage1(false);
+      if (storedOption === "visitHabi") {
+        setIsPage3(true);
+      } else if (storedOption === "inviteHabi") {
+        setIsPage4(true);
+      } else {
+        setIsPage1(false);
+      }
     }
   }, []);
 
@@ -41,15 +52,51 @@ function Consultation({}) {
     setDateTime(true);
   };
 
+  const handleVisitHabi = () => {
+    setShowPopup(false);
+    setDateTime(true);
+    setIsPage3(true);
+    setIsPage1(false);
+    localStorage.setItem("selectedOption", "visitHabi");
+  };
+
+  const handleInviteHabi = () => {
+    setShowPopup(false);
+    setDateTime(true);
+    setIsPage4(true);
+    setIsPage1(false);
+    localStorage.setItem("selectedOption", "inviteHabi");
+  };
+
   const handleBookingConfirmed = (date, time) => {
     const formattedDate = dayjs(date).format("MMMM D, YYYY");
-    const formattedTime = time.format("hh:mm A");
+    const formattedTime = dayjs(time).format("hh:mm A");
     setDateTime(false);
     setIsPage1(false);
-    setSelectedDateTime({ date, time });
+
     setSelectedDateTime({ date: formattedDate, time: formattedTime });
     localStorage.setItem("selectedDate", formattedDate);
     localStorage.setItem("selectedTime", formattedTime);
+  };
+
+  const handleScheduleClose = () => {
+    setDateTime(false);
+    setIsPage1(true);
+    setIsPage3(false);
+    setIsPage4(false);
+    localStorage.removeItem("selectedDate");
+    localStorage.removeItem("selectedTime");
+    localStorage.removeItem("selectedOption");
+  };
+
+  const handleReschedule = () => {
+    setIsPage1(true);
+    setIsPage3(false);
+    setIsPage4(false);
+    setSelectedDateTime({ date: "", time: "" });
+    localStorage.removeItem("selectedDate");
+    localStorage.removeItem("selectedTime");
+    localStorage.removeItem("selectedOption");
   };
 
   return (
@@ -63,8 +110,21 @@ function Consultation({}) {
             handleDateTime={handleDateTime}
             handlePhysicallyClick={handlePhysicallyClick}
           />
+        ) : isPage3 ? (
+          <Page3
+            selectedDateTime={selectedDateTime}
+            onReschedule={handleReschedule}
+          />
+        ) : isPage4 ? (
+          <Page4
+            selectedDateTime={selectedDateTime}
+            onReschedule={handleReschedule}
+          />
         ) : (
-          <Page2 selectedDateTime={selectedDateTime} />
+          <Page2
+            selectedDateTime={selectedDateTime}
+            onReschedule={handleReschedule}
+          />
         )}
       </div>
       <HabiFeatures />
@@ -82,11 +142,12 @@ function Consultation({}) {
       <Meeting
         show={showPopup}
         onClose={() => setShowPopup(false)}
-        handleDateTime={handleDateTime}
+        handleVisitHabi={handleVisitHabi}
+        handleInviteHabi={handleInviteHabi}
       />
       <Schedule
         show={DateTime}
-        onClose={() => setDateTime(false)}
+        onClose={handleScheduleClose}
         onConfirm={handleBookingConfirmed}
       />
     </div>
