@@ -18,12 +18,13 @@ function Dashboard() {
   return (
     <div className="flex h-screen">
       <Navbar isExpanded={collapsed} />
-      <div className="relative">
+      <div className="relative z-9">
         <ToggleButton collapsed={collapsed} toggleSidebar={toggleSidebar} />
       </div>
-      <div className="flex-grow">
+      <div className="flex-grow z-8">
         <Routes>
-          <Route path="/" element={<Consultation isExpanded={collapsed} />} />
+          <Route path="/" element={<HomePage isExpanded={collapsed} />} />
+          {/* <Route path="/" element={<Consultation isExpanded={collapsed} />} /> */}
           <Route
             path="packages"
             element={<CostEstimator isExpanded={collapsed} />}

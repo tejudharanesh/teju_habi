@@ -6,7 +6,7 @@ function Page2({ onReschedule, selectedDateTime }) {
       <h2 className="text-[16px] lg:text-[18px] font-medium mb-2 text-center text-black">
         we're waiting for you!
       </h2>
-      <p className="text-black text-center">
+      <p className="text-black text-center mb-2">
         {selectedDateTime.date} @ {selectedDateTime.time}
       </p>
       <div className="flex flex-col justify-center items-center md:flex-row md:space-x-4 lg:space-x-1">

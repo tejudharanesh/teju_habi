@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 import FAQ from "../components/FAQ";
 import Meeting from "../components/Meeting";
@@ -7,11 +8,10 @@ import Page2 from "../components/Homepage/Page2";
 import Page3 from "../components/Homepage/Page3";
 import Page4 from "../components/Homepage/page4";
 import HabiFeatures from "../components/Homepage/HabiFeatures";
+import ScheduleBooked from "../components/ScheduleBooked";
 import dayjs from "dayjs";
 
-import { useState, useEffect } from "react";
-
-function Consultation({}) {
+function Consultation() {
   const [showPopup, setShowPopup] = useState(false);
   const [DateTime, setDateTime] = useState(false);
   const [isPage1, setIsPage1] = useState(true);
@@ -21,6 +21,7 @@ function Consultation({}) {
     date: "",
     time: "",
   });
+  const [showScheduleBooked, setShowScheduleBooked] = useState(false);
 
   useEffect(() => {
     const storedDate = localStorage.getItem("selectedDate");
@@ -56,7 +57,6 @@ function Consultation({}) {
     setShowPopup(false);
     setDateTime(true);
     setIsPage3(true);
-    setIsPage1(false);
     localStorage.setItem("selectedOption", "visitHabi");
   };
 
@@ -64,7 +64,6 @@ function Consultation({}) {
     setShowPopup(false);
     setDateTime(true);
     setIsPage4(true);
-    setIsPage1(false);
     localStorage.setItem("selectedOption", "inviteHabi");
   };
 
@@ -77,6 +76,20 @@ function Consultation({}) {
     setSelectedDateTime({ date: formattedDate, time: formattedTime });
     localStorage.setItem("selectedDate", formattedDate);
     localStorage.setItem("selectedTime", formattedTime);
+
+    // Show ScheduleBooked popup for 3 seconds
+    setShowScheduleBooked(true);
+    setTimeout(() => {
+      setShowScheduleBooked(false);
+
+      // Render the appropriate page after the popup closes
+      const storedOption = localStorage.getItem("selectedOption");
+      if (storedOption === "visitHabi") {
+        setIsPage3(true);
+      } else if (storedOption === "inviteHabi") {
+        setIsPage4(true);
+      }
+    }, 5000);
   };
 
   const handleScheduleClose = () => {
@@ -150,6 +163,7 @@ function Consultation({}) {
         onClose={handleScheduleClose}
         onConfirm={handleBookingConfirmed}
       />
+      {showScheduleBooked && <ScheduleBooked />}
     </div>
   );
 }
