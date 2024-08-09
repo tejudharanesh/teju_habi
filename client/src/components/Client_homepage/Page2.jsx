@@ -5,7 +5,7 @@ import PaymentBar from "./PaymentBar";
 function Page2() {
   return (
     <div>
-      <div className="md:px-12 bg-layoutColor h-full">
+      <div className="md:px-16 bg-layoutColor h-full">
         <div className="text-gray-500 mb-3 ml-3 md:hidden">25 May 2024</div>
 
         <div className="flex flex-col md:flex-row">
@@ -30,26 +30,28 @@ function Page2() {
           {/* Left Panel */}
           <div className="flex-1 pr-3 md:pr-6 pl-4">
             {/* Date and Timeline */}
+
             <div className="relative">
               <div className="absolute top-0 left-0 h-full border-l-2 border-gray-300"></div>
 
               {/* Ongoing Section */}
               <div className="mb-10">
-                <p className="m-2 mt-0">Ongoing</p>
-                <div className="relative bg-layoutColor p-4 rounded-3xl rounded-tl-none border-2 ">
-                  <h3 className="font-bold text-gray-800">Soil Testing</h3>
-                  <p className="text-sm text-gray-500">initial stage</p>
-                  <p className="text-sm text-gray-500">
-                    25 May 2024 - 26 May 2024
-                  </p>
-                  <div className="h-2 bg-layoutColor rounded-full mt-2">
-                    <div
-                      className="h-2 bg-blue-500 rounded-full"
-                      style={{ width: "70%" }}
-                    ></div>
-                  </div>
-                  <div className="flex items-center absolute -top-2 -left-2">
-                    <div className="w-5 h-5 bg-primary rounded-full"></div>
+                <div>
+                  <div className="relative bg-layoutColor p-4 rounded-3xl rounded-tl-none border-2 ">
+                    <h3 className="font-bold text-gray-800">Soil Testing</h3>
+                    <p className="text-sm text-gray-500">initial stage</p>
+                    <p className="text-sm text-gray-500">
+                      25 May 2024 - 26 May 2024
+                    </p>
+                    <div className="h-2 bg-layoutColor rounded-full mt-2">
+                      <div
+                        className="h-2 bg-blue-500 rounded-full"
+                        style={{ width: "70%" }}
+                      ></div>
+                    </div>
+                    <div className="flex items-center absolute -top-2 -left-2">
+                      <div className="w-5 h-5 bg-primary rounded-full"></div>
+                    </div>
                   </div>
                 </div>
               </div>
