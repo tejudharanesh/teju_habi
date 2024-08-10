@@ -9,12 +9,12 @@ function Page1() {
     <div className="relative w-full">
       {/* Background Image with Gradient Overlay */}
       <div
-        className="relative inset-0 bg-cover bg-center w-full h-[350px]  rounded-b-[20px] md:rounded-b-[100px]"
+        className="relative inset-0 bg-cover bg-center w-full h-[350px]  rounded-b-[40px] md:rounded-b-[80px]"
         style={{
           backgroundImage: `url(${home})`,
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent rounded-b-[20px] md:rounded-b-[100px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent rounded-b-[40px] md:rounded-b-[80px]"></div>
 
         {/* Content on top of the image */}
 

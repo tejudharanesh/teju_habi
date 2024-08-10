@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import whatsapp from "../../assets/images/Whatsapp.png";
+import site from "../../assets/images/site.png";
+
 import PaymentBar from "./PaymentBar";
 
 function Page2() {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
   return (
     <div>
-      <div className="md:px-16 bg-layoutColor h-full">
-        <div className="text-gray-500 mb-3 ml-3 md:hidden">25 May 2024</div>
+      <div className="md:px-12 lg:px-18 bg-layoutColor h-full">
+        <div className="text-gray-500 m-5 md:hidden ">25 May 2024</div>
 
         <div className="flex flex-col md:flex-row">
           {/* Payment and Chat for small screens */}
@@ -28,45 +35,93 @@ function Page2() {
           </div>
 
           {/* Left Panel */}
-          <div className="flex-1 pr-3 md:pr-6 pl-4">
-            {/* Date and Timeline */}
-
+          <div className="flex-1 pr-3 pl-6 md:pl-0">
             <div className="relative">
               <div className="absolute top-0 left-0 h-full border-l-2 border-gray-300"></div>
+              <div className="text-gray-500 m-3 hidden md:inline-block">
+                25 May 2024
+              </div>
 
               {/* Ongoing Section */}
               <div className="mb-10">
+                <p className="p-2">Ongoing</p>
+
                 <div>
-                  <div className="relative bg-layoutColor p-4 rounded-3xl rounded-tl-none border-2 ">
+                  <div
+                    onClick={toggleExpand}
+                    className="relative bg-layoutColor p-4 rounded-3xl rounded-tl-none border-2 md:w-[300px] lg:w-[500px]"
+                  >
                     <h3 className="font-bold text-gray-800">Soil Testing</h3>
                     <p className="text-sm text-gray-500">initial stage</p>
                     <p className="text-sm text-gray-500">
                       25 May 2024 - 26 May 2024
                     </p>
-                    <div className="h-2 bg-layoutColor rounded-full mt-2">
+                    <div className="h-2 bg-gray-200 rounded-full mt-2">
                       <div
-                        className="h-2 bg-blue-500 rounded-full"
-                        style={{ width: "70%" }}
+                        className="h-2 bg-primary rounded-full"
+                        style={{ width: "7%" }}
                       ></div>
                     </div>
-                    <div className="flex items-center absolute -top-2 -left-2">
-                      <div className="w-5 h-5 bg-primary rounded-full"></div>
+                    <div className="flex items-center absolute -top-3 -left-3 rounded-full border-2 border-primary p-0.5">
+                      <div className="w-4 h-4 bg-primary rounded-full"></div>
                     </div>
+                    {isExpanded && (
+                      <div>
+                        <div className="">
+                          <img
+                            src={site}
+                            alt="Site Photo 1"
+                            className="w-[90px] h-[69px] object-cover rounded-lg inline-block"
+                          />
+                          <img
+                            src={site}
+                            alt="Site Photo 1"
+                            className="w-[90px] h-[69px] object-cover rounded-lg inline-block m-2"
+                          />
+                          <img
+                            src={site}
+                            alt="Site Photo 1"
+                            className="w-[90px] h-[69px] object-cover rounded-lg inline-block"
+                          />
+                        </div>
+                        <div class="mt-4 text-right">
+                          <a
+                            href="#"
+                            class="text-sm text-primary font-medium flex items-center justify-end"
+                          >
+                            view more
+                            <svg
+                              class="w-4 h-4 ml-1"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M9 5l7 7-7 7"
+                              ></path>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
               <div className="mb-10">
-                <p className="m-2">Ongoing</p>
-                <div className="relative bg-layoutColor p-4 rounded-3xl rounded-tl-none border-2 ">
+                <p className="m-2">Upcoming</p>
+                <div className="relative bg-layoutColor p-4 rounded-3xl rounded-tl-none border-2 md:w-[300px] lg:w-[500px]">
                   <h3 className="font-bold text-gray-800">Soil Testing</h3>
                   <p className="text-sm text-gray-500">initial stage</p>
                   <p className="text-sm text-gray-500">
                     25 May 2024 - 26 May 2024
                   </p>
-                  <div className="h-2 bg-layoutColor rounded-full mt-2">
+                  <div className="h-2 bg-gray-200 rounded-full mt-2">
                     <div
-                      className="h-2 bg-blue-500 rounded-full"
-                      style={{ width: "70%" }}
+                      className="h-2 bg-primary rounded-full"
+                      style={{ width: "0%" }}
                     ></div>
                   </div>
                   <div className="flex items-center absolute -top-2 -left-2">
@@ -80,8 +135,8 @@ function Page2() {
           </div>
 
           {/* Payment and Chat for medium and larger screens */}
-          <div className="hidden md:block md:w-1/3">
-            <div className="w-[267px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1 mb-4">
+          <div className="hidden md:block mt-[85px] mr-7 lg:mr-10">
+            <div className="w-[260px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1 mb-4">
               <div>
                 <p className="text-sm">payment</p>
                 <p className="text-sm">Due on 05 May 2024</p>
@@ -91,23 +146,60 @@ function Page2() {
               </div>
             </div>
 
-            <div className="w-[267px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1">
+            <div className="w-[260px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1">
               <div>
-                <p className="text-sm">payment</p>
-                <p className="text-sm">Due on 05 May 2024</p>
+                <p className="text-sm">Chat with our Executive</p>
+                <p className="text-sm">Quick Reply</p>
               </div>
               <div>
-                <PaymentBar completed={4} />
+                <img src={whatsapp} alt="" className="mr-4" />
               </div>
             </div>
 
-            <div className="w-[267px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1">
-              <div>
-                <p className="text-sm">payment</p>
-                <p className="text-sm">Due on 05 May 2024</p>
+            <div className="w-[260px] h-[250px] border-2 justify-between items-center rounded-xl px-2">
+              <p class="text-lg font-semibold mb-4">Recent Site Photos</p>
+              <div className="grid grid-cols-2 gap-2">
+                <img
+                  src={site}
+                  alt="Site Photo 1"
+                  className="w-[99px] h-[69px] object-cover rounded-lg"
+                />
+                <img
+                  src={site}
+                  alt="Site Photo 1"
+                  className="w-[99px] h-[69px] object-cover rounded-lg"
+                />
+                <img
+                  src={site}
+                  alt="Site Photo 1"
+                  className="w-[99px] h-[69px] object-cover rounded-lg"
+                />
+                <img
+                  src={site}
+                  alt="Site Photo 1"
+                  className="w-[99px] h-[69px] object-cover rounded-lg"
+                />
               </div>
-              <div>
-                <PaymentBar completed={4} />
+              <div class="mt-4 text-right">
+                <a
+                  href="#"
+                  class="text-sm text-primary font-medium flex items-center justify-end"
+                >
+                  view more
+                  <svg
+                    class="w-4 h-4 ml-1"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 5l7 7-7 7"
+                    ></path>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
