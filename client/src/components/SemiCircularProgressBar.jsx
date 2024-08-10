@@ -17,7 +17,7 @@ const SemiCircularProgressBar = () => {
 
   return (
     <div className="relative flex items-center justify-center rotate-90 ">
-      <svg className="w-28 h-28 transform -rotate-90" viewBox="0 0 100 50">
+      <svg className="w-24 h-24 transform -rotate-90" viewBox="0 0 100 50">
         <defs>
           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#0FB4C3" />

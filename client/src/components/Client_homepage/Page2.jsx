@@ -12,7 +12,7 @@ function Page2() {
   };
   return (
     <div>
-      <div className="md:px-12 lg:px-18 bg-layoutColor h-full">
+      <div className="md:px-12 lg:px-40 xl:px-80 bg-layoutColor h-full">
         <div className="text-gray-500 m-5 md:hidden ">25 May 2024</div>
 
         <div className="flex flex-col md:flex-row">

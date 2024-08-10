@@ -18,10 +18,10 @@ function Page1() {
 
         {/* Content on top of the image */}
 
-        <div className="absolute -bottom-3 left-10 md:bottom-1 md:left-20 text-white">
+        <div className="absolute -bottom-3 left-8 md:bottom-1 md:left-20 text-white">
           <SemiCircularProgressBar />
         </div>
-        <div className="absolute bottom-3 left-48 md:bottom-8 md:left-60 text-white">
+        <div className="absolute bottom-3 left-40 md:bottom-8 md:left-60 text-white">
           <p className="text-lg font-semibold">PROJECT ID: teju188</p>
           <p className="text-sm">Kodihalli Hosadurga - 577527</p>
         </div>
