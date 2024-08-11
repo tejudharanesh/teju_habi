@@ -4,10 +4,11 @@ import ToggleButton from "../components/ToggleButton";
 import Consultation from "./Consultation";
 import Navbar from "../components/Navbar";
 import CostEstimator from "./CostEstimator";
-import ProjectsPage from "./Projects";
+import Projects from "./Projects";
 import Profile from "./Profile";
 import HomePage from "./HomePage";
 import PaymentsPage from "./PaymentsPage";
+import ProjectDetails from "./ProjectDetails";
 function Dashboard() {
   const [collapsed, setCollapsed] = useState(false);
 
@@ -23,7 +24,7 @@ function Dashboard() {
       </div>
       <div className="flex-grow z-8">
         <Routes>
-          <Route path="/" element={<PaymentsPage isExpanded={collapsed} />} />
+          <Route path="/" element={<ProjectDetails isExpanded={collapsed} />} />
           {/* <Route path="/" element={<Consultation isExpanded={collapsed} />} /> */}
           <Route
             path="packages"
@@ -31,7 +32,7 @@ function Dashboard() {
           />
           <Route
             path="projects"
-            element={<ProjectsPage isExpanded={collapsed} />}
+            element={<Projects isExpanded={collapsed} />}
           />
           <Route path="profile" element={<Profile isExpanded={collapsed} />} />
         </Routes>
