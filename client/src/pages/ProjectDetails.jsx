@@ -2,6 +2,7 @@ import React from "react";
 import Docments from "../components/ProjectDetails/Docments";
 import Details from "../components/ProjectDetails/Details";
 import DVisualize from "../components/ProjectDetails/3DVisualize";
+import Materials from "../components/ProjectDetails/Materials";
 function ProjectDetails({ isExpanded }) {
   return (
     <div className="min-h-screen flex flex-col font-poppins w-full bg-background">
@@ -19,6 +20,7 @@ function ProjectDetails({ isExpanded }) {
         <Docments />
       </div>
       <DVisualize />
+      <Materials />
     </div>
   );
 }
