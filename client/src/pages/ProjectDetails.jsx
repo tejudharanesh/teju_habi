@@ -3,9 +3,10 @@ import Docments from "../components/ProjectDetails/Docments";
 import Details from "../components/ProjectDetails/Details";
 import DVisualize from "../components/ProjectDetails/3DVisualize";
 import Materials from "../components/ProjectDetails/Materials";
+import Gallery from "../components/ProjectDetails/Gallery";
 function ProjectDetails({ isExpanded }) {
   return (
-    <div className="min-h-screen flex flex-col font-poppins w-full bg-background">
+    <div className="min-h-screen flex flex-col font-poppins w-full bg-background h-auto">
       <Details isExpanded={isExpanded} />
       <div
         className={`flex flex-col w-full bg-layoutColor shadow h-auto p-2 mb-2 ${
@@ -21,6 +22,9 @@ function ProjectDetails({ isExpanded }) {
       </div>
       <DVisualize />
       <Materials />
+      <Gallery />
+      <br className="md:hidden" />
+      <br className="md:hidden" />
     </div>
   );
 }
