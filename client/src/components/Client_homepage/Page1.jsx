@@ -2,7 +2,7 @@ import React from "react";
 import home from "../../assets/images/Rectangle 521.png";
 import profile from "../../assets/images/profile.png";
 import bell from "../../assets/svg/Bell.svg";
-import SemiCircularProgressBar from "../../components/SemiCircularProgressBar";
+import SemiCircularProgressBar from "./SemiCircularProgressBar";
 
 function Page1() {
   return (

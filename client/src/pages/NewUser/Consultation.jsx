@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Footer from "../../components/Footer";
+import Footer from "../../components/Footer/Footer";
 import FAQ from "../../components/FAQ";
-import Meeting from "../../components/Meeting";
-import Schedule from "../../components/Schedule";
+import Meeting from "../../components/Homepage/Meeting";
+import Schedule from "../../components/Homepage/Schedule";
 import Page1 from "../../components/Homepage/Page1";
 import Page2 from "../../components/Homepage/Page2";
 import Page3 from "../../components/Homepage/Page3";
 import Page4 from "../../components/Homepage/page4";
 import HabiFeatures from "../../components/Homepage/HabiFeatures";
-import ScheduleBooked from "../../components/ScheduleBooked";
+import ScheduleBooked from "../../components/Homepage/ScheduleBooked";
 import dayjs from "dayjs";
 
 function Consultation() {

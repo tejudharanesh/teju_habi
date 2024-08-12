@@ -1,5 +1,5 @@
 import React from "react";
-import tick from "../assets/images/tick.png";
+import tick from "../../assets/images/tick.png";
 
 function ScheduleBooked() {
   return (

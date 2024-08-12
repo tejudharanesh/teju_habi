@@ -8,7 +8,7 @@ import policy from "../../assets/svg/policy.svg";
 import terms from "../../assets/svg/terms.svg";
 import habi from "../../assets/svg/habi.svg";
 import logout from "../../assets/svg/Logout.svg";
-import Footer from "../../components/Footer";
+import Footer from "../../components/Footer/Footer";
 import friend from "../../assets/images/friend.png";
 import family from "../../assets/images/family.png";
 

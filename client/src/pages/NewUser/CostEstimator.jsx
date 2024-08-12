@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../../components/Footer";
+import Footer from "../../components/Footer/Footer";
 import go from "../../assets/svg/go.svg";
 
 const CostEstimator = ({ isExpanded }) => {

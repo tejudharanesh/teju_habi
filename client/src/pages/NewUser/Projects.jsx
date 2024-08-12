@@ -1,7 +1,7 @@
 import * as React from "react";
 import thumbNail from "../../assets/images/tumbnail.png";
 import home from "../../assets/images/home.png";
-import Footer from "../../components/Footer";
+import Footer from "../../components/Footer/Footer";
 import youtube from "../../assets/svg/youtube.svg";
 
 function Projects({ isExpanded }) {

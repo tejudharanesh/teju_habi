@@ -1,6 +1,6 @@
 // src/components/Popup.js
 import React from "react";
-import cancel from "../assets/svg/cancel.svg";
+import cancel from "../../assets/svg/cancel.svg";
 
 const Meeting = ({ show, onClose, handleVisitHabi, handleInviteHabi }) => {
   if (!show) return null;

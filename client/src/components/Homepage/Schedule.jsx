@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { FaCalendarAlt, FaClock } from "react-icons/fa";
-import cancel from "../assets/svg/cancel.svg";
+import cancel from "../../assets/svg/cancel.svg";
 import dayjs from "dayjs";
 
 const Schedule = ({ show, onClose, onConfirm }) => {
