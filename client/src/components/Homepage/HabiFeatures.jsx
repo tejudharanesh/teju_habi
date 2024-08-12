@@ -11,7 +11,7 @@ import Youtube from "../../assets/svg/youtube.svg";
 
 function FeatureItem({ icon, smallText, fullText }) {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center font-poppins">
       <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
         <img className="m-auto" src={icon} alt={fullText} />
       </div>
@@ -98,8 +98,8 @@ function HabiFeatures() {
 
       <div className="flex flex-col items-center w-full bg-layoutColor shadow h-auto lg:px-40 mb-3">
         <div className="w-full">
-          <div className="flex flex-row ml-10">
-            <div className="p-2 relative w-auto">
+          <div className="ml-10">
+            <div className="p-2 relative w-[173px] h-[105px] inline-block">
               <a href={videoUrl} target="_blank" rel="noopener noreferrer">
                 <img
                   src={thumbnailUrl}
@@ -114,7 +114,7 @@ function HabiFeatures() {
               </a>
             </div>
 
-            <div className="p-2 w-[50%]">
+            <div className="p-2 w-[60%] inline-block">
               <h3 className="text-lg font-semibold text-black">
                 habi's Story - Redefines Home Building | habi
               </h3>
