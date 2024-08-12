@@ -6,9 +6,9 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import LoginPage from "./pages/LoginPage";
-import Otp from "./pages/Otp";
-import CompleteProfile from "./pages/CompleteProfile";
+import LoginPage from "./pages/Authentication/LoginPage";
+import Otp from "./pages/Authentication/Otp";
+import CompleteProfile from "./pages/Authentication/CompleteProfile";
 import Dashboard from "./pages/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
 import HomePage from "./pages/HomePage";

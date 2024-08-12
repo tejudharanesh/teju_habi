@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import React, { useState, useEffect } from "react";
 import ToggleButton from "../components/ToggleButton";
-import Consultation from "./Consultation";
+import Consultation from "./NewUser/Consultation";
 import Navbar from "../components/Navbar";
 import CostEstimator from "./CostEstimator";
 import Projects from "./Projects";

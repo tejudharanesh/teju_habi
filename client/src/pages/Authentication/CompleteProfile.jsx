@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from "../axiosConfig";
-import Gallery from "../assets/svg/Gallery.svg";
+import axios from "../../axiosConfig";
+import Gallery from "../../assets/svg/Gallery.svg";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const CompleteProfile = () => {

@@ -1,10 +1,10 @@
 import { useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../contexts/AuthContext";
-import logo from "../assets/habi_logo.png";
-import googleLogo from "../assets/svg/Google.svg";
-import facebookLogo from "../assets/svg/facebook.svg";
+import { AuthContext } from "../../contexts/AuthContext";
+import logo from "../../assets/habi_logo.png";
+import googleLogo from "../../assets/svg/Google.svg";
+import facebookLogo from "../../assets/svg/facebook.svg";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 
 const LoginPage = () => {
@@ -59,7 +59,9 @@ const LoginPage = () => {
             className="h-40 md:h-40 lg:h-40 xl:h-40 md:mx-auto mt-14  inline"
           />
           {/* Show the text only on large screens and center it below the image */}
-          <p className="hidden md:block mt-4 text-center font-DuneRise">THE WAY OF LIVING</p>
+          <p className="hidden md:block mt-4 text-center font-DuneRise">
+            THE WAY OF LIVING
+          </p>
         </div>
 
         <div className="md:w-2/3 md:pl-16 lg:pl-16">
