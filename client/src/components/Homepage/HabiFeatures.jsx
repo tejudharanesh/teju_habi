@@ -1,181 +1,104 @@
 import React from "react";
 import UniqueDesign from "../../assets/svg/UniqueDesign.svg";
 import EfficientPlan from "../../assets/svg/EfficientPlan.svg";
-import homeSafety from "../../assets/svg/HomeSafety.svg";
+import HomeSafety from "../../assets/svg/HomeSafety.svg";
 import Warranty from "../../assets/svg/Guarantee.svg";
 import Tracking from "../../assets/svg/Tracking.svg";
 import BestPrice from "../../assets/svg/bestPrice.svg";
 import Gurantee from "../../assets/svg/Gurantee.svg";
 import Structure from "../../assets/svg/Structure.svg";
-import youtube from "../../assets/svg/youtube.svg";
+import Youtube from "../../assets/svg/youtube.svg";
+
+function FeatureItem({ icon, smallText, fullText }) {
+  return (
+    <div className="flex flex-col items-center justify-center">
+      <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
+        <img className="m-auto" src={icon} alt={fullText} />
+      </div>
+      <span className="block md:hidden text-xs text-center text-black">
+        {smallText[0]}
+      </span>
+      <span className="block md:hidden text-xs text-center text-black">
+        {smallText[1]}
+      </span>
+      <span className="hidden md:block text-xs text-center text-black">
+        {fullText}
+      </span>
+    </div>
+  );
+}
 
 function HabiFeatures() {
+  const features = [
+    {
+      icon: UniqueDesign,
+      smallText: ["Unique", "Design"],
+      fullText: "Unique Design",
+    },
+    {
+      icon: EfficientPlan,
+      smallText: ["Efficient", "Planning"],
+      fullText: "Efficient Planning",
+    },
+    {
+      icon: HomeSafety,
+      smallText: ["Disaster", "Resilient"],
+      fullText: "Disaster Resilient",
+    },
+    {
+      icon: Warranty,
+      smallText: ["1 Year", "Warranty"],
+      fullText: "1 Year Warranty",
+    },
+    {
+      icon: Tracking,
+      smallText: ["Project", "Tracking"],
+      fullText: "Project Tracking",
+    },
+    {
+      icon: Gurantee,
+      smallText: ["50 Year", "Guarantee"],
+      fullText: "50 Year Guarantee",
+    },
+    {
+      icon: Structure,
+      smallText: ["Structure as", "per NBC"],
+      fullText: "Structure as per NBC",
+    },
+    {
+      icon: BestPrice,
+      smallText: ["Transparent", "Pricing"],
+      fullText: "Transparent Pricing",
+    },
+  ];
+
   const thumbnailUrl = `https://img.youtube.com/vi/R3C12M4nG1o/hqdefault.jpg`;
   const videoUrl = `https://www.youtube.com/watch?v=R3C12M4nG1o`;
 
   return (
     <div>
       <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto lg:px-40">
-        <div className=" rounded-xl py-5 w-full">
-          <h2 className="text-[16px] md:text-[18px]  mb-4 text-center text-black">
+        <div className="rounded-xl py-5 w-full">
+          <h2 className="text-[16px] md:text-[18px] mb-4 text-center text-black">
             Constructing Dreams with Precision and Care
           </h2>
 
           <div className="grid grid-cols-4 gap-4 mb-1">
-            <div className="flex flex-col items-center justify-center">
-              <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
-                <img
-                  className="m-auto mt-1.5"
-                  src={UniqueDesign}
-                  alt="Unique Design"
-                />
-              </div>
-              <span className="block md:hidden text-xs md:text-sm text-center text-black">
-                Unique
-              </span>
-              <span className="block md:hidden text-xs md:text-sm text-center text-black">
-                Design
-              </span>
-              <span className="hidden md:block text-xs md:text-sm text-center text-black">
-                Unique Design
-              </span>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
-                <img
-                  className="m-auto mt-1.5"
-                  src={EfficientPlan}
-                  alt="Efficient Planning"
-                />
-              </div>
-              <span className="block md:hidden text-xs md:text-sm text-center text-black">
-                Efficient
-              </span>
-              <span className="block md:hidden text-xs md:text-sm text-center text-black">
-                Planning
-              </span>
-              <span className="hidden md:block text-xs md:text-sm text-center text-black">
-                Efficient Planning
-              </span>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
-                <img
-                  className="m-auto mt-1.5"
-                  src={homeSafety}
-                  alt="Disaster Resilient"
-                />
-              </div>
-              <span className="block md:hidden text-xs md:text-sm text-center text-black">
-                Disaster
-              </span>
-              <span className="block md:hidden text-xs md:text-sm text-center text-black">
-                Resilient
-              </span>
-              <span className="hidden md:block text-xs md:text-sm text-center text-black">
-                Disaster Resilient
-              </span>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
-                <img
-                  className="m-auto mt-1.5"
-                  src={Warranty}
-                  alt="One Year Warranty"
-                />
-              </div>
-              <span className="block md:hidden text-xs md:text-sm text-center text-black">
-                1 Year
-              </span>
-              <span className="block md:hidden text-xs md:text-sm text-center text-black">
-                Warranty
-              </span>
-              <span className="hidden md:block text-xs md:text-sm text-center text-black">
-                1 Year Warranty
-              </span>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
-                <img
-                  className="m-auto mt-3"
-                  src={Tracking}
-                  alt="Project Tracking"
-                />
-              </div>
-              <span className="block md:hidden text-xs md:text-sm text-center text-black">
-                Project
-              </span>
-              <span className="block md:hidden text-xs md:text-sm text-center text-black">
-                Tracking
-              </span>
-              <span className="hidden md:block text-xs md:text-sm text-center text-black">
-                Project Tracking
-              </span>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
-                <img
-                  className="m-auto mt-3"
-                  src={Gurantee}
-                  alt="50 Year Guarantee"
-                />
-              </div>
-              <span className="block md:hidden text-xs md:text-sm text-center text-black">
-                50 Year
-              </span>
-              <span
-                className="block md:hidden text-xs md:text-sm text-center text-black"
-                text-black
-              >
-                Guarantee
-              </span>
-              <span className="hidden md:block text-xs md:text-sm text-center text-black">
-                50 Year Guarantee
-              </span>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
-                <img
-                  className="m-auto mt-2"
-                  src={Structure}
-                  alt="Structure as per NBC"
-                />
-              </div>
-              <span className="block md:hidden text-xs md:text-sm text-center text-black">
-                Structure as
-              </span>
-              <span className="block md:hidden text-xs md:text-sm text-center text-black">
-                per NBC
-              </span>
-              <span className="hidden md:block text-xs md:text-sm text-center text-black">
-                Structure as per NCB
-              </span>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="bg-primary rounded-full w-12 h-12 mb-2 flex-center">
-                <img
-                  className="m-auto mt-3"
-                  src={BestPrice}
-                  alt="Transparent Pricing"
-                />
-              </div>
-              <span className="block md:hidden text-xs md:text-sm text-center text-black">
-                Transparent
-              </span>
-              <span className="block md:hidden text-xs md:text-sm text-center text-black">
-                Pricing
-              </span>
-              <span className="hidden md:block text-xs md:text-sm text-center text-black">
-                Transparent Pricing
-              </span>
-            </div>
+            {features.map((feature, index) => (
+              <FeatureItem
+                key={index}
+                icon={feature.icon}
+                smallText={feature.smallText}
+                fullText={feature.fullText}
+              />
+            ))}
           </div>
         </div>
       </div>
+
       <div className="flex flex-col items-center w-full bg-layoutColor shadow h-auto lg:px-40 mb-3">
-        <div className=" w-full">
+        <div className="w-full">
           <div className="flex flex-row ml-10">
-            {/* Image Section */}
             <div className="p-2 relative w-auto">
               <a href={videoUrl} target="_blank" rel="noopener noreferrer">
                 <img
@@ -184,13 +107,13 @@ function HabiFeatures() {
                   className="w-[250px] h-[150px] md:h-[150px] object-cover rounded-xl"
                 />
                 <img
-                  src={youtube}
+                  src={Youtube}
                   alt="YouTube Icon"
                   className="absolute inset-0 m-auto w-7 h-8"
                 />
               </a>
             </div>
-            {/* Content Section */}
+
             <div className="p-2 w-[50%]">
               <h3 className="text-lg font-semibold text-black">
                 habi's Story - Redefines Home Building | habi
@@ -206,7 +129,6 @@ function HabiFeatures() {
               </p>
             </div>
           </div>
-          {/* kkk */}
         </div>
       </div>
     </div>
