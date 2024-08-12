@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/habi_logo.png";
-import meetIcon from "../assets/svg/meet.svg";
-import packagesIcon from "../assets/svg/Packages.svg";
-import profileIcon from "../assets/svg/Profile.svg";
-import projectsIcon from "../assets/svg/Projects.svg";
-import SelectionIndicator from "../components/SelectionIndicator";
+import logo from "../../assets/habi_logo.png";
+import meetIcon from "../../assets/svg/meet.svg";
+import packagesIcon from "../../assets/svg/Packages.svg";
+import profileIcon from "../../assets/svg/Profile.svg";
+import projectsIcon from "../../assets/svg/Projects.svg";
+import SelectionIndicator from "./SelectionIndicator";
 
 const Navbar = ({ isExpanded }) => {
   const location = useLocation();

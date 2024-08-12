@@ -1,6 +1,6 @@
 // src/ToggleButton.js
 import React from "react";
-import arrow from "../assets/svg/arrow.svg";
+import arrow from "../../assets/svg/arrow.svg";
 
 const ToggleButton = ({ collapsed, toggleSidebar }) => {
   return (

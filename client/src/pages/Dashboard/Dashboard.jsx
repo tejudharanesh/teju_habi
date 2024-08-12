@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 
 import React, { useState, useEffect } from "react";
-import ToggleButton from "../../components/ToggleButton";
+import ToggleButton from "../../components/Navbar/ToggleButton";
 import Consultation from "../NewUser/Consultation";
-import Navbar from "../../components/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import CostEstimator from "../NewUser/CostEstimator";
 import Projects from "../NewUser/Projects";
 import Profile from "../NewUser/Profile";
