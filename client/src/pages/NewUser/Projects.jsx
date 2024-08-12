@@ -1,8 +1,8 @@
 import * as React from "react";
-import thumbNail from "../assets/images/tumbnail.png";
-import home from "../assets/images/home.png";
-import Footer from "../components/Footer";
-import youtube from "../assets/svg/youtube.svg";
+import thumbNail from "../../assets/images/tumbnail.png";
+import home from "../../assets/images/home.png";
+import Footer from "../../components/Footer";
+import youtube from "../../assets/svg/youtube.svg";
 
 function Projects({ isExpanded }) {
   return (

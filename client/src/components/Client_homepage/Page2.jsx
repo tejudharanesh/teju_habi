@@ -19,8 +19,8 @@ function Page2() {
           {/* Payment and Chat for small screens */}
           <div className="flex md:hidden">
             <div className="w-[99px] h-[54px] mr-[16px] border-2 rounded-xl rounded-l-none p-3 pl-8">
-              <button className="mx-auto">
-                <img src={whatsapp} alt="" />
+              <button>
+                <img src={whatsapp} alt="whatsapp" />
               </button>
             </div>
             <div className="w-[267px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1">

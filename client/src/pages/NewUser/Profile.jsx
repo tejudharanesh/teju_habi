@@ -1,16 +1,16 @@
 import React from "react";
-import cover from "../assets/images/cover.png";
-import profile from "../assets/images/profile.png";
-import edit from "../assets/svg/edit.svg";
-import arrow from "../assets/svg/arrow.svg";
-import faq from "../assets/svg/FAQ.svg";
-import policy from "../assets/svg/policy.svg";
-import terms from "../assets/svg/terms.svg";
-import habi from "../assets/svg/habi.svg";
-import logout from "../assets/svg/Logout.svg";
-import Footer from "../components/Footer";
-import friend from "../assets/images/friend.png";
-import family from "../assets/images/family.png";
+import cover from "../../assets/images/cover.png";
+import profile from "../../assets/images/profile.png";
+import edit from "../../assets/svg/edit.svg";
+import arrow from "../../assets/svg/arrow.svg";
+import faq from "../../assets/svg/FAQ.svg";
+import policy from "../../assets/svg/policy.svg";
+import terms from "../../assets/svg/terms.svg";
+import habi from "../../assets/svg/habi.svg";
+import logout from "../../assets/svg/Logout.svg";
+import Footer from "../../components/Footer";
+import friend from "../../assets/images/friend.png";
+import family from "../../assets/images/family.png";
 
 const Profile = ({ isExpanded, user }) => {
   return (

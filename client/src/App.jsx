@@ -9,11 +9,8 @@ import {
 import LoginPage from "./pages/Authentication/LoginPage";
 import Otp from "./pages/Authentication/Otp";
 import CompleteProfile from "./pages/Authentication/CompleteProfile";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
-import HomePage from "./pages/HomePage";
-import Schedule from "./components/Schedule";
-import ScheduleBooked from "./components/ScheduleBooked";
 import Testing from "./pages/Testing";
 function App() {
   return (

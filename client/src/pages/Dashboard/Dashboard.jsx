@@ -1,15 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 
 import React, { useState, useEffect } from "react";
-import ToggleButton from "../components/ToggleButton";
-import Consultation from "./NewUser/Consultation";
-import Navbar from "../components/Navbar";
-import CostEstimator from "./CostEstimator";
-import Projects from "./Projects";
-import Profile from "./Profile";
-import HomePage from "./HomePage";
-import PaymentsPage from "./PaymentsPage";
-import ProjectDetails from "./ProjectDetails";
+import ToggleButton from "../../components/ToggleButton";
+import Consultation from "../NewUser/Consultation";
+import Navbar from "../../components/Navbar";
+import CostEstimator from "../NewUser/CostEstimator";
+import Projects from "../NewUser/Projects";
+import Profile from "../NewUser/Profile";
+import HomePage from "../ExistingUser/HomePage";
+import PaymentsPage from "../ExistingUser/PaymentsPage";
+import ProjectDetails from "../ExistingUser/ProjectDetails";
 function Dashboard() {
   const [collapsed, setCollapsed] = useState(false);
   const [user, setUser] = useState("");
@@ -39,7 +39,7 @@ function Dashboard() {
               user == "new" ? (
                 <Consultation isExpanded={collapsed} />
               ) : (
-                <HomePage isExpanded={collapsed} />
+                <HomePage />
               )
             }
           />
