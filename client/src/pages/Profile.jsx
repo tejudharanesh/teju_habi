@@ -9,8 +9,10 @@ import terms from "../assets/svg/terms.svg";
 import habi from "../assets/svg/habi.svg";
 import logout from "../assets/svg/Logout.svg";
 import Footer from "../components/Footer";
+import friend from "../assets/images/friend.png";
+import family from "../assets/images/family.png";
 
-const Profile = ({ isExpanded }) => {
+const Profile = ({ isExpanded, user }) => {
   return (
     <div className="min-h-screen flex flex-col items-center bg-background font-poppins w-full">
       <div
@@ -87,17 +89,63 @@ const Profile = ({ isExpanded }) => {
                 className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
               />
             </div>
+            <div className="relative mb-5">
+              <label className="absolute -top-2.5 left-3 bg-layoutColor px-1 text-sm text-grey">
+                Current Address
+              </label>
+              <textarea
+                type="text"
+                name="name"
+                rows={3}
+                placeholder="43, Second Floor, Leela Palace Rd, behind The Leela Palace, HAL 2nd Stage, Kodihalli, Bengaluru, Karnataka 560008"
+                className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
+              />
+            </div>
           </form>
         </div>
       </div>
+      {user === "client" ? (
+        <div
+          className={`flex flex-col items-center w-full bg-layoutColor shadow p-2 h-auto mb-3 ${
+            isExpanded ? "md:px-20 lg:px-72" : "md:px-16 lg:px-60"
+          }`}
+        >
+          <div className="rounded-xl w-full p-3 py-1">
+            <div className="flex justify-between items-center py-2">
+              <span className="flex items-center">
+                <img src={family} alt="" />
+                <span className="ml-3.5 text-black text-[16px]">
+                  Add Family Members
+                </span>
+              </span>
+              <img src={arrow} className="mr-2 md:mr-0" />
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
       <div
         className={`flex flex-col items-center w-full bg-layoutColor shadow p-2 h-auto mb-3 ${
           isExpanded ? "md:px-20 lg:px-72" : "md:px-16 lg:px-60"
         }`}
       >
-        <div className=" rounded-xl py-4 w-full p-1">
+        <div className="rounded-xl py-4 w-full p-3">
           <div className="w-full">
             <ul>
+              {user === "client" ? (
+                <li className="flex justify-between items-center py-2">
+                  <span className="flex items-center">
+                    <img src={friend} alt="" />
+                    <span className="ml-3 text-black text-[16px] ">
+                      Refer a friend
+                    </span>
+                  </span>
+                  <img src={arrow} className="mr-2 md:mr-0" />
+                </li>
+              ) : (
+                ""
+              )}
               <li className="flex justify-between items-center py-2">
                 <span className="flex items-center">
                   <img src={faq} alt="" />
@@ -136,7 +184,7 @@ const Profile = ({ isExpanded }) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center w-full shadow p-2 h-auto lg:px-32">
+      <div className="flex flex-col items-center w-full shadow p-2 mb-12 h-auto lg:px-32">
         <div className="rounded-xl py-4 w-full">
           <div className=" text-center">
             <button className="bg-layoutColor text-secondary rounded-lg w-[360px] h-[44px] border-2">
@@ -144,7 +192,7 @@ const Profile = ({ isExpanded }) => {
               Logout
             </button>
           </div>
-          <Footer />
+          {user === "new" && <Footer />}
         </div>
       </div>
     </div>

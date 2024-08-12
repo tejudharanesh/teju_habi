@@ -14,13 +14,14 @@ import PrivateRoute from "./components/PrivateRoute";
 import HomePage from "./pages/HomePage";
 import Schedule from "./components/Schedule";
 import ScheduleBooked from "./components/ScheduleBooked";
+import Testing from "./pages/Testing";
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/test" element={<ScheduleBooked />} />
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Testing />} />
+          {/* <Route path="/" element={<Dashboard />} /> */}
           <Route path="/dashboard/*" element={<Dashboard />} />
 
           <Route path="/login" element={<LoginPage />} />
