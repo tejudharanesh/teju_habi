@@ -14,6 +14,7 @@ const CompleteProfile = () => {
     phoneNumber: phoneNumber,
     email: "",
     pinCode: "",
+    address: "",
   });
 
   const handleChange = (e) => {
@@ -103,6 +104,20 @@ const CompleteProfile = () => {
               name="pinCode"
               placeholder="560103"
               value={formData.pinCode}
+              onChange={handleChange}
+              className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-white focus:outline-none"
+            />
+          </div>
+          <div className="relative mb-5">
+            <label className="absolute -top-2.5 left-3 bg-white px-1 text-sm text-grey">
+              Current Address
+            </label>
+            <textarea
+              type="text"
+              name="address"
+              placeholder=""
+              rows={3}
+              value={formData.address}
               onChange={handleChange}
               className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-white focus:outline-none"
             />

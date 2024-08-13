@@ -1,5 +1,5 @@
 import React from "react";
-import Docments from "../../components/ProjectDetails/Docments";
+import Documents from "../../components/ProjectDetails/Docments";
 import Details from "../../components/ProjectDetails/Details";
 import DVisualize from "../../components/ProjectDetails/3DVisualize";
 import Materials from "../../components/ProjectDetails/Materials";
@@ -16,9 +16,11 @@ function ProjectDetails({ isExpanded }) {
         }`}
       >
         <header className="text-center m-2 ">
-          <h1 className="text-xl font-semibold text-black">Project Details</h1>
+          <h1 className="text-xl font-semibold text-black">
+            Design & documents
+          </h1>
         </header>
-        <Docments />
+        <Documents />
       </div>
       <DVisualize />
       <Materials />

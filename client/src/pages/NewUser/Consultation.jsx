@@ -10,6 +10,8 @@ import Page4 from "../../components/Homepage/page4";
 import HabiFeatures from "../../components/Homepage/HabiFeatures";
 import ScheduleBooked from "../../components/Homepage/ScheduleBooked";
 import dayjs from "dayjs";
+import OnePercent from "../../components/Homepage/OnePercent";
+import Design from "../../components/Homepage/Design";
 
 function Consultation() {
   const [showPopup, setShowPopup] = useState(false);
@@ -140,6 +142,8 @@ function Consultation() {
           />
         )}
       </div>
+      <OnePercent />
+      <Design />
       <HabiFeatures />
 
       <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto lg:px-40 ">

@@ -10,6 +10,9 @@ import Profile from "../NewUser/Profile";
 import HomePage from "../ExistingUser/HomePage";
 import PaymentsPage from "../ExistingUser/PaymentsPage";
 import ProjectDetails from "../ExistingUser/ProjectDetails";
+import Materials from "../ExistingUser/Materials";
+import Gallery from "../ExistingUser/Gallery";
+
 function Dashboard() {
   const [collapsed, setCollapsed] = useState(false);
   const [user, setUser] = useState("");
@@ -67,6 +70,11 @@ function Dashboard() {
             path="profile"
             element={<Profile isExpanded={collapsed} user={user} />}
           />
+          <Route
+            path="/materials"
+            element={<Materials isExpanded={collapsed} />}
+          />
+          <Route path="/gallery" element={<Gallery isExpanded={collapsed} />} />
         </Routes>
       </div>
     </div>

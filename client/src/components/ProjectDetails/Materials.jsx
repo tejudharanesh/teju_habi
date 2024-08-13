@@ -1,7 +1,12 @@
 import React from "react";
 import steel from "../../assets/images/steel.png";
+import { useNavigate } from "react-router-dom";
 
 function Materials({ isExpanded }) {
+  const navigate = useNavigate();
+  const goToMaterials = () => {
+    navigate("/dashboard/materials");
+  };
   return (
     <div
       className={`flex flex-col w-full bg-layoutColor shadow h-auto p-2 mb-2 ${
@@ -15,7 +20,9 @@ function Materials({ isExpanded }) {
           Materials
         </p>
         <p className="inline-block absolute right-0 top-1">
-          <button className="text-primary">View more </button>
+          <button onClick={goToMaterials} className="text-primary">
+            View more
+          </button>
         </p>
       </header>
       <div className="grid grid-rows-3 items-center text-black">
