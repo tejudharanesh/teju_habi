@@ -5,6 +5,7 @@ function Gallery({ isExpanded }) {
   const [galleryData, setGalleryData] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     // Mock fetching data from backend
     const fetchGalleryData = async () => {
       // Replace with actual API call
@@ -26,10 +27,22 @@ function Gallery({ isExpanded }) {
 
   return (
     <div className="min-h-screen flex flex-col font-poppins w-full bg-background h-auto">
+      <div
+        className={`flex flex-col w-full bg-layoutColor  h-auto p-2 ${
+          isExpanded
+            ? "md:px-20 lg:px-52 xl:px-[300px]"
+            : "md:px-16 lg:px-48 xl:px-[300px]"
+        }`}
+      >
+        <header className="text-center  m-2">
+          <h1 className="text-black font-semibold text-lg">Gallery</h1>
+        </header>
+      </div>
+
       {galleryData.map((section, index) => (
         <div
           key={index}
-          className={`flex flex-col w-full bg-layoutColor shadow h-auto p-2 mb-2 ${
+          className={`flex flex-col w-full bg-layoutColor shadow h-auto p-2 ${
             isExpanded
               ? "md:px-20 lg:px-52 xl:px-[300px]"
               : "md:px-16 lg:px-48 xl:px-[300px]"
@@ -38,6 +51,7 @@ function Gallery({ isExpanded }) {
           <header className="text-sm m-2 ">
             <p className="text-black">{section.heading}</p>
           </header>
+
           <div className="grid grid-cols-4 gap-4 justify-around items-center">
             {section.images.map((image, imgIndex) => (
               <img

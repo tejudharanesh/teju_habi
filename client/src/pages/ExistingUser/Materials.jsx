@@ -1,7 +1,11 @@
-import React from "react";
+import React,{useEffect} from "react";
 import steel from "../../assets/images/steel.png";
 
 function Materials() {
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
   const isExpanded = true;
   return (
     <div className="min-h-screen flex flex-col font-poppins w-full bg-background h-auto">
