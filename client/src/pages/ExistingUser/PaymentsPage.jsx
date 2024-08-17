@@ -1,4 +1,5 @@
 import React from "react";
+import done from "../../assets/images/done.png";
 
 const PaymentsPage = () => {
   const paidSegments = 3;
@@ -23,10 +24,8 @@ const PaymentsPage = () => {
             <p className="text-gray-400 m-1">1st week</p>
           </div>
           <div className="absolute top-0 right-14 h-full border-l-2  border-black border-dashed"></div>
-          <div className="absolute top-5 right-2">
-            <button className="bg-primary text-white w-[94px] h-[41px] rounded-2xl">
-              Pay now
-            </button>
+          <div className="absolute top-5 right-11 bg-[#2c9c22] rounded-full">
+            <img src={done} alt="done" className="" />
           </div>
           <div className="absolute top-20 right-2">
             <h2 className="bg-layoutColor p-1">25 May 2024</h2>
