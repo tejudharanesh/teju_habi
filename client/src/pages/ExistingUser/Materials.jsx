@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import steel from "../../assets/images/steel.png";
 
 function Materials() {
@@ -71,12 +71,10 @@ function Materials() {
             </div>
             <div className="inline-block">
               <p className="font-semibold">TATA Steel</p>
-              <p className="text-sm text-gray-400  ">
+              <p className="text-sm text-gray-400">
                 brand TATA, diameter: 32 mm & above
               </p>
-              <p className="text-sm text-gray-400  ">
-                single piece 12 meter...
-              </p>
+              <p className="text-sm text-gray-400">single piece 12 meter...</p>
             </div>
             <hr className="mt-2" />
           </div>

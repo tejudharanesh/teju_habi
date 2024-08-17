@@ -12,12 +12,13 @@ import CompleteProfile from "./pages/Authentication/CompleteProfile";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Testing from "./pages/Testing";
+import Faqs from "./pages/FAQ's/Faqs";
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Testing />} />
+          <Route path="/" element={<Faqs />} />
           {/* <Route path="/" element={<Dashboard />} /> */}
           <Route path="/dashboard/*" element={<Dashboard />} />
 
