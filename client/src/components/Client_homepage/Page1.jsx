@@ -26,11 +26,13 @@ function Page1() {
           <p className="text-sm">Kodihalli Hosadurga - 577527</p>
         </div>
         <div className="absolute top-3 left-3 md:top-2 md:left-auto md:right-20 flex items-center space-x-2 p-2 rounded-lg">
-          <img
-            src={profile}
-            alt="Profile"
-            className="h-[60px] w-[60px] rounded-full"
-          />
+          <button>
+            <img
+              src={profile}
+              alt="Profile"
+              className="h-[60px] w-[60px] rounded-full"
+            />
+          </button>
         </div>
         <div className="absolute top-4 right-4 md:top-4 md:right-40 flex items-center space-x-2 p-2 rounded-lg">
           <div className="flex items-center backdrop-blur-sm rounded-md border-white border-2 px-3 whitespace-nowrap -mr-6 h-[25px]">
