@@ -14,12 +14,13 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Testing from "./pages/Testing";
 import Faqs from "./pages/FAQ's/Faqs";
 import AddFamilyMembers from "./components/Client_profile/AddFamilyMembers";
+import Notifications from "./components/Client_homepage/Notifications";
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<AddFamilyMembers />} />
+          <Route path="/" element={<Notifications />} />
           {/* <Route path="/" element={<Dashboard />} /> */}
           <Route path="/dashboard/*" element={<Dashboard />} />
 
