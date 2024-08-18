@@ -3,8 +3,11 @@ import home from "../../assets/images/Rectangle 521.png";
 import profile from "../../assets/images/profile.png";
 import bell from "../../assets/svg/Bell.svg";
 import SemiCircularProgressBar from "./SemiCircularProgressBar";
+import { useNavigate } from "react-router-dom";
 
-function Page1() {
+function Page1({ showPopup }) {
+  const navigate = useNavigate();
+
   return (
     <div className="relative w-full">
       {/* Background Image with Gradient Overlay */}
@@ -26,7 +29,11 @@ function Page1() {
           <p className="text-sm">Kodihalli Hosadurga - 577527</p>
         </div>
         <div className="absolute top-3 left-3 md:top-2 md:left-auto md:right-20 flex items-center space-x-2 p-2 rounded-lg">
-          <button >
+          <button
+            onClick={() => {
+              navigate("/dashboard/profile");
+            }}
+          >
             <img
               src={profile}
               alt="Profile"
@@ -40,12 +47,15 @@ function Page1() {
               Soil Testing is Underway...
             </span>
           </div>
+
           <div className="w-[40px] h-[40px] z-10 rounded-full bg-white">
-            <img
-              src={bell}
-              alt="Bell Icon"
-              className="w-[24px] h-[24px] mx-auto my-2"
-            />
+            <button onClick={showPopup}>
+              <img
+                src={bell}
+                alt="Bell Icon"
+                className="w-[24px] h-[24px] mx-2 my-2"
+              />
+            </button>
           </div>
         </div>
       </div>

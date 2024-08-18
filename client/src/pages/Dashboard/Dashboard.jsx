@@ -52,7 +52,7 @@ function Dashboard() {
               user == "new" ? (
                 <CostEstimator isExpanded={collapsed} />
               ) : (
-                <PaymentsPage isExpanded={collapsed} />
+                <ProjectDetails isExpanded={collapsed} />
               )
             }
           />
@@ -62,7 +62,7 @@ function Dashboard() {
               user == "new" ? (
                 <Projects isExpanded={collapsed} />
               ) : (
-                <ProjectDetails isExpanded={collapsed} />
+                <PaymentsPage isExpanded={collapsed} />
               )
             }
           />
@@ -74,6 +74,7 @@ function Dashboard() {
             path="/materials"
             element={<Materials isExpanded={collapsed} />}
           />
+
           <Route path="/gallery" element={<Gallery isExpanded={collapsed} />} />
         </Routes>
       </div>
