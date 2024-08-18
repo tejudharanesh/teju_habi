@@ -12,12 +12,12 @@ function Page3({ onReschedule, selectedDateTime }) {
       </p>
       <div className="flex flex-col justify-center items-center md:flex-row md:space-x-4 lg:space-x-1">
         <a href="https://maps.app.goo.gl/hqQVAC1Q7oz8XMbX7" target="_blank">
-          <button className="text-black py-3 px-4 rounded-lg mb-2 md:mb-0 w-[275px] md:w-[240px] h-[128px] md:mr-[16px] lg:mr-[74px]">
-            <img src={location} alt="Location" className="w-[275px]" />
+          <button className="text-black rounded-lg mb-2 md:mb-0 w-[275px] md:w-[240px] h-[128px] md:mr-[16px] lg:mr-[74px]">
+            <img src={location} alt="Location" />
           </button>
         </a>
         <button
-          className="bg-primary1 text-black py-3 px-4 rounded-lg w-[275px] md:w-[240px] h-[58px]"
+          className="bg-primary1 text-black py-3 rounded-lg w-[275px] md:w-[240px] h-[58px]"
           onClick={onReschedule}
         >
           Reschedule

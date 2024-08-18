@@ -12,7 +12,7 @@ function Page2() {
   };
   return (
     <div>
-      <div className="md:px-12 lg:px-40 xl:px-80 bg-layoutColor h-full">
+      <div className="md:px-12 lg:px-40 xl:px-80 bg-layoutColor h-screen">
         <div className="text-gray-500 m-5 md:hidden ">25 May 2024</div>
 
         <div className="flex flex-col md:flex-row">
@@ -23,9 +23,9 @@ function Page2() {
                 <img src={whatsapp} alt="whatsapp" />
               </button>
             </div>
-            <div className="w-[267px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1">
+            <div className="w-[267px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1 pl-2">
               <div>
-                <p className="text-sm">payment</p>
+                <p className="text-sm text-black font-semibold">payment</p>
                 <p className="text-sm">Due on 05 May 2024</p>
               </div>
               <div>
@@ -44,7 +44,7 @@ function Page2() {
 
               {/* Ongoing Section */}
               <div className="mb-10">
-                <p className="p-2">Ongoing</p>
+                <p className="p-2 text-black ">Ongoing</p>
 
                 <div>
                   <div
@@ -56,10 +56,10 @@ function Page2() {
                     <p className="text-sm text-gray-500">
                       25 May 2024 - 26 May 2024
                     </p>
-                    <div className="h-2 bg-gray-200 rounded-full mt-2">
+                    <div className="h-2 bg-gray-200 rounded-full mt-2 w-[60%]">
                       <div
                         className="h-2 bg-primary rounded-full"
-                        style={{ width: "7%" }}
+                        style={{ width: "10%" }}
                       ></div>
                     </div>
                     <div className="flex items-center absolute -top-3 -left-3 rounded-full border-2 border-primary p-0.5">
@@ -111,14 +111,14 @@ function Page2() {
                 </div>
               </div>
               <div className="mb-10">
-                <p className="m-2">Upcoming</p>
+                <p className="m-2 text-black">Upcoming</p>
                 <div className="relative bg-layoutColor p-4 rounded-3xl rounded-tl-none border-2 md:w-[300px] lg:w-[500px]">
                   <h3 className="font-bold text-gray-800">Soil Testing</h3>
                   <p className="text-sm text-gray-500">initial stage</p>
                   <p className="text-sm text-gray-500">
                     25 May 2024 - 26 May 2024
                   </p>
-                  <div className="h-2 bg-gray-200 rounded-full mt-2">
+                  <div className="h-2 bg-gray-200 rounded-full mt-2 w-[60%]">
                     <div
                       className="h-2 bg-primary rounded-full"
                       style={{ width: "0%" }}
@@ -136,7 +136,7 @@ function Page2() {
 
           {/* Payment and Chat for medium and larger screens */}
           <div className="hidden md:block mt-[85px] mr-7 lg:mr-10">
-            <div className="w-[260px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1 mb-4">
+            <div className="w-[260px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1 pl-2 mb-4">
               <div>
                 <p className="text-sm">payment</p>
                 <p className="text-sm">Due on 05 May 2024</p>
@@ -146,7 +146,7 @@ function Page2() {
               </div>
             </div>
 
-            <div className="w-[260px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1">
+            <div className="w-[260px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1 pl-2 mb-4">
               <div>
                 <p className="text-sm">Chat with our Executive</p>
                 <p className="text-sm">Quick Reply</p>

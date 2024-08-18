@@ -26,7 +26,7 @@ function Page1() {
           <p className="text-sm">Kodihalli Hosadurga - 577527</p>
         </div>
         <div className="absolute top-3 left-3 md:top-2 md:left-auto md:right-20 flex items-center space-x-2 p-2 rounded-lg">
-          <button>
+          <button >
             <img
               src={profile}
               alt="Profile"
