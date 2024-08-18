@@ -31,7 +31,7 @@ function Page1({ showPopup }) {
         <div className="absolute top-3 left-3 md:top-2 md:left-auto md:right-20 flex items-center space-x-2 p-2 rounded-lg">
           <button
             onClick={() => {
-              navigate("/dashboard/profile");
+              navigate("/dashboard/profile1");
             }}
           >
             <img

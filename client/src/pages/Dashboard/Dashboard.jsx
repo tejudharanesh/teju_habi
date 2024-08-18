@@ -12,6 +12,7 @@ import PaymentsPage from "../ExistingUser/PaymentsPage";
 import ProjectDetails from "../ExistingUser/ProjectDetails";
 import Materials from "../ExistingUser/Materials";
 import Gallery from "../ExistingUser/Gallery";
+import Faqs from "../FAQ's/Faqs";
 
 function Dashboard() {
   const [collapsed, setCollapsed] = useState(false);
@@ -58,24 +59,37 @@ function Dashboard() {
           />
           <Route
             path="/projects"
+            element={user == "new" ? <Projects isExpanded={collapsed} /> : ""}
+          />
+          <Route
+            path="/profile"
             element={
               user == "new" ? (
-                <Projects isExpanded={collapsed} />
+                <Profile isExpanded={collapsed} user={user} />
               ) : (
-                <PaymentsPage isExpanded={collapsed} />
+                <Consultation isExpanded={collapsed} />
               )
             }
           />
-          <Route
-            path="profile"
-            element={<Profile isExpanded={collapsed} user={user} />}
-          />
+
           <Route
             path="/materials"
             element={<Materials isExpanded={collapsed} />}
           />
+          <Route
+            path="/payment"
+            element={<PaymentsPage isExpanded={collapsed} />}
+          />
+          <Route
+            path="/profile1"
+            element={<Profile isExpanded={collapsed} user={user} />}
+          />
 
           <Route path="/gallery" element={<Gallery isExpanded={collapsed} />} />
+          <Route
+            path="/profile1/faq"
+            element={<Faqs isExpanded={collapsed} />}
+          />
         </Routes>
       </div>
     </div>

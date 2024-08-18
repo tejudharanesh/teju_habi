@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import cover from "../../assets/images/cover.png";
 import profile from "../../assets/images/profile.png";
 import edit from "../../assets/svg/edit.svg";
@@ -11,8 +12,19 @@ import logout from "../../assets/svg/Logout.svg";
 import Footer from "../../components/Footer/Footer";
 import friend from "../../assets/images/friend.png";
 import family from "../../assets/images/family.png";
+import AddFamilyMembers from "../../components/Client_profile/AddFamilyMembers";
 
 const Profile = ({ isExpanded, user }) => {
+  const [isPopupVisible, setPopupVisible] = useState(false);
+  const showPopup = () => {
+    setPopupVisible(true);
+  };
+
+  const hidePopup = () => {
+    setPopupVisible(false);
+  };
+
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen flex flex-col items-center bg-background font-poppins w-full">
       <div
@@ -111,7 +123,10 @@ const Profile = ({ isExpanded, user }) => {
           }`}
         >
           <div className="rounded-xl w-full p-3 py-1">
-            <div className="flex justify-between items-center py-2">
+            <div
+              className="flex justify-between items-center py-2"
+              onClick={showPopup}
+            >
               <span className="flex items-center">
                 <img src={family} alt="" />
                 <span className="ml-3.5 text-black text-[16px]">
@@ -146,7 +161,12 @@ const Profile = ({ isExpanded, user }) => {
               ) : (
                 ""
               )}
-              <li className="flex justify-between items-center py-2">
+              <li
+                className="flex justify-between items-center py-2"
+                onClick={() => {
+                  navigate("faq");
+                }}
+              >
                 <span className="flex items-center">
                   <img src={faq} alt="" />
                   <span className="ml-3.5 text-black text-[16px]">FAQ's</span>
@@ -195,6 +215,7 @@ const Profile = ({ isExpanded, user }) => {
           {user === "new" && <Footer />}
         </div>
       </div>
+      {isPopupVisible && <AddFamilyMembers onClose={hidePopup} />}
     </div>
   );
 };

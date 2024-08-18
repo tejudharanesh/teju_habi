@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import whatsapp from "../../assets/images/Whatsapp.png";
 import site from "../../assets/images/site.png";
-
 import PaymentBar from "./PaymentBar";
 
 function Page2() {
   const [isExpanded, setIsExpanded] = useState(false);
+  const navigate = useNavigate();
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
@@ -23,7 +24,12 @@ function Page2() {
                 <img src={whatsapp} alt="whatsapp" />
               </button>
             </div>
-            <div className="w-[267px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1 pl-2">
+            <div
+              className="w-[267px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1 pl-2"
+              onClick={() => {
+                navigate("/dashboard/payment");
+              }}
+            >
               <div>
                 <p className="text-sm text-black font-semibold">payment</p>
                 <p className="text-sm">Due on 05 May 2024</p>
