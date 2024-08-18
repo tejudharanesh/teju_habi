@@ -36,7 +36,7 @@ const paymentStages = [
     dueDate: "22 June",
   },
   {
-    stage: "Stage 03",
+    stage: "Stage 04",
     title: "Completion of Internal Work",
     cost: "30% of the Total cost",
     stages: [
