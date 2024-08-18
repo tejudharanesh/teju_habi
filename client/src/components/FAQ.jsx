@@ -4,7 +4,6 @@ import leftarrow from "../assets/svg/leftArrow.svg";
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-
   const faqs = [
     {
       question: "Does habi charge an advance payment?",
@@ -33,7 +32,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="w-full py-4 font-poppins">
+    <div className="w-full font-poppins">
       <h2 className="text-[16px] lg:text-[18px] text-black font-semibold text-center mb-6">
         FAQ's
       </h2>

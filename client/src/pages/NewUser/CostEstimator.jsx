@@ -25,7 +25,7 @@ const CostEstimator = ({ isExpanded }) => {
                 <input
                   type="text"
                   name="name"
-                  className="text-black block w-[173px] h-[48px] md:w-[222px] lg:w-[270px] border border-gray-300 rounded-xl bg-layoutColor"
+                  className="text-black block w-[173px] h-[48px] md:w-[222px] lg:w-[270px] border border-gray-300 rounded-xl bg-layoutColor pl-4"
                 />
               </div>
               <div className="relative mb-5">
@@ -35,7 +35,7 @@ const CostEstimator = ({ isExpanded }) => {
                 <input
                   type="text"
                   name="name"
-                  className="text-black block w-[173px] h-[48px] md:w-[222px] lg:w-[270px] border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
+                  className="text-black block w-[173px] h-[48px] md:w-[222px] lg:w-[270px] border border-gray-300 rounded-xl bg-layoutColor focus:outline-none pl-4"
                 />
               </div>
             </div>
@@ -48,7 +48,7 @@ const CostEstimator = ({ isExpanded }) => {
                   type="text"
                   name="name"
                   placeholder="Teju"
-                  className="text-black block w-[173px] h-[48px] md:w-[222px] lg:w-[270px] border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
+                  className="text-black block w-[173px] h-[48px] md:w-[222px] lg:w-[270px] border border-gray-300 rounded-xl bg-layoutColor focus:outline-none pl-4"
                 />
               </div>
               <div className="relative mb-5">
@@ -59,7 +59,7 @@ const CostEstimator = ({ isExpanded }) => {
                   type="number"
                   name="name"
                   placeholder="00"
-                  className="text-black block w-[173px] h-[48px] md:w-[222px] lg:w-[270px] border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
+                  className="text-black block w-[173px] h-[48px] md:w-[222px] lg:w-[270px] border border-gray-300 rounded-xl bg-layoutColor focus:outline-none pl-4"
                 />
               </div>
             </div>

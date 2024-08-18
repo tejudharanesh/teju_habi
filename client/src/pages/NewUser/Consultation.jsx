@@ -12,6 +12,7 @@ import ScheduleBooked from "../../components/Homepage/ScheduleBooked";
 import dayjs from "dayjs";
 import OnePercent from "../../components/Homepage/OnePercent";
 import Design from "../../components/Homepage/Design";
+import Youtube from "../../components/Homepage/Youtube";
 
 function Consultation() {
   const [showPopup, setShowPopup] = useState(false);
@@ -91,7 +92,7 @@ function Consultation() {
       } else if (storedOption === "inviteHabi") {
         setIsPage4(true);
       }
-    }, 5000);
+    }, 3000);
   };
 
   const handleScheduleClose = () => {
@@ -145,13 +146,14 @@ function Consultation() {
       <OnePercent />
       <Design />
       <HabiFeatures />
+      <Youtube />
 
-      <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto lg:px-40 ">
-        <div className="rounded-xl py-5 w-full">
+      <div className="flex flex-col items-center w-full bg-layoutColor  p-4 h-auto lg:px-40 ">
+        <div className="rounded-xl w-full">
           <FAQ />
         </div>
       </div>
-      <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto lg:px-40 mb-3">
+      <div className="flex flex-col items-center w-full bg-layoutColor  p-4 h-auto lg:px-40 mb-3">
         <div className="rounded-xl py-5 w-full">
           <Footer />
         </div>
