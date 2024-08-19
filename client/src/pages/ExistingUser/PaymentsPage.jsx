@@ -1,6 +1,8 @@
 import React from "react";
 import PaymentBlock from "../../components/Client_homepage/PaymentBlock";
 import PaymentSummary from "../../components/Client_homepage/PaymentSummary";
+import back from "../../assets/images/back.png";
+import { useNavigate } from "react-router-dom";
 
 const paymentStages = [
   {
@@ -56,13 +58,20 @@ const paymentStages = [
 const currentStage = 2;
 
 const PaymentsPage = () => {
+  const navigate = useNavigate();
   const paidSegments = 1;
   const totalSegments = 7;
   const segmentAngle = 360 / totalSegments;
   const paidAngle = paidSegments * segmentAngle;
   return (
     <div className="relative flex flex-col md:flex-row items-start p-2 bg-layoutColor min-h-screen font-poppins px-4 md:pl-10 lg:pl-28 xl:pl-60">
-      <div className="w-full md:w-[60%] lg:w-[50%]">
+      <div className="relative w-full md:w-[60%] lg:w-[50%]">
+        <button
+          className="absolute top-2 md:hidden"
+          onClick={() => navigate(-1)}
+        >
+          <img src={back} alt="" />
+        </button>
         <h2 className="text-2xl font-semibold mb-6 text-center text-black">
           Payments
         </h2>
