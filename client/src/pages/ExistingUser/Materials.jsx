@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import steel from "../../assets/images/steel.png";
+import back from "../../assets/images/back.png";
+import { useNavigate } from "react-router-dom";
 
 function Materials() {
   useEffect(() => {
@@ -10,15 +12,22 @@ function Materials() {
   return (
     <div className="min-h-screen flex flex-col font-poppins w-full bg-background h-auto">
       <div
-        className={`flex flex-col w-full bg-layoutColor shadow h-auto p-2 mb-2 ${
+        className={`relative flex flex-col w-full bg-layoutColor shadow h-auto p-2 mb-2 ${
           isExpanded
             ? "md:px-20 lg:px-52 xl:px-[300px]"
             : "md:px-16 lg:px-48 xl:px-[300px]"
         }`}
       >
+        <button
+          className="absolute top-5 md:hidden"
+          onClick={() => navigate(-2)}
+        >
+          <img src={back} alt="" />
+        </button>
         <header className="text-center m-2 ">
           <h1 className="text-xl font-semibold text-black">materials</h1>
         </header>
+
         <div>
           <div className="p-2">
             <div className="inline-block mr-4">
