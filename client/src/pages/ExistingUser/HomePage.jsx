@@ -3,7 +3,7 @@ import Page1 from "../../components/Client_homepage/Page1";
 import Page2 from "../../components/Client_homepage/Page2";
 import Notifications from "../../components/Client_homepage/Notifications";
 
-const HomePage = ({}) => {
+const HomePage = ({ isExpanded }) => {
   const [isPopupVisible, setPopupVisible] = useState(false);
   const showPopup = () => {
     setPopupVisible(true);

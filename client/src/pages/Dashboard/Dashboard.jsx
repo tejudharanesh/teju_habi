@@ -47,7 +47,7 @@ function Dashboard() {
                 user === "new" ? (
                   <Consultation isExpanded={collapsed} />
                 ) : (
-                  <HomePage />
+                  <HomePage isExpanded={collapsed} />
                 )
               }
             />
