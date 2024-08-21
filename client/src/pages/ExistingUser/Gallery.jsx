@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import site from "../../assets/images/site.png";
+import back from "../../assets/images/back.png";
+import { useNavigate } from "react-router-dom";
 
 function Gallery({ isExpanded }) {
+  const navigate = useNavigate();
   const [galleryData, setGalleryData] = useState([]);
 
   useEffect(() => {
@@ -28,12 +31,18 @@ function Gallery({ isExpanded }) {
   return (
     <div className="min-h-screen flex flex-col font-poppins w-full bg-background h-auto">
       <div
-        className={`flex flex-col w-full bg-layoutColor  h-auto p-2 ${
+        className={`flex flex-col w-full bg-layoutColor h-auto p-2 ${
           isExpanded
             ? "md:px-20 lg:px-52 xl:px-[300px]"
             : "md:px-16 lg:px-48 xl:px-[300px]"
         }`}
       >
+        <button
+          className="absolute top-6 left-4 md:hidden"
+          onClick={() => navigate(-1)}
+        >
+          <img src={back} alt="" />
+        </button>
         <header className="text-center  m-2">
           <h1 className="text-black font-semibold text-lg">Gallery</h1>
         </header>
@@ -42,7 +51,7 @@ function Gallery({ isExpanded }) {
       {galleryData.map((section, index) => (
         <div
           key={index}
-          className={`flex flex-col w-full bg-layoutColor shadow h-auto p-2 ${
+          className={`flex flex-col w-full bg-layoutColor h-auto p-2 ${
             isExpanded
               ? "md:px-20 lg:px-52 xl:px-[300px]"
               : "md:px-16 lg:px-48 xl:px-[300px]"

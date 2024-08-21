@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import search from "../../assets/images/search.png";
+import { useNavigate } from "react-router-dom";
+import back from "../../assets/images/back.png";
 
 function Faqs({ isExpanded }) {
+  const navigate = useNavigate();
   const [openIndex, setOpenIndex] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -53,8 +56,14 @@ function Faqs({ isExpanded }) {
           isExpanded ? "md:px-20 lg:px-72" : "md:px-16 lg:px-60"
         }`}
       >
-        <div className=" p-4 w-full">
-          <h2 className="text-xl text-black font-bold text-center m-3">
+        <div className=" p-4 w-full relative">
+          <button
+            className="absolute top-7 left-5 md:hidden"
+            onClick={() => navigate(-1)}
+          >
+            <img src={back} alt="" />
+          </button>
+          <h2 className="text-xl text-black font-bold text-center m-2 mb-3">
             FAQ's
           </h2>
           <div className="relative mb-6 w-full">
