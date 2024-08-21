@@ -20,7 +20,7 @@ function PaymentBlock({ data, currentStage, stageNumber }) {
     } else if (currentStage === stageNumber) {
       return (
         <div>
-          <div className="absolute top-0 right-14 h-full border-l-2 border-dashed"></div>
+          <div className="absolute top-6 right-14 h-full border-l-2 border-dashed"></div>
 
           <div className="absolute top-5 right-4 rounded-full">
             <button className="bg-primary text-white p-2 rounded">
@@ -35,7 +35,7 @@ function PaymentBlock({ data, currentStage, stageNumber }) {
     } else {
       return (
         <div>
-          <div className="absolute top-0 right-14 h-full border-l-2 border-dashed"></div>
+          <div className="absolute top-6 right-14 h-full border-l-2 border-dashed"></div>
 
           <div className="absolute top-5 right-11 rounded-full">
             <img src={circle} alt="done" className="h-7 w-7" />

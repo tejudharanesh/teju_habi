@@ -4,6 +4,7 @@ import back from "../../assets/images/back.png";
 import { useNavigate } from "react-router-dom";
 
 function Materials() {
+  const navigate = useNavigate();
   useEffect(() => {
     // Scroll to the top when the component mounts
     window.scrollTo(0, 0);
@@ -19,8 +20,8 @@ function Materials() {
         }`}
       >
         <button
-          className="absolute top-5 md:hidden"
-          onClick={() => navigate(-2)}
+          className="absolute top-6 left-4 md:hidden"
+          onClick={() => navigate(-1)}
         >
           <img src={back} alt="" />
         </button>
