@@ -16,23 +16,23 @@ function Details({ isExpanded }) {
       }`}
     >
       <header className="text-center m-2 ">
-        <h1 className="text-xl font-semibold text-black">Project Details</h1>
+        <h1 className="text-xl font-medium text-black">Project Details</h1>
       </header>
       <div className="mt-4">
         <div className="ml-3">
           <img src={user} alt="" className="w-6 h-6 inline-block mr-2" />
-          <p className="inline-block text-black font-semibold">Name</p>
+          <p className="inline-block text-black">Name</p>
           <p className="mb-2 ml-[32px] text-black">Yash</p>
         </div>
         <div className="ml-3">
           <img src={cost} alt="" className="w-6 h-6 inline-block mr-2" />
-          <p className="inline-block text-black font-semibold">Project Cost</p>
+          <p className="inline-block text-black">Project Cost</p>
 
           <p className="mb-2 ml-[32px] text-black">1.5 crores</p>
         </div>
         <div className="ml-3">
           <img src={duration} alt="" className="w-6 h-6 inline-block mr-2" />
-          <p className="inline-block text-black font-semibold">Duration</p>
+          <p className="inline-block text-black">Duration</p>
 
           <p className="mb-2 ml-[32px] text-black">25 May - 17 Nov 2024</p>
         </div>

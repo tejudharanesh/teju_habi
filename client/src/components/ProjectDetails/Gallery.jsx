@@ -20,7 +20,7 @@ function Gallery({ isExpanded }) {
   return (
     <div className={containerClasses}>
       <header className="text-center m-2 relative">
-        <p className="text-xl font-semibold text-black inline-block">Gallery</p>
+        <p className="text-xl font-medium text-black inline-block">Gallery</p>
       </header>
       <div className="grid grid-cols-4 justify-around items-center">
         {[...Array(3)].map((_, index) => (

@@ -5,7 +5,7 @@ import arrow from "../../assets/svg/arrow.svg";
 const ToggleButton = ({ collapsed, toggleSidebar }) => {
   return (
     <div
-      className={`relative md:flex justify-center h-screen hidden z-10 ${
+      className={`fixed  md:flex justify-center h-screen hidden z-20 ${
         collapsed ? "mt-6" : "mt-11"
       }`}
     >

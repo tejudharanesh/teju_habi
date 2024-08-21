@@ -11,7 +11,7 @@ function DVisualize({ isExpanded }) {
       }`}
     >
       <header className="text-center m-2 relative">
-        <p className="text-xl font-semibold text-black inline-block">
+        <p className="text-lg font-medium text-black inline-block">
           3D Visualize
         </p>
         <p className="inline-block absolute right-0 top-1">

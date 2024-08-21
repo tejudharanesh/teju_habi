@@ -1,9 +1,8 @@
-import { Route, Routes } from "react-router-dom";
-
 import React, { useState, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
 import ToggleButton from "../../components/Navbar/ToggleButton";
-import Consultation from "../NewUser/Consultation";
 import Navbar from "../../components/Navbar/Navbar";
+import Consultation from "../NewUser/Consultation";
 import CostEstimator from "../NewUser/CostEstimator";
 import Projects from "../NewUser/Projects";
 import Profile from "../NewUser/Profile";
@@ -30,67 +29,76 @@ function Dashboard() {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen overflow-hidden">
+      {/* Navbar */}
       <Navbar isExpanded={collapsed} />
-      <div className="relative z-9">
+
+      {/* Main Content */}
+      <div className="flex flex-col flex-grow">
+        {/* Toggle Button */}
         <ToggleButton collapsed={collapsed} toggleSidebar={toggleSidebar} />
-      </div>
-      <div className="flex-grow z-8">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              user == "new" ? (
-                <Consultation isExpanded={collapsed} />
-              ) : (
-                <HomePage />
-              )
-            }
-          />
-          <Route
-            path="/packages"
-            element={
-              user == "new" ? (
-                <CostEstimator isExpanded={collapsed} />
-              ) : (
-                <ProjectDetails isExpanded={collapsed} />
-              )
-            }
-          />
-          <Route
-            path="/projects"
-            element={user == "new" ? <Projects isExpanded={collapsed} /> : ""}
-          />
-          <Route
-            path="/profile"
-            element={
-              user == "new" ? (
-                <Profile isExpanded={collapsed} user={user} />
-              ) : (
-                <Consultation isExpanded={collapsed} />
-              )
-            }
-          />
 
-          <Route
-            path="/materials"
-            element={<Materials isExpanded={collapsed} />}
-          />
-          <Route
-            path="/payment"
-            element={<PaymentsPage isExpanded={collapsed} />}
-          />
-          <Route
-            path="/profile1"
-            element={<Profile isExpanded={collapsed} user={user} />}
-          />
-
-          <Route path="/gallery" element={<Gallery isExpanded={collapsed} />} />
-          <Route
-            path="/profile1/faq"
-            element={<Faqs isExpanded={collapsed} />}
-          />
-        </Routes>
+        {/* Routes */}
+        <div className="flex-grow overflow-y-auto">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                user === "new" ? (
+                  <Consultation isExpanded={collapsed} />
+                ) : (
+                  <HomePage />
+                )
+              }
+            />
+            <Route
+              path="/packages"
+              element={
+                user === "new" ? (
+                  <CostEstimator isExpanded={collapsed} />
+                ) : (
+                  <ProjectDetails isExpanded={collapsed} />
+                )
+              }
+            />
+            <Route
+              path="/projects"
+              element={
+                user === "new" ? <Projects isExpanded={collapsed} /> : null
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                user === "new" ? (
+                  <Profile isExpanded={collapsed} user={user} />
+                ) : (
+                  <Consultation isExpanded={collapsed} />
+                )
+              }
+            />
+            <Route
+              path="/materials"
+              element={<Materials isExpanded={collapsed} />}
+            />
+            <Route
+              path="/payment"
+              element={<PaymentsPage isExpanded={collapsed} />}
+            />
+            <Route
+              path="/profile1"
+              element={<Profile isExpanded={collapsed} user={user} />}
+            />
+            <Route
+              path="/gallery"
+              element={<Gallery isExpanded={collapsed} />}
+            />
+            <Route
+              path="/profile1/faq"
+              element={<Faqs isExpanded={collapsed} />}
+            />
+          </Routes>
+        </div>
       </div>
     </div>
   );

@@ -61,7 +61,7 @@ function Faqs({ isExpanded }) {
             className="absolute top-7 left-5 md:hidden"
             onClick={() => navigate(-1)}
           >
-            <img src={back} alt="" />
+            <img src={back} alt="back" />
           </button>
           <h2 className="text-xl text-black font-bold text-center m-2 mb-3">
             FAQ's

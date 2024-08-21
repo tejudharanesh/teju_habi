@@ -16,7 +16,7 @@ function ProjectDetails({ isExpanded }) {
         }`}
       >
         <header className="text-center m-2 ">
-          <h1 className="text-xl font-semibold text-black">
+          <h1 className="text-xl font-medium text-black">
             Design & documents
           </h1>
         </header>
