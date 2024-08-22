@@ -29,9 +29,7 @@ const paymentStages = [
     stages: [
       "Ground Floor",
       "First Floor",
-      "Second Floor",
-      "Third Floor",
-      "Forth Floor",
+      
     ],
     week: "9th - 23rd Week",
     date: "",
@@ -55,7 +53,7 @@ const paymentStages = [
   // Add more stages as needed
 ];
 
-const currentStage = 2;
+const currentStage = 3;
 
 const PaymentsPage = () => {
   const navigate = useNavigate();
