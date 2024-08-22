@@ -5,7 +5,7 @@ function AddFamilyMembers({ onClose }) {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
       <div className="bg-white p-3 rounded-2xl shadow-lg text-center w-[361px] h-[404px] lg:w-[416px] lg:h-[444px] relative md:ml-48 lg:ml-[]">
-        <p className="text-black font-semibold text-lg">
+        <p className="text-black font-medium text-lg">
           Invite Family Members
         </p>
         <form className="mt-[40px] space-y-7 w-full px-4 md:px-0">

@@ -50,9 +50,9 @@ function Faqs({ isExpanded }) {
   );
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-background font-poppins w-full">
+    <div className="min-h-screen flex flex-col items-center bg-layoutColor font-poppins w-full">
       <div
-        className={`flex flex-col items-center w-full bg-layoutColor shadow h-auto mb-3 ${
+        className={`flex flex-col items-center w-full bg-layoutColor ${
           isExpanded ? "md:px-20 lg:px-72" : "md:px-16 lg:px-60"
         }`}
       >
@@ -63,18 +63,22 @@ function Faqs({ isExpanded }) {
           >
             <img src={back} alt="back" />
           </button>
-          <h2 className="text-xl text-black font-bold text-center m-2 mb-3">
+          <p className="text-xl text-black font-medium text-center m-2 mb-3">
             FAQ's
-          </h2>
+          </p>
           <div className="relative mb-6 w-full">
             <input
               type="text"
               placeholder="Search for topics or questions"
-              className="w-full p-2 border border-gray-300 rounded-xl bg-inherit text-xs pl-14"
+              className="w-full p-2 border border-gray-300 rounded-xl bg-inherit text-sm pl-14"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <img src={search} alt="search" className="absolute left-4 top-1" />
+            <img
+              src={search}
+              alt="search"
+              className="h-5 w-5 absolute left-4 top-1.5"
+            />
           </div>
           {filteredFaqs.length > 0 ? (
             filteredFaqs.map((faq, index) => (
@@ -89,17 +93,17 @@ function Faqs({ isExpanded }) {
                 </div>
                 {openIndex === index && (
                   <div className="py-1 border-gray-300">
-                    <p className="text-[14px] lg:text-[16px] text-black">
+                    <p className="text-[14px] lg:text-[16px] text-black px-2">
                       {faq.answer}
                     </p>
-                    <div className="mt-3 text-gray-600">
+                    <div className="mt-3 text-gray-400">
                       <p className="text-xs mb-1">Was this helpful?</p>
                     </div>
-                    <div className="flex">
-                      <button className="w-1/2 py-1 border-y border-gray-300">
+                    <div className="flex text-black">
+                      <button className="w-1/2 py-1 border-y border-gray-300 hover:bg-slate-200">
                         Yes
                       </button>
-                      <button className="w-1/2 border border-gray-300 border-r-0">
+                      <button className="w-1/2 border border-gray-300 border-r-0 hover:bg-slate-200">
                         No
                       </button>
                     </div>
