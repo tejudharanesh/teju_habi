@@ -3,20 +3,20 @@ import steel from "../../assets/images/steel.png";
 import back from "../../assets/images/back.png";
 import { useNavigate } from "react-router-dom";
 
-function Materials() {
+function Materials({ isExpanded }) {
   const navigate = useNavigate();
   useEffect(() => {
     // Scroll to the top when the component mounts
     window.scrollTo(0, 0);
   }, []);
-  const isExpanded = true;
+
   return (
     <div className="min-h-screen flex flex-col font-poppins w-full bg-background h-auto">
       <div
-        className={`relative flex flex-col w-full bg-layoutColor shadow h-auto p-2 mb-2 ${
+        className={`flex flex-col w-full bg-layoutColor h-screen pt-2 ${
           isExpanded
-            ? "md:px-20 lg:px-52 xl:px-[300px]"
-            : "md:px-16 lg:px-48 xl:px-[300px]"
+            ? "md:px-40 lg:px-52 xl:px-[300px]"
+            : "md:px-20 lg:px-48 xl:px-[300px]"
         }`}
       >
         <button

@@ -11,8 +11,8 @@ function Gallery({ isExpanded }) {
 
   const containerClasses = `flex flex-col w-full bg-layoutColor shadow h-auto p-2 pb-4 ${
     isExpanded
-      ? "md:px-20 lg:px-52 xl:px-[300px]"
-      : "md:px-16 lg:px-48 xl:px-[300px]"
+      ? "md:px-32 lg:px-52 xl:px-[300px]"
+      : "md:px-20 lg:px-48 xl:px-[300px]"
   }`;
 
   const imageClasses = "w-[78px] md:w-[100px] h-[75px] object-cover rounded-lg";
@@ -20,7 +20,7 @@ function Gallery({ isExpanded }) {
   return (
     <div className={containerClasses}>
       <header className="text-center m-2 relative">
-        <p className="text-xl font-medium text-black inline-block">Gallery</p>
+        <p className="text-xl font-semibold text-black inline-block">Gallery</p>
       </header>
       <div className="grid grid-cols-4 justify-around items-center">
         {[...Array(3)].map((_, index) => (

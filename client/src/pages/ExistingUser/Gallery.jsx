@@ -15,7 +15,7 @@ function Gallery({ isExpanded }) {
       const data = [
         {
           heading: "Soil testing - 25 May 2024",
-          images: [site, site, site],
+          images: [site, site, site, site],
         },
         {
           heading: "Flooring - 30 May 2024",
@@ -31,10 +31,10 @@ function Gallery({ isExpanded }) {
   return (
     <div className="min-h-screen flex flex-col font-poppins w-full bg-background h-auto">
       <div
-        className={`flex flex-col w-full bg-layoutColor h-auto p-2 ${
+        className={`flex flex-col w-full bg-layoutColor h-auto pt-2 ${
           isExpanded
-            ? "md:px-20 lg:px-52 xl:px-[300px]"
-            : "md:px-16 lg:px-48 xl:px-[300px]"
+            ? "md:px-40 lg:px-52 xl:px-[300px]"
+            : "md:px-20 lg:px-48 xl:px-[300px]"
         }`}
       >
         <button
@@ -43,22 +43,22 @@ function Gallery({ isExpanded }) {
         >
           <img src={back} alt="" />
         </button>
-        <header className="text-center  m-2">
-          <h1 className="text-black3 text-lg">Gallery</h1>
+        <header className="text-center m-3">
+          <h1 className="text-black text-lg">Gallery</h1>
         </header>
       </div>
 
       {galleryData.map((section, index) => (
         <div
           key={index}
-          className={`flex flex-col w-full bg-layoutColor h-auto p-2 ${
+          className={`flex flex-col w-full bg-layoutColor h-auto px-2 pb-3 ${
             isExpanded
-              ? "md:px-20 lg:px-52 xl:px-[300px]"
-              : "md:px-16 lg:px-48 xl:px-[300px]"
+              ? "md:px-40 lg:px-52 xl:px-[300px]"
+              : "md:px-20 lg:px-48 xl:px-[300px]"
           }`}
         >
           <header className="text-sm m-2 ">
-            <p className="text-black">{section.heading}</p>
+            <p className="">{section.heading}</p>
           </header>
 
           <div className="grid grid-cols-4 gap-4 justify-around items-center">

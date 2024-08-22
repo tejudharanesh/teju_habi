@@ -11,20 +11,18 @@ function ProjectDetails({ isExpanded }) {
       <div
         className={`flex flex-col w-full bg-layoutColor shadow h-auto p-2 mb-2 ${
           isExpanded
-            ? "md:px-20 lg:px-52 xl:px-[300px]"
-            : "md:px-16 lg:px-48 xl:px-[300px]"
+            ? "md:px-32 lg:px-52 xl:px-[300px]"
+            : "md:px-20 lg:px-48 xl:px-[300px]"
         }`}
       >
         <header className="text-center m-2 ">
-          <h1 className="text-xl font-medium text-black">
-            Design & documents
-          </h1>
+          <h1 className="text-xl font-semibold text-black">Design & documents</h1>
         </header>
-        <Documents />
+        <Documents isExpanded={isExpanded} />
       </div>
-      <DVisualize />
-      <Materials />
-      <Gallery />
+      <DVisualize isExpanded={isExpanded} />
+      <Materials isExpanded={isExpanded} />
+      <Gallery isExpanded={isExpanded} />
       <br className="md:hidden" />
       <br className="md:hidden" />
     </div>
