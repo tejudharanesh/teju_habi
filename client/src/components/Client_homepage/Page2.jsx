@@ -13,7 +13,7 @@ function Page2() {
   };
   return (
     <div>
-      <div className="md:px-12 lg:px-40 xl:px-80 bg-layoutColor h-screen">
+      <div className="md:px-[8%] lg:px-[] xl:px-[] bg-layoutColor h-screen">
         <div className="text-gray-500 m-5 md:hidden ">25 May 2024</div>
 
         <div className="flex flex-col md:flex-row">
@@ -55,7 +55,7 @@ function Page2() {
                 <div>
                   <div
                     onClick={toggleExpand}
-                    className="relative bg-layoutColor p-4 rounded-3xl rounded-tl-none border-2 md:w-[300px] lg:w-[500px]"
+                    className="relative bg-layoutColor p-4 rounded-3xl rounded-tl-none border-2 md:w-[100%] lg:w-[80%]"
                   >
                     <h3 className="font-bold text-gray-800">Soil Testing</h3>
                     <p className="text-sm text-gray-500">initial stage</p>
@@ -118,7 +118,7 @@ function Page2() {
               </div>
               <div className="mb-10">
                 <p className="m-2 text-black">Upcoming</p>
-                <div className="relative bg-layoutColor p-4 rounded-3xl rounded-tl-none border-2 md:w-[300px] lg:w-[500px]">
+                <div className="relative bg-layoutColor p-4 rounded-3xl rounded-tl-none border-2 md:w-[100%] lg:w-[80%]">
                   <h3 className="font-bold text-gray-800">Soil Testing</h3>
                   <p className="text-sm text-gray-500">initial stage</p>
                   <p className="text-sm text-gray-500">

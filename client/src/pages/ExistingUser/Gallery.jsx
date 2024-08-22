@@ -44,7 +44,7 @@ function Gallery({ isExpanded }) {
           <img src={back} alt="" />
         </button>
         <header className="text-center  m-2">
-          <h1 className="text-black font-semibold text-lg">Gallery</h1>
+          <h1 className="text-black3 text-lg">Gallery</h1>
         </header>
       </div>
 

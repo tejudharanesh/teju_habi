@@ -20,14 +20,14 @@ function Notifications({ onClose }) {
     },
   ];
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      <div className="bg-white p-3 rounded-2xl shadow-lg text-center w-[361px] h-[404px] lg:w-[416px] lg:h-[444px] relative md:ml-48 lg:ml-[]">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-30">
+      <div className="bg-white p-3 rounded-2xl shadow-lg text-center w-[313px] md:w-[450px] relative md:ml-48 lg:ml-[]">
         <p className="text-black font-semibold text-lg">Notifications</p>
 
         {notifications.map((notification, index) => (
           <div
             key={index}
-            className="flex items-center justify-between py-2 border-b last:border-none mt-3"
+            className="flex items-center justify-between py-2 border-b last:border-none mt-3 md:px-5"
           >
             <div className="flex items-center ml-2">
               <img
@@ -39,7 +39,9 @@ function Notifications({ onClose }) {
                 <p className="text-sm font-medium">{notification.title}</p>
               </div>
             </div>
-            <div className="text-xs text-gray-400">{notification.date}</div>
+            <div className="text-xs text-gray-400 w-20">
+              {notification.date}
+            </div>
           </div>
         ))}
 

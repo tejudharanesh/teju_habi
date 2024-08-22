@@ -1,16 +1,10 @@
 import React, { useState } from "react";
 import search from "../../assets/images/search.png";
-import { useNavigate } from "react-router-dom";
-import back from "../../assets/images/back.png";
+import Back from "../../components/Buttons/Back";
 
 function Faqs({ isExpanded }) {
-  const navigate = useNavigate();
   const [openIndex, setOpenIndex] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
-
-  const toggleFaq = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
 
   const faqs = [
     {
@@ -56,14 +50,9 @@ function Faqs({ isExpanded }) {
           isExpanded ? "md:px-20 lg:px-72" : "md:px-16 lg:px-60"
         }`}
       >
-        <div className=" p-4 w-full relative">
-          <button
-            className="absolute top-7 left-5 md:hidden"
-            onClick={() => navigate(-1)}
-          >
-            <img src={back} alt="back" />
-          </button>
-          <p className="text-xl text-black font-medium text-center m-2 mb-3">
+        <div className="m-2 w-full relative px-4">
+          <Back />
+          <p className="text-xl text-black font-medium text-center m-2 mb-4">
             FAQ's
           </p>
           <div className="relative mb-6 w-full">
@@ -80,14 +69,16 @@ function Faqs({ isExpanded }) {
               className="h-5 w-5 absolute left-4 top-1.5"
             />
           </div>
-          {filteredFaqs.length > 0 ? (
+          {filteredFaqs.length ? (
             filteredFaqs.map((faq, index) => (
               <div key={index} className="mb-2">
                 <div
                   className={`cursor-pointer py-1 text-black text-[16px] lg:text-[18px] ${
                     openIndex === index ? "" : "border-b border-gray-300"
                   }`}
-                  onClick={() => toggleFaq(index)}
+                  onClick={() =>
+                    setOpenIndex(openIndex === index ? null : index)
+                  }
                 >
                   {faq.question}
                 </div>
