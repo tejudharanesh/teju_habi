@@ -1,4 +1,4 @@
-// src/services/api.js
+// client/src/services/api.js
 
 // Base URL from environment variable
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
