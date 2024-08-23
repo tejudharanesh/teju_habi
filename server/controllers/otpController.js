@@ -1,7 +1,7 @@
 const twilio = require("twilio");
 
-const accountSid = "ACdb13688dd318588c2866806197c9f067";
-const authToken = "2d14023885cb2dc8ae5d98ce8a73ca46";
+const accountSid = "";
+const authToken = "";
 const client = new twilio(accountSid, authToken);
 
 const sendOtp = async (req, res) => {
