@@ -4,7 +4,7 @@ import more from "../../assets/images/option.png";
 
 function Design() {
   return (
-    <div className="flex flex-col w-full bg-layoutColor shadow p-4 h-auto lg:px-40 text-black mb-2">
+    <div className="flex flex-col w-full bg-layoutColor shadow p-4 h-auto md:px-10 lg:px-40 text-black mb-2">
       <p className="text-center font-semibold mb-2">Design</p>
       <div className="flex justify-between">
         <div className="flex items-center">

@@ -71,11 +71,10 @@ function HabiFeatures() {
     },
   ];
 
-  const thumbnailUrl = `https://img.youtube.com/vi/R3C12M4nG1o/hqdefault.jpg`;
-  const videoUrl = `https://www.youtube.com/watch?v=R3C12M4nG1o`;
+ 
 
   return (
-    <div className="flex flex-col items-center w-full bg-layoutColor shadow p-1 h-auto lg:px-40">
+    <div className="flex flex-col items-center w-full bg-layoutColor shadow p-1 h-auto md:px-10 lg:px-40">
       <div className="rounded-xl py-5 w-full">
         <h2 className="text-[16px] md:text-[18px] mb-4 text-center text-black">
           Constructing Dreams with Precision and Care

@@ -5,7 +5,7 @@ function Youtube() {
   const thumbnailUrl = `https://img.youtube.com/vi/R3C12M4nG1o/hqdefault.jpg`;
   const videoUrl = `https://www.youtube.com/watch?v=R3C12M4nG1o`;
   return (
-    <div className="flex flex-col items-center w-full bg-layoutColor h-auto lg:px-40 mb-2 px-4">
+    <div className="flex flex-col items-center w-full bg-layoutColor h-auto md:px-10 lg:px-40 mb-2 px-4">
       <div className="w-full">
         <div className="ml-2 relative">
           <div className="relative inline-block">

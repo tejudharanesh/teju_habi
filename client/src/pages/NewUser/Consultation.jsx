@@ -117,7 +117,7 @@ function Consultation() {
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-background font-poppins w-full">
-      <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto lg:px-40 mb-3">
+      <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto md:px-10 lg:px-40 mb-3">
         <h1 className="text-[21px] lg:text-[24px] my-4 text-black font-medium">
           Book Free Consultation
         </h1>
@@ -148,12 +148,12 @@ function Consultation() {
       <HabiFeatures />
       <Youtube />
 
-      <div className="flex flex-col items-center w-full bg-layoutColor  p-4 h-auto lg:px-40 ">
+      <div className="flex flex-col items-center w-full bg-layoutColor  p-4 h-auto md:px-10 lg:px-40 ">
         <div className="rounded-xl w-full">
           <FAQ />
         </div>
       </div>
-      <div className="flex flex-col items-center w-full bg-layoutColor  p-4 h-auto lg:px-40 mb-3">
+      <div className="flex flex-col items-center w-full bg-layoutColor  p-4 h-auto md:px-10 lg:px-40 mb-3">
         <div className="rounded-xl py-5 w-full">
           <Footer />
         </div>
