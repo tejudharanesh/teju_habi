@@ -12,6 +12,8 @@ import ProjectDetails from "../ExistingUser/ProjectDetails";
 import Materials from "../ExistingUser/Materials";
 import Gallery from "../ExistingUser/Gallery";
 import Faqs from "../FAQ's/Faqs";
+import CostEstimator1 from "../NewUser/CostEstimator1";
+import DetailedReport from "../NewUser/DetailedReport";
 
 function Dashboard() {
   const [collapsed, setCollapsed] = useState(false);
@@ -55,7 +57,7 @@ function Dashboard() {
               path="/packages"
               element={
                 user === "new" ? (
-                  <CostEstimator isExpanded={collapsed} />
+                  <CostEstimator1 isExpanded={collapsed} />
                 ) : (
                   <ProjectDetails isExpanded={collapsed} />
                 )
@@ -96,6 +98,10 @@ function Dashboard() {
             <Route
               path="/profile1/faq"
               element={<Faqs isExpanded={collapsed} />}
+            />
+            <Route
+              path="/detailedCost"
+              element={<DetailedReport isExpanded={collapsed} />}
             />
           </Routes>
         </div>
