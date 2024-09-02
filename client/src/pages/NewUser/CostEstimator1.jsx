@@ -250,7 +250,7 @@ function CostEstimator1({ isExpanded }) {
         <button
           className="w-full bg-indigo-600 text-white py-2 mt-6 rounded-lg font-bold hover:bg-indigo-700 transition"
           onClick={() => {
-            navigate("/detailedCost", {
+            navigate("/dashboard/detailedCost", {
               state: {
                 sump,
                 estimatedCost,

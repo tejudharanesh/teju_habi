@@ -5,7 +5,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 // Register components for Chart.js
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const PieChart = ({ costs }) => {
+const PieChart1 = ({ costs }) => {
   const data = {
     labels: [
       "Design Fees",
@@ -51,6 +51,7 @@ const PieChart = ({ costs }) => {
           "#EAA1A1",
           "#111111",
           "#E0E5B6",
+          "#ff0000",
         ],
         hoverOffset: 13,
         // Add inner radius to create a doughnut chart
@@ -59,7 +60,11 @@ const PieChart = ({ costs }) => {
     ],
   };
 
-  return <Doughnut data={data} />;
+  return (
+    <div className=" md:h-[500px]">
+      <Doughnut data={data} />
+    </div>
+  );
 };
 
-export default PieChart;
+export default PieChart1;

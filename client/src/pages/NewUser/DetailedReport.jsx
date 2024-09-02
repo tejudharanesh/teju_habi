@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import PieChart1 from "./PieChart";
+import PieChart1 from "./PieChart1";
+import PaymentSchedule from "./Paymentschedule";
 
-function DetailedReport() {
+function DetailedReport({ isExpanded }) {
   const location = useLocation();
   const { sump, estimatedCost, floors, floorHeight } = location.state || {};
+  const [newField, setNewField] = useState("");
+  const [newAmount, setNewAmount] = useState("");
+  const [additionalCosts, setAdditionalCosts] = useState({});
 
   // Calculating costs based on estimatedCost
   const designFees = 0.03 * estimatedCost;
@@ -47,8 +51,12 @@ function DetailedReport() {
   const sumpCost = sump * 17;
 
   // Total Estimated Cost
-  const totalEstimatedCost = estimatedCost + floorHeightCost + sumpCost;
-
+  const totalAdditionalCosts = Object.values(additionalCosts).reduce(
+    (acc, cost) => acc + parseFloat(cost),
+    0
+  );
+  const totalEstimatedCost =
+    estimatedCost + floorHeightCost + sumpCost + totalAdditionalCosts;
   const costs = {
     designFees: 0.03 * estimatedCost,
     excavation: 0.03 * estimatedCost,
@@ -69,41 +77,120 @@ function DetailedReport() {
     internalFlooring: 0.07 * estimatedCost,
     floorHeightCost: floorHeightCost,
     sumpCost: sumpCost,
+    ...additionalCosts,
+  };
+  const scheduleData = [
+    {
+      title: "Design & Development",
+      items: [
+        "2D & 3D - Floor Plans",
+        "Detailed presentation of the floor plan with holes in visualization.",
+        "3D Elevation Design",
+        "Standard 3D Walkthrough Video",
+        "Architectural Services",
+        "Soil Testing + Structure",
+        "MEP Design",
+      ],
+      percentage: 1,
+      price: 0.01 * totalEstimatedCost,
+    },
+    {
+      title: "Civil Construction: (Upto Plinth Level)",
+      items: [
+        "Excavation",
+        "Foundation",
+        "Plinth Level",
+        "Termite Treatment",
+        "PCC",
+      ],
+      percentage: 20,
+      price: 0.2 * totalEstimatedCost,
+    },
+    {
+      title: "Civil Construction: (Upto Terrace Level)",
+      items: ["Beams, Column & Slabs For All Floors"],
+      percentage: 30,
+      price: 0.3 * totalEstimatedCost,
+    },
+    {
+      title: "Civil Construction: (Upto Plastering)",
+      items: [
+        "Walls",
+        "Electrical Wiring",
+        "Plumbing",
+        "Plastering",
+        "Tile Laying",
+        "Door & Windows Installation",
+        "Painting Work",
+      ],
+      percentage: 20,
+      price: 0.2 * totalEstimatedCost,
+    },
+    {
+      title: "Civil Construction: (Fixtures Installation)",
+      items: ["Toilet Fixtures", "Electrical Fixtures"],
+      percentage: 15,
+      price: 0.15 * totalEstimatedCost,
+    },
+    {
+      title: "Civil Construction: (Upto Metal Works)",
+      items: ["Window Grills", "Railings", "Snag List Rectification"],
+      percentage: 10,
+      price: 0.1 * totalEstimatedCost,
+    },
+    {
+      title: "Handover",
+      items: ["Keys Handover", "Documents"],
+      percentage: 4,
+      price: 0.04 * totalEstimatedCost,
+    },
+  ];
+  const handleAddField = (e) => {
+    e.preventDefault();
+    if (newField && newAmount) {
+      setAdditionalCosts((prev) => ({
+        ...prev,
+        [newField]: parseFloat(newAmount),
+      }));
+      setNewField("");
+      setNewAmount("");
+    }
   };
 
   return (
-    <div className="bg-slate-500 w-screen h-auto p-2 flex flex-col items-center justify-center">
-      <div className="bg-white w-full max-w-lg rounded-2xl border-2 shadow-md mb-3 pb-3">
+    <div className="min-h-screen flex flex-col bg-background font-poppins w-full h-full">
+      <div
+        className={`items-center w-full bg-layoutColor shadow md:p-2 h-auto mb-3 ${
+          isExpanded ? "md:px-20 lg:px-60" : "md:px-12 lg:px-40"
+        }`}
+      >
         <h2 className="text-black font-bold text-2xl mb-6 text-center">
           Cost Breakdown Details
         </h2>
-
-        <div className="bg-white p-4 px-6 rounded-lg mt-4 space-y-2">
+        <div className="bg-layoutColor rounded-lg mt-4 space-y-1 pr-[10%] md:pr-4 px-2">
           <div className="flex justify-between relative">
-            <span className="font-semibold text-gray-700">Design Fees</span>
-            <span className="text-gray-700 absolute right-28 md:right-32 ">
+            <span className=" text-gray-700">Design Fees</span>
+            <span className="text-gray-700 absolute right-28 md:right-32">
               3%
             </span>
             <span className="text-gray-700">₹{designFees.toFixed(2)}</span>
           </div>
           <div className="flex justify-between relative">
-            <span className="font-semibold text-gray-700">Excavation</span>
+            <span className=" text-gray-700">Excavation</span>
             <span className="text-gray-700 absolute right-28 md:right-32 ">
               3%
             </span>
             <span className="text-gray-700">₹{excavation.toFixed(2)}</span>
           </div>
           <div className="flex justify-between relative">
-            <span className="font-semibold text-gray-700">Sand</span>
+            <span className=" text-gray-700">Sand</span>
             <span className="text-gray-700 absolute right-28 md:right-32 ">
               4%
             </span>
             <span className="text-gray-700">₹{sand.toFixed(2)}</span>
           </div>
           <div className="flex justify-between relative">
-            <span className="font-semibold text-gray-700">
-              Steel Reinforcement
-            </span>
+            <span className=" text-gray-700">Steel Reinforcement</span>
             <span className="text-gray-700 absolute right-28 md:right-32 ">
               13%
             </span>
@@ -112,65 +199,63 @@ function DetailedReport() {
             </span>
           </div>
           <div className="flex justify-between relative">
-            <span className="font-semibold text-gray-700">Cement</span>
+            <span className=" text-gray-700">Cement</span>
             <span className="text-gray-700 absolute right-28 md:right-32 ">
               7%
             </span>
             <span className="text-gray-700">₹{cement.toFixed(2)}</span>
           </div>
           <div className="flex justify-between relative">
-            <span className="font-semibold text-gray-700">Solid Blocks</span>
+            <span className=" text-gray-700">Solid Blocks</span>
             <span className="text-gray-700 absolute right-28 md:right-32 ">
               9%
             </span>
             <span className="text-gray-700">₹{solidBlocks.toFixed(2)}</span>
           </div>
           <div className="flex justify-between relative">
-            <span className="font-semibold text-gray-700">Stones</span>
+            <span className=" text-gray-700">Stones</span>
             <span className="text-gray-700 absolute right-28 md:right-32 ">
               3%
             </span>
             <span className="text-gray-700">₹{stones.toFixed(2)}</span>
           </div>
           <div className="flex justify-between relative">
-            <span className="font-semibold text-gray-700">RMC</span>
+            <span className=" text-gray-700">RMC</span>
             <span className="text-gray-700 absolute right-28 md:right-32 ">
               9%
             </span>
             <span className="text-gray-700">₹{rmc.toFixed(2)}</span>
           </div>
           <div className="flex justify-between relative">
-            <span className="font-semibold text-gray-700">Formwork</span>
+            <span className=" text-gray-700">Formwork</span>
             <span className="text-gray-700 absolute right-28 md:right-32 ">
               3%
             </span>
             <span className="text-gray-700">₹{formwork.toFixed(2)}</span>
           </div>
           <div className="flex justify-between relative">
-            <span className="font-semibold text-gray-700">Painting</span>
+            <span className=" text-gray-700">Painting</span>
             <span className="text-gray-700 absolute right-28 md:right-32 ">
               10%
             </span>
             <span className="text-gray-700">₹{painting.toFixed(2)}</span>
           </div>
           <div className="flex justify-between relative">
-            <span className="font-semibold text-gray-700">Plumbing</span>
+            <span className=" text-gray-700">Plumbing</span>
             <span className="text-gray-700 absolute right-28 md:right-32 ">
               7%
             </span>
             <span className="text-gray-700">₹{plumbing.toFixed(2)}</span>
           </div>
           <div className="flex justify-between relative">
-            <span className="font-semibold text-gray-700">Electrical Work</span>
+            <span className=" text-gray-700">Electrical Work</span>
             <span className="text-gray-700 absolute right-28 md:right-32 ">
               5%
             </span>
             <span className="text-gray-700">₹{electricalWork.toFixed(2)}</span>
           </div>
           <div className="flex justify-between relative">
-            <span className="font-semibold text-gray-700">
-              Exterior Flooring
-            </span>
+            <span className=" text-gray-700">Exterior Flooring</span>
             <span className="text-gray-700 absolute right-28 md:right-32 ">
               5%
             </span>
@@ -179,30 +264,28 @@ function DetailedReport() {
             </span>
           </div>
           <div className="flex justify-between relative">
-            <span className="font-semibold text-gray-700">Compound Wall</span>
+            <span className=" text-gray-700">Compound Wall</span>
             <span className="text-gray-700 absolute right-28 md:right-32 ">
               2%
             </span>
             <span className="text-gray-700">₹{compoundWall.toFixed(2)}</span>
           </div>
           <div className="flex justify-between relative">
-            <span className="font-semibold text-gray-700">Doors & Windows</span>
+            <span className=" text-gray-700">Doors & Windows</span>
             <span className="text-gray-700 absolute right-28 md:right-32 ">
               3%
             </span>
             <span className="text-gray-700">₹{doorsWindows.toFixed(2)}</span>
           </div>
           <div className="flex justify-between relative">
-            <span className="font-semibold text-gray-700">Miscellaneous</span>
+            <span className=" text-gray-700">Miscellaneous</span>
             <span className="text-gray-700 absolute right-28 md:right-32 ">
               7%
             </span>
             <span className="text-gray-700">₹{miscellaneous.toFixed(2)}</span>
           </div>
           <div className="flex justify-between relative">
-            <span className="font-semibold text-gray-700">
-              Internal Flooring
-            </span>
+            <span className=" text-gray-700">Internal Flooring</span>
             <span className="text-gray-700 absolute right-28 md:right-32 ">
               7%
             </span>
@@ -211,24 +294,55 @@ function DetailedReport() {
             </span>
           </div>
           <div className="flex justify-between">
-            <span className="font-semibold text-gray-700">
-              Floor Height Cost
-            </span>
+            <span className=" text-gray-700">Floor Height Cost</span>
             <span className="text-gray-700">₹{floorHeightCost.toFixed(2)}</span>
           </div>
           <div className="flex justify-between">
-            <span className="font-semibold text-gray-700">Sump Cost</span>
+            <span className=" text-gray-700">Sump Cost</span>
             <span className="text-gray-700">₹{sumpCost.toFixed(2)}</span>
           </div>
+          {Object.keys(additionalCosts).map((key) => (
+            <div key={key} className="flex justify-between relative">
+              <span className=" text-gray-700">{key}</span>
+              <span className="text-gray-700">₹{costs[key].toFixed(2)}</span>
+            </div>
+          ))}
           <div className="flex justify-between">
             <span className="font-bold text-black">Total Estimated Cost</span>
             <span className="text-black font-bold">
               ₹{totalEstimatedCost.toFixed(2)}
             </span>
           </div>
+          <form onSubmit={handleAddField} className="mt-4 p-4">
+            <div className="flex flex-col md:flex-row justify-between mb-2">
+              <input
+                type="text"
+                placeholder="New Field Name"
+                value={newField}
+                onChange={(e) => setNewField(e.target.value)}
+                className="p-2 border border-gray-300 rounded-lg w-40 bg-inherit"
+                required
+              />
+              <input
+                type="number"
+                placeholder="Amount"
+                value={newAmount}
+                onChange={(e) => setNewAmount(e.target.value)}
+                className="p-2 border border-gray-300 rounded-lg w-40 bg-inherit"
+                required
+              />
+              <button
+                type="submit"
+                className=" p-2 bg-blue-500 text-white rounded-lg w-10"
+              >
+                +
+              </button>
+            </div>
+          </form>
         </div>
         <br />
         <PieChart1 costs={costs} />
+        <PaymentSchedule scheduleData={scheduleData} />;
       </div>
     </div>
   );
