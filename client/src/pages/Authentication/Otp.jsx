@@ -82,7 +82,7 @@ const Otp = () => {
 
   return (
     <div className="min-h-screen flex md:items-center justify-center w-screen font-poppins">
-      <div className="w-full md:max-w-md lg:max-w-lg p-8 bg-white md:rounded-lg shadow-md">
+      <div className="w-full md:max-w-md lg:max-w-lg p-8 bg-layoutColor md:rounded-lg">
         <h2 className="mb-4 text-xl md:text-lg lg:text-xl font-semibold text-center text-black">
           Verify your details
         </h2>

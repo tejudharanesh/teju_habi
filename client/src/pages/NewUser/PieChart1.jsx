@@ -27,6 +27,7 @@ const PieChart1 = ({ costs }) => {
       "Internal Flooring",
       "Floor Height Cost",
       "Sump Cost",
+      "Additional Cost",
     ],
     datasets: [
       {
@@ -51,6 +52,7 @@ const PieChart1 = ({ costs }) => {
           "#EAA1A1",
           "#111111",
           "#E0E5B6",
+          "#ff0000",
           "#ff0000",
         ],
         hoverOffset: 13,

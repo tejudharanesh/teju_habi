@@ -91,7 +91,7 @@ const LoginPage = () => {
                 id="phone"
                 type="text"
                 placeholder="00000 00000"
-                className="w-full border bg-white text-black border-gray-300 border-l-transparent rounded-r-2xl py-2 px-3 focus:outline-none"
+                className="w-full border bg-layoutColor text-black border-gray-300 border-l-transparent rounded-r-2xl py-2 px-3 focus:outline-none"
                 value={phone}
                 onChange={handlePhoneChange}
                 maxLength="10"

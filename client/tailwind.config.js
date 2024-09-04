@@ -5,7 +5,7 @@ export default {
     extend: {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
-        DuneRise: ["DuneRise", "sans-serif"],
+        DuneRise: ["Dune Rise", "sans-serif"],
         // Add more custom font families as needed
       },
       colors: {
