@@ -27,7 +27,7 @@ function FeatureItem({ icon, smallText, fullText }) {
   );
 }
 
-function HabiFeatures() {
+function HabiFeatures({ isExpanded }) {
   const features = [
     {
       icon: UniqueDesign,
@@ -71,10 +71,12 @@ function HabiFeatures() {
     },
   ];
 
- 
-
   return (
-    <div className="flex flex-col items-center w-full bg-layoutColor shadow p-1 h-auto md:px-10 lg:px-40">
+    <div
+        className={`flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto mb-3 ${
+          isExpanded ? "md:px-14 lg:px-40" : "md:px-3 lg:px-28"
+        }`}
+      >
       <div className="rounded-xl py-5 w-full">
         <h2 className="text-[16px] md:text-[18px] mb-4 text-center text-black">
           Constructing Dreams with Precision and Care

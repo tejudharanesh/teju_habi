@@ -14,12 +14,12 @@ function Page2({ onReschedule, selectedDateTime }) {
           href="https://meet.google.com/jyp-xqya-szy?authuser=0"
           target="_blank"
         >
-          <button className="bg-primary text-black py-3 px-4 rounded-lg mb-2 md:mb-0 w-[275px] md:w-[240px] h-[58px] md:mr-[16px] lg:mr-[74px]">
+          <button className="bg-primary text-white py-3 px-4 rounded-lg mb-2 md:mb-0 w-[275px] md:w-[240px] h-[58px] md:mr-[16px] lg:mr-[74px]">
             Join the meeting
           </button>
         </a>
         <button
-          className="bg-primary text-black py-3 px-4 rounded-lg w-[275px] md:w-[240px] h-[58px]"
+          className="bg-primary text-white py-3 px-4 rounded-lg w-[275px] md:w-[240px] h-[58px]"
           onClick={onReschedule}
         >
           Reschedule

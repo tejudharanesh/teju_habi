@@ -8,13 +8,13 @@ function Page1({ handleDateTime, handlePhysicallyClick }) {
       </h2>
       <div className="flex flex-col justify-center items-center md:flex-row md:space-x-4 lg:space-x-1">
         <button
-          className="bg-primary text-black py-3 px-4 rounded-lg mb-2 md:mb-0 w-[275px] md:w-[240px] h-[58px] md:mr-[16px] lg:mr-[74px]"
+          className="bg-primary text-white py-3 px-4 rounded-lg mb-2 md:mb-0 w-[275px] md:w-[240px] h-[58px] md:mr-[16px] lg:mr-[74px]"
           onClick={handleDateTime}
         >
           Virtually
         </button>
         <button
-          className="bg-primary text-black py-3 px-4 rounded-lg w-[275px] md:w-[240px] h-[58px]"
+          className="bg-primary text-white py-3 px-4 rounded-lg w-[275px] md:w-[240px] h-[58px]"
           onClick={handlePhysicallyClick}
         >
           Physically

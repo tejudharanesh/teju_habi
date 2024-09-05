@@ -14,7 +14,7 @@ import OnePercent from "../../components/Homepage/OnePercent";
 import Design from "../../components/Homepage/Design";
 import Youtube from "../../components/Homepage/Youtube";
 
-function Consultation() {
+function Consultation({ isExpanded }) {
   const [showPopup, setShowPopup] = useState(false);
   const [DateTime, setDateTime] = useState(false);
   const [isPage1, setIsPage1] = useState(true);
@@ -117,7 +117,11 @@ function Consultation() {
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-background font-poppins w-full">
-      <div className="flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto md:px-10 lg:px-40 mb-3">
+      <div
+        className={`flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto mb-3 ${
+          isExpanded ? "md:px-14 lg:px-40" : "md:px-3 lg:px-28"
+        }`}
+      >
         <h1 className="text-[21px] lg:text-[24px] my-4 text-black font-medium">
           Book Free Consultation
         </h1>
@@ -143,17 +147,27 @@ function Consultation() {
           />
         )}
       </div>
-      <OnePercent />
-      <Design />
-      <HabiFeatures />
-      <Youtube />
+      <OnePercent isExpanded={isExpanded} />
+      <Design isExpanded={isExpanded} />
+      <HabiFeatures isExpanded={isExpanded} />
+      <Youtube isExpanded={isExpanded} />
 
-      <div className="flex flex-col items-center w-full bg-layoutColor  p-4 h-auto md:px-10 lg:px-40 ">
+      <div
+        className={`flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto mb-3 ${
+          isExpanded ? "md:px-14 lg:px-72" : "md:px-3 lg:px-60"
+        }`}
+      >
+        {" "}
         <div className="rounded-xl w-full">
           <FAQ />
         </div>
       </div>
-      <div className="flex flex-col items-center w-full bg-layoutColor  p-4 h-auto md:px-10 lg:px-40 mb-3">
+      <div
+        className={`flex flex-col items-center w-full bg-layoutColor shadow p-4 h-auto mb-3 ${
+          isExpanded ? "md:px-14 lg:px-72" : "md:px-3 lg:px-60"
+        }`}
+      >
+        {" "}
         <div className="rounded-xl py-5 w-full">
           <Footer />
         </div>

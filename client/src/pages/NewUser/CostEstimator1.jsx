@@ -248,7 +248,7 @@ function CostEstimator1({ isExpanded }) {
           </div>
         </div>
         <button
-          className="w-full bg-indigo-600 text-white py-2 mt-6 rounded-lg font-bold hover:bg-indigo-700 transition"
+          className="w-full bg-primary text-white py-2 mt-6 rounded-lg font-bold"
           onClick={() => {
             navigate("/dashboard/detailedCost", {
               state: {

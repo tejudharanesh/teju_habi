@@ -20,7 +20,7 @@ function Dashboard() {
   const [user, setUser] = useState("");
 
   useEffect(() => {
-    const storedUser = localStorage.getItem("userType");
+    const storedUser = localStorage.getItem("userType") || "new";
     if (storedUser) {
       setUser(storedUser);
     }

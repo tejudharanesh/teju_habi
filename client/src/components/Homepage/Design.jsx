@@ -2,9 +2,13 @@ import React from "react";
 import pdf from "../../assets/images/pdf.png";
 import more from "../../assets/images/option.png";
 
-function Design() {
+function Design({ isExpanded }) {
   return (
-    <div className="flex flex-col w-full bg-layoutColor shadow p-4 h-auto md:px-10 lg:px-40 text-black mb-2">
+    <div
+      className={`flex flex-col w-full bg-layoutColor shadow p-4 h-auto mb-3 ${
+        isExpanded ? "md:px-14 lg:px-40" : "md:px-3 lg:px-28"
+      }`}
+    >
       <p className="text-center font-semibold mb-2">Design</p>
       <div className="flex justify-between">
         <div className="flex items-center">
