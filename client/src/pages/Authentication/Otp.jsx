@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
+import Back from "../../components/Buttons/Back";
 
 const Otp = () => {
   const [otp, setOtp] = useState(["", "", "", ""]);
@@ -82,18 +83,19 @@ const Otp = () => {
 
   return (
     <div className="min-h-screen flex md:items-center justify-center w-screen font-poppins">
-      <div className="w-full md:max-w-md lg:max-w-lg p-8 bg-layoutColor md:rounded-lg">
+      <div className="w-full md:max-w-md lg:max-w-lg p-8 bg-layoutColor md:rounded-2xl">
         <h2 className="mb-4 text-xl md:text-lg lg:text-xl font-semibold text-center text-black">
           Verify your details
         </h2>
+        <Back/>
         <p className="mb-4 text-center text-sm md:text-xl lg:text-xl">
-          Enter OTP sent to <span className="text-black">{phoneNumber}</span>{" "}
+          Enter OTP sent to <span className="text-black">{phoneNumber}</span>
           via SMS
         </p>
         <div className="flex mb-2 mt-5 justify-center">
-          <p className="text-grey font-semibold text-black">Enter OTP</p>
+          <p className="text-grey font-semibold text-black ">Enter OTP</p>
         </div>
-        <div className="flex justify-center mb-4 space-x-2">
+        <div className="flex justify-center mb-4 space-x-6">
           {otp.map((value, index) => (
             <input
               key={index}
@@ -104,7 +106,7 @@ const Otp = () => {
               value={value}
               onChange={(e) => handleChange(e, index)}
               onKeyDown={(e) => handleKeyDown(e, index)}
-              className="w-12 h-12 text-2xl text-center bg-gray-100 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black-500"
+              className="w-16 h-12 text-2xl text-center bg-gray-100 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black-500"
             />
           ))}
         </div>

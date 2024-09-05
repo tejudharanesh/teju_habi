@@ -51,7 +51,7 @@ const LoginPage = () => {
 
   return (
     <div className="min-h-screen flex md:items-center justify-center w-screen font-poppins">
-      <div className="bg-layoutColor p-8 md:rounded-lg shadow-lg w-full md:max-w-2xl lg:max-w-3xl md:flex md:flex-row">
+      <div className="bg-layoutColor p-8 md:rounded-3xl w-full md:max-w-2xl lg:max-w-3xl md:flex md:flex-row">
         <div className="flex flex-col items-center mb-20 md:mb-0 md:w-1/2">
           <img
             src={logo}
@@ -59,13 +59,13 @@ const LoginPage = () => {
             className="h-40 md:h-40 lg:h-40 xl:h-40 md:mx-auto mt-14  inline"
           />
           {/* Show the text only on large screens and center it below the image */}
-          <p className="hidden md:block mt-4 text-center font-DuneRise">
+          <p className="hidden md:block mt-4 text-center font-DuneRise text-black">
             THE WAY OF LIVING
           </p>
         </div>
 
         <div className="md:w-2/3 md:pl-16 lg:pl-16">
-          <h2 className="text-xl lg:text-2xl font-bold text-start mb-4 text-BlackO">
+          <h2 className="text-xl lg:text-2xl font-bold text-start mb-1 text-black">
             Login to Begin Your Journey
           </h2>
           <p className="text-black-500 mb-8 text-sm lg:text-lg">
