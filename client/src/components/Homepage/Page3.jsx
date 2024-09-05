@@ -17,7 +17,7 @@ function Page3({ onReschedule, selectedDateTime }) {
           </button>
         </a>
         <button
-          className="bg-primary1 text-black py-3 rounded-lg w-[275px] md:w-[240px] h-[58px]"
+          className="bg-primary text-black py-3 rounded-lg w-[275px] md:w-[240px] h-[58px]"
           onClick={onReschedule}
         >
           Reschedule

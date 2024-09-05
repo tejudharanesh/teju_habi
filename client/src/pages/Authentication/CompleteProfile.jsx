@@ -42,8 +42,8 @@ const CompleteProfile = () => {
   };
 
   return (
-    <div className="min-h-screen md:items-center flex justify-center w-screen font-poppins bg-background">
-      <div className="bg-white p-6 md:rounded-2xl shadow-lg w-full max-w-sm">
+    <div className="min-h-screen flex md:items-center justify-center w-screen font-poppins">
+      <div className="w-full md:max-w-md lg:max-w-lg p-8 bg-layoutColor md:rounded-2xl">
         <h2 className="text-center text-lg font-semibold mb-6 text-black">
           Complete Your Profile
         </h2>
@@ -56,7 +56,7 @@ const CompleteProfile = () => {
         </div>
         <form onSubmit={handleSubmit}>
           <div className="relative mb-5">
-            <label className="absolute -top-2.5 left-3 bg-white px-1 text-sm text-grey">
+            <label className="absolute -top-2.5 left-3 bg-layoutColor px-1 text-sm text-grey">
               Name
             </label>
             <input
@@ -65,11 +65,11 @@ const CompleteProfile = () => {
               placeholder="Teju"
               value={formData.name}
               onChange={handleChange}
-              className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-white focus:outline-none"
+              className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
             />
           </div>
           <div className="relative mb-5">
-            <label className="absolute -top-2.5 left-3 bg-white px-1 text-sm text-grey">
+            <label className="absolute -top-2.5 left-3 bg-layoutColor px-1 text-sm text-grey">
               Phone Number
             </label>
             <input
@@ -79,24 +79,24 @@ const CompleteProfile = () => {
               value={formData.phoneNumber}
               onChange={handleChange}
               disabled
-              className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-white focus:outline-none"
+              className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
             />
           </div>
           <div className="relative mb-5">
-            <label className="absolute -top-2.5 left-3 bg-white px-1 text-sm text-grey">
+            <label className="absolute -top-2.5 left-3 bg-layoutColor px-1 text-sm text-grey">
               Email ID
             </label>
             <input
               type="text"
               name="email"
-              placeholder="Tejuvsr@gmail.com"
+              placeholder="Teju@gmail.com"
               value={formData.email}
               onChange={handleChange}
-              className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-white focus:outline-none"
+              className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
             />
           </div>
           <div className="relative mb-5">
-            <label className="absolute -top-2.5 left-3 bg-white px-1 text-sm text-grey">
+            <label className="absolute -top-2.5 left-3 bg-layoutColor px-1 text-sm text-grey">
               Site Location Pin code
             </label>
             <input
@@ -105,26 +105,26 @@ const CompleteProfile = () => {
               placeholder="560103"
               value={formData.pinCode}
               onChange={handleChange}
-              className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-white focus:outline-none"
+              className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
             />
           </div>
           <div className="relative mb-5">
-            <label className="absolute -top-2.5 left-3 bg-white px-1 text-sm text-grey">
+            <label className="absolute -top-2.5 left-3 bg-layoutColor px-1 text-sm text-grey">
               Current Address
             </label>
             <textarea
               type="text"
               name="address"
-              placeholder=""
+              placeholder="kodihalli Aralihalli Hosadurga Chittradurga"
               rows={3}
               value={formData.address}
               onChange={handleChange}
-              className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-white focus:outline-none"
+              className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-primary opacity-50 text-white p-2 rounded-xl hover:bg-primary mt-20 md:mt-19"
+            className="w-full bg-primary text-white p-2 rounded-xl hover:bg-primary mt-20 md:mt-19"
           >
             Complete
           </button>

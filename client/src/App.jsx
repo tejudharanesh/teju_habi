@@ -15,12 +15,13 @@ import Testing from "./pages/Testing";
 import Faqs from "./pages/FAQ's/Faqs";
 import AddFamilyMembers from "./components/Client_profile/AddFamilyMembers";
 import Notifications from "./components/Client_homepage/Notifications";
+import Consultation from "./pages/NewUser/Consultation";
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Otp />} />
+          <Route path="/" element={<Consultation />} />
           {/* <Route path="/" element={<Dashboard />} /> */}
           <Route path="/dashboard/*" element={<Dashboard />} />
 
