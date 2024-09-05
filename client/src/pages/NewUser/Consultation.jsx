@@ -183,7 +183,7 @@ function Consultation({ isExpanded }) {
         onClose={handleScheduleClose}
         onConfirm={handleBookingConfirmed}
       />
-      {showScheduleBooked && <ScheduleBooked />}
+      {showScheduleBooked && <ScheduleBooked/>}
     </div>
   );
 }

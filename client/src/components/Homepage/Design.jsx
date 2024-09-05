@@ -9,7 +9,7 @@ function Design({ isExpanded }) {
         isExpanded ? "md:px-14 lg:px-40" : "md:px-3 lg:px-28"
       }`}
     >
-      <p className="text-center font-semibold mb-2">Design</p>
+      <p className="text-center font-semibold mb-2 text-black">Design</p>
       <div className="flex justify-between">
         <div className="flex items-center">
           <p className="text-black text-lg mr-2">1. </p>
