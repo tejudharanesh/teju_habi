@@ -6,8 +6,11 @@ import packagesIcon from "../../assets/svg/Packages.svg";
 import profileIcon from "../../assets/svg/Profile.svg";
 import projectsIcon from "../../assets/svg/Projects.svg";
 import SelectionIndicator from "./SelectionIndicator";
+import project from "../../assets/svg/Project.svg";
+import meeting from "../../assets/svg/meeting.svg";
+import live from "../../assets/svg/live.svg";
 
-const Navbar = ({ isExpanded }) => {
+const Navbar = ({ isExpanded, user }) => {
   const location = useLocation();
   const [selected, setSelected] = useState(
     location.pathname.split("/")[2] || "meet"
@@ -18,28 +21,28 @@ const Navbar = ({ isExpanded }) => {
       id: "meet",
       icon: meetIcon,
       alt: "Meet us",
-      label: "Meet us",
+      label: "Home",
       link: "/dashboard",
     },
     {
       id: "packages",
-      icon: packagesIcon,
+      icon: user == "client" ? project : packagesIcon,
       alt: "Packages",
-      label: "Packages",
+      label: user == "client" ? "project" : "Packages",
       link: "/dashboard/packages",
     },
     {
       id: "projects",
-      icon: projectsIcon,
+      icon: user == "client" ? live : projectsIcon,
       alt: "Projects",
-      label: "Projects",
+      label: user == "client" ? "Live" : "Portfolio",
       link: "/dashboard/projects",
     },
     {
       id: "profile",
-      icon: profileIcon,
+      icon: user == "client" ? meeting : profileIcon,
       alt: "Profile",
-      label: "Profile",
+      label: user == "client" ? "Meet Us" : "Profile",
       link: "/dashboard/profile",
     },
   ];

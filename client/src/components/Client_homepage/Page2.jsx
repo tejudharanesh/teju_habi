@@ -13,7 +13,7 @@ function Page2() {
   };
   return (
     <div>
-      <div className="md:px-[8%] lg:px-[] xl:px-[] bg-layoutColor h-screen">
+      <div className="md:px-[8%] lg:px-[] xl:px-[] bg-layoutColor h-auto">
         <div className="text-gray-500 m-5 md:hidden ">25 May 2024</div>
 
         <div className="flex flex-col md:flex-row">
@@ -119,6 +119,60 @@ function Page2() {
               <div className="mb-10">
                 <p className="m-2 text-black">Upcoming</p>
                 <div className="relative bg-layoutColor p-4 rounded-3xl rounded-tl-none border-2 md:w-[100%] lg:w-[80%]">
+                  <h3 className="font-bold text-gray-800">Slabs</h3>
+                  <p className="text-sm text-gray-500">initial stage</p>
+                  <p className="text-sm text-gray-500">
+                    25 May 2024 - 26 May 2024
+                  </p>
+                  <div className="h-2 bg-gray-200 rounded-full mt-2 w-[60%]">
+                    <div
+                      className="h-2 bg-primary rounded-full"
+                      style={{ width: "0%" }}
+                    ></div>
+                  </div>
+                  <div className="flex items-center absolute -top-2 -left-2">
+                    <div className="w-5 h-5 bg-primary rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="mb-10">
+                <div className="relative bg-layoutColor p-4 rounded-3xl rounded-tl-none border-2 md:w-[100%] lg:w-[80%]">
+                  <h3 className="font-bold text-gray-800">Foundations</h3>
+                  <p className="text-sm text-gray-500">initial stage</p>
+                  <p className="text-sm text-gray-500">
+                    25 May 2024 - 26 May 2024
+                  </p>
+                  <div className="h-2 bg-gray-200 rounded-full mt-2 w-[60%]">
+                    <div
+                      className="h-2 bg-primary rounded-full"
+                      style={{ width: "0%" }}
+                    ></div>
+                  </div>
+                  <div className="flex items-center absolute -top-2 -left-2">
+                    <div className="w-5 h-5 bg-primary rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="mb-10">
+                <div className="relative bg-layoutColor p-4 rounded-3xl rounded-tl-none border-2 md:w-[100%] lg:w-[80%]">
+                  <h3 className="font-bold text-gray-800">Soil Testing</h3>
+                  <p className="text-sm text-gray-500">initial stage</p>
+                  <p className="text-sm text-gray-500">
+                    25 May 2024 - 26 May 2024
+                  </p>
+                  <div className="h-2 bg-gray-200 rounded-full mt-2 w-[60%]">
+                    <div
+                      className="h-2 bg-primary rounded-full"
+                      style={{ width: "0%" }}
+                    ></div>
+                  </div>
+                  <div className="flex items-center absolute -top-2 -left-2">
+                    <div className="w-5 h-5 bg-primary rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="mb-10">
+                <div className="relative bg-layoutColor p-4 rounded-3xl rounded-tl-none border-2 md:w-[100%] lg:w-[80%]">
                   <h3 className="font-bold text-gray-800">Soil Testing</h3>
                   <p className="text-sm text-gray-500">initial stage</p>
                   <p className="text-sm text-gray-500">
@@ -141,8 +195,8 @@ function Page2() {
           </div>
 
           {/* Payment and Chat for medium and larger screens */}
-          <div className="hidden md:block mt-[85px] mr-7 lg:mr-10">
-            <div className="w-[260px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1 pl-2 mb-4">
+          <div className="hidden md:block mt-[85px] lg:mr-10">
+            <div className="w-[250px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1 pl-2 mb-4">
               <div>
                 <p className="text-sm">payment</p>
                 <p className="text-sm">Due on 05 May 2024</p>
@@ -152,7 +206,7 @@ function Page2() {
               </div>
             </div>
 
-            <div className="w-[260px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1 pl-2 mb-4">
+            <div className="w-[250px] h-[54px] border-2 flex justify-between items-center rounded-xl p-1 pl-2 mb-4">
               <div>
                 <p className="text-sm">Chat with our Executive</p>
                 <p className="text-sm">Quick Reply</p>
@@ -162,7 +216,7 @@ function Page2() {
               </div>
             </div>
 
-            <div className="w-[260px] h-[250px] border-2 justify-between items-center rounded-xl px-2">
+            <div className="w-[250px] h-[250px] border-2 justify-between items-center rounded-xl px-2">
               <p class="text-lg font-semibold mb-4">Recent Site Photos</p>
               <div className="grid grid-cols-2 gap-2">
                 <img

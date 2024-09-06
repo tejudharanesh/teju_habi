@@ -6,7 +6,7 @@ const SemiCircularProgressBar = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prev) => (prev > 0 ? prev - 1 : 0));
-    }, 100);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);

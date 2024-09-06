@@ -20,7 +20,7 @@ function Dashboard() {
   const [user, setUser] = useState("");
 
   useEffect(() => {
-    const storedUser = localStorage.getItem("userType") || "new";
+    const storedUser = localStorage.getItem("userType") || "client";
     if (storedUser) {
       setUser(storedUser);
     }
@@ -33,7 +33,7 @@ function Dashboard() {
   return (
     <div className="flex h-screen overflow-hidden">
       {/* Navbar */}
-      <Navbar isExpanded={collapsed} />
+      <Navbar isExpanded={collapsed} user={user} />
 
       {/* Main Content */}
       <div className="flex flex-col flex-grow">
