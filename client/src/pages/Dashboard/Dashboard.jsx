@@ -103,6 +103,7 @@ function Dashboard() {
               path="/detailedCost"
               element={<DetailedReport isExpanded={collapsed} />}
             />
+            <Route path="/faq" element={<Faqs isExpanded={collapsed} />} />
           </Routes>
         </div>
       </div>

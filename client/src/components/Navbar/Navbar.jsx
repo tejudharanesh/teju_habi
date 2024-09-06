@@ -48,7 +48,7 @@ const Navbar = ({ isExpanded }) => {
     <nav
       className={`fixed bottom-0 left-0 bg-layoutColor md:sticky ${
         isExpanded ? "md:w-[81px]" : "md:w-[200px]"
-      } md:flex-shrink-0 h-14 md:h-full w-full border-r-2 z-10 md:z-0`}
+      } md:flex-shrink-0 h-14 md:h-full w-full border-r-2 z-10 md:z-10`}
     >
       <div className="flex flex-col justify-between relative h-auto">
         <div className={`hidden md:flex justify-center px-4 items-center py-4`}>

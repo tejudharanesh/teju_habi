@@ -12,7 +12,7 @@ const Meeting = ({ show, onClose, handleVisitHabi, handleInviteHabi }) => {
           Meet our habi's executive at office.
         </p>
         <button
-          className="bg-primary1 text-black text-lg h-[60px] rounded-xl mx-auto w-[279px] lg:w-[315px]"
+          className="bg-primary text-black text-lg h-[60px] rounded-xl mx-auto w-[279px] lg:w-[315px]"
           onClick={handleVisitHabi}
         >
           Visit habi
@@ -21,7 +21,7 @@ const Meeting = ({ show, onClose, handleVisitHabi, handleInviteHabi }) => {
           An executive from habi will visit your home.
         </p>
         <button
-          className=" bg-primary1 text-black text-lg h-[60px] rounded-xl mx-auto w-[279px] lg:w-[315px]"
+          className=" bg-primary text-black text-lg h-[60px] rounded-xl mx-auto w-[279px] lg:w-[315px]"
           onClick={handleInviteHabi}
         >
           Invite habi

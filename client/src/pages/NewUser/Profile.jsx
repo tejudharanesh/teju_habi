@@ -18,10 +18,15 @@ import family from "../../assets/images/family.png";
 
 const Profile = ({ isExpanded, user }) => {
   const [isPopupVisible, setPopupVisible] = useState(false);
+  const [editable, setEditable] = useState(false);
   const navigate = useNavigate();
-  const containerClass = `flex flex-col items-center w-full bg-layoutColor shadow h-auto mb-3 ${
+  const containerClass = `flex flex-col items-center w-full bg-layoutColor h-auto mb-3 ${
     isExpanded ? "md:px-20 lg:px-72" : "md:px-16 lg:px-60"
   }`;
+
+  const toggleEditMode = () => {
+    setEditable((prev) => !prev); // Toggle editable state
+  };
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-background font-poppins w-full">
@@ -44,9 +49,20 @@ const Profile = ({ isExpanded, user }) => {
                 className="w-[94px] h-[94px] rounded-full"
               />
             </div>
-            <button className="absolute right-3 md:right-0 -bottom-11 bg-primaryO border-2 border-primary text-primary rounded-lg w-[78px] h-[31px]">
-              <img src={edit} alt="" className="inline mr-1" />
-              Edit
+            <button
+              className={`absolute right-3 md:right-0 -bottom-11 rounded-lg w-[78px] h-[31px] ${
+                editable
+                  ? "bg-primary text-layoutColor"
+                  : "border-primary bg-primaryO text-primary border-2"
+              }`}
+              onClick={toggleEditMode}
+            >
+              <img
+                src={edit}
+                alt=""
+                className={`inline mr-1 ${editable ? "hidden" : ""}`}
+              />
+              {editable ? "Done" : "Edit"}
             </button>
           </div>
           <form className="mt-[77px] space-y-7 w-full px-4 md:px-0 mb-3">
@@ -71,12 +87,14 @@ const Profile = ({ isExpanded, user }) => {
                     type={type}
                     placeholder={placeholder}
                     className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
+                    disabled={!editable} // Disable input if not editable
                   />
                 ) : (
                   <textarea
                     rows={3}
                     placeholder={placeholder}
                     className="text-black block w-full px-3 py-2 border border-gray-300 rounded-xl bg-layoutColor focus:outline-none"
+                    disabled={!editable} // Disable input if not editable
                   />
                 )}
               </div>
@@ -114,7 +132,11 @@ const Profile = ({ isExpanded, user }) => {
             </li>
           )}
           {[
-            { label: "FAQ's", icon: faq, onClick: () => navigate("faq") },
+            {
+              label: "FAQ's",
+              icon: faq,
+              onClick: () => navigate("/dashboard/faq"),
+            }, //for client its faq
             { label: "Privacy Policies", icon: policy },
             { label: "Terms & conditions", icon: terms },
             { label: "habi's story", icon: habi },
