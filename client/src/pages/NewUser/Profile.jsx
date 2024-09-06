@@ -33,7 +33,7 @@ const Profile = ({ isExpanded, user }) => {
       <div className={containerClass}>
         <div className="rounded-xl w-full relative">
           <div className="relative w-full h-40">
-            <Back />
+            {user === "client" && <Back />}
             <p className="text-center text-black text-[21px] md:text-[24px] my-2 pt-1">
               Profile
             </p>
